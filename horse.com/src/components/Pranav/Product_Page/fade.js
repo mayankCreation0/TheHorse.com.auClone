@@ -2,13 +2,16 @@ import { Fade, ScaleFade, Slide, SlideFade } from '@chakra-ui/react'
 import React from 'react';
 import { useDisclosure } from '@chakra-ui/react';
 import { Button,Box } from '@chakra-ui/react';
+import {BsArrowDown} from "react-icons/bs"
 
 export function FadeEx() {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
       <>
-        <Button onClick={onToggle}>Sort By</Button>
+
+        <Button onClick={onToggle} border="none" bg="none">Sort By <BsArrowDown/></Button>
+        <Button onClick={onToggle} border="none" bg="none">Filter <BsArrowDown/></Button>  
         <Fade in={isOpen}>
           <Box
              p="10px"
@@ -17,11 +20,14 @@ export function FadeEx() {
             bg='#545540'
              
             shadow='md'
-            width="300px"
+            width="100%"
+            display="flex"
+            flexDirection="column"
+            gap="10px"
           >
-           <h3>Price Low to High</h3> 
-           <h3>Price High to Low</h3> 
-           <h3>Best Selling</h3> 
+           <text>Price Low to High</text> 
+           <text>Price High to Low</text> 
+           <text>Best Selling</text> 
           </Box>
         </Fade>
       </>
