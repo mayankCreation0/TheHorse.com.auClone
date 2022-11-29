@@ -59,3 +59,67 @@ hr{
     border-top: .1px solid #c8c5c5;
     background-color: #c8c5c5;
 }
+
+#Checkout-Coupon{
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+#Checkout-Coupon>input{
+    width: 78%;
+    height: 45px;
+    border: 1px solid #c8c5c5;
+    border-radius: 5px;
+}
+
+#Checkout-Coupon>input:focus{
+    border: none;
+    outline: 1.8px solid rgb(24, 120, 185);
+}
+
+#Checkout-Coupon>button{
+    width: 20%;
+    height: 45px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    background-color: #c8c5c5;
+    border: none;
+}
+
+#Subtotal{
+    /* display: flex;
+    align-items: center; */
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#Subtotal>div{
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    color: gray;
+    font-size: 14px;
+}
+#Subtotal>div p:last-child{
+    color: rgb(70, 68, 68);
+    font-weight: 600;
+}
+
+#Total{
+    display: flex;
+    margin-top: 20PX;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    color: rgb(58, 57, 57);
+}
+#Total span{
+    font-size: 15px;
+}
+#Total p:last-child{
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(58, 57, 57);
+}

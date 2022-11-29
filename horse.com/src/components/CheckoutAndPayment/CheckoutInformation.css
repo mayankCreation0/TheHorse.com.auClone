@@ -1,6 +1,5 @@
 #CheckoutInformation{
     width: 80%;
-    height: 500px;
     margin: auto;
     margin-top: 60px;
     /* border: 1px solid red; */
@@ -30,7 +29,22 @@ a{
     width: 100%;
     margin-top: 10px;
     /* border: 1px solid red; */
-  font-size: 12px;
+    font-size: 12px;
+    /* color: rgb(24, 120, 185) */
+}
+
+#page-location a{
+    color: rgb(24, 120, 185);
+}
+
+#page-location a:nth-child(3){
+    color: gray;
+    font-weight: 600;
+}
+
+.fa-chevron-right{
+    font-size: 10px;
+    color: gray;
 }
 
 #ExpressCheckOut{
@@ -115,6 +129,8 @@ a{
     padding-left:15px;
     padding-right: 15px;
     position: absolute;
+    color: gray;
+    font-size: 14px;
 }
 #ExpressCheckOut-ContactInfo{
     /* border: 1px solid red; */
@@ -126,6 +142,7 @@ a{
     display: flex;
     margin-top: 15px;
     margin-bottom: 15px;
+    color: gray;
 }
 #ExpressCheckOut-ContactInfo-UserImage{
     width: 50px;
@@ -145,10 +162,13 @@ a{
 }
 #CheckOut-NewsLetter{
     display: flex;
+    align-items: center;
+    color: gray;
+    font-size: 14px;
 }
 #ExpressCheckOut-ContactInfo input{
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -184,6 +204,7 @@ form{
 }
 #DeliveryMethod label{
 color: gray;
+font-size: 14px;
 }
 input[type="radio"]{
     margin-right: 5px;
@@ -217,6 +238,7 @@ input[type="radio"]{
     border-radius: 4px;
     color: gray;
     box-sizing: border-box;
+    font-size: 14px;
     /* outline: rgb(24, 120, 185); */
 }
 #ShippingAddress>div{

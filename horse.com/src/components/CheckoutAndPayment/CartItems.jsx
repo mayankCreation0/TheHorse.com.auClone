@@ -15,6 +15,26 @@ function CartItems() {
           </div>
         </div>
         <hr />
+        <div id='Checkout-Coupon'>
+          <input type="text" placeholder='Gift card or discount code' />
+          <button disabled='true'>Apply</button>
+        </div>
+        <hr />
+        <div id='Subtotal'>
+          <div>
+            <p>Subtotal</p>
+            <p>$342</p>
+          </div>
+          <div>
+            <p>Shipping</p>
+            <p>Free</p>
+          </div>
+        </div>
+        <hr />
+        <div id='Total'>
+          <p>Total</p>
+          <p><span>Aud</span> $342</p>
+        </div>
     </div>
   )
 }

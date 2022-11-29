@@ -110,7 +110,7 @@ function CheckoutInformation() {
                     </div>
                 </div>
                 <div id='UserAddress-Phone'>
-                    <label htmlFor="">Adress</label>
+                    <label htmlFor="">Address</label>
                     <input type="text" name='Phone' />
                 </div>
                 <div id='OfferNewsCheckbox'>
