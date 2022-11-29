@@ -1,0 +1,137 @@
+import React from 'react'
+import './CheckoutInformation.css'
+import { Link } from 'react-router-dom'
+
+function CheckoutInformation() {
+  return (
+    <div id='CheckoutInformation'>
+        <div id='CheckoutWebSiteName'>
+            {/* <Link to={'/'}>The Horse</Link> */}
+            <a href="#" id='CheckoutWebSiteName-Header'>The Hourse</a>
+        </div>
+        <div id='page-location'>
+            {/* <Link to='#'>Cart</Link> */}
+            <a href="">Cart </a> &nbsp; <span><i class="fa-solid fa-chevron-right"></i> </span> &nbsp;
+            <a href=""> Information</a>&nbsp;
+            <span><i class="fa-solid fa-chevron-right"></i></span>&nbsp;
+            <a href=""> Shipping</a>&nbsp;
+            <span><i class="fa-solid fa-chevron-right"></i></span>&nbsp;
+            <a href=""> Shipping</a>&nbsp;
+        </div>
+        <div id='ExpressCheckOut'>
+            <div id='ExpressCheckOut-Head'> 
+                <p>Express Checkout</p> 
+            </div>
+            <div id='ExpressCheckOut-PaymentOptions'>
+                <button id='ExpressCheckOut-PaymentOptions-1'><img src="https://i.ibb.co/7ysMmtx/Shop-Pay-White-1.png" alt="" /></button>
+                <button id='ExpressCheckOut-PaymentOptions-2'><img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png" alt="" /></button>
+                <button id='ExpressCheckOut-PaymentOptions-3'><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/768px-Google_Pay_Logo.svg.png?20221017164555" alt="" /></button>
+            </div>
+        </div>
+        <div id='Seperator-div'>
+            <div id='Seperator-div-Or'><p>OR</p></div>
+        </div>
+        <div id='ExpressCheckOut-ContactInfo'>
+            <p>Contact information</p>
+            <div id='ExpressCheckOut-ContactInfo-UserDetail'>
+                <div id='ExpressCheckOut-ContactInfo-UserImage'>
+                    <img src="https://cdn.shopify.com/proxy/bca536451bdec34615bffa8243f68db067c89c287b6fdc3e37be207de3fa4d17/www.gravatar.com/avatar/6771390b5fe3f4fc4d85841699528953.jpg?s=100&d=https%3A%2F%2Fcdn.shopify.com%2Fshopifycloud%2Fshopify%2Fassets%2Fno-gravatar-new-04e7c2331218ac202e79e31be502fd5631bc96cb0206580dbcb0720ebbbd7c73_100x100.png" alt="" />
+                </div>
+                <div id='ExpressCheckOut-ContactInfo-UserEmail'>
+                    <p>Nishant Prajapati (nishant810125@gmail.com)</p>
+                    <p>Log out</p>
+                </div>  
+            </div>
+            <div id='CheckOut-NewsLetter'>
+            <input type="checkbox" />
+            <label htmlFor="">
+             Email me with news and offers
+            </label>
+            </div>
+        </div>
+        <form action="">
+            <div id='DeliveryMethod'>
+                <p>Delivery Method</p>
+                <div id='DeliveryMethod-ship'>
+                    <input type="radio" name='DeliveryMethod'/>
+                    <label htmlFor="">Ship</label>
+                </div>
+                <div id='DeliveryMethod-pickup'>
+                    <input type="radio" name='DeliveryMethod'/>
+                    <label htmlFor="">Pick Up</label>
+                </div>
+            </div>
+            <div id='ShippingAddress'>
+                <p>Shipping Address</p>
+                <div id='AddressOption'>
+                    <select name="Address Option" id="AddressSelection">
+                        <option value="">Use a new address</option>
+                    </select>
+                </div>
+                <div id='SlectCountryOrRegion'>
+                    {/* <label htmlFor="">Country/region</label> */}
+                    <select name="Country/Region" id="CountrySelection">
+                        <option value="">Country/region</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                </div>
+                <div id='Address-Username'>
+                  <div id='Address-FirstName'>
+                    <label htmlFor="">First Name</label>
+                    <input type="text" name='First-Name' />
+                  </div>
+                  <div id='Address-SecondName'>
+                  <label htmlFor="">Last Name</label>
+                    <input type="text" name='Last-Name' />
+                  </div>
+                </div>
+                <div id='CompanyAddress'>
+                    <input type="text" placeholder='Company (Optional)' name="" id="" />
+                </div>
+                <div id='UserAddress-Street'>
+                    <label htmlFor="">Address</label>
+                    <input type="text" name='Street' />
+                </div>
+                <div id='UserAddress-Suburb-PostCode'>
+                    <div id='UserAddress-Suburb'>
+                        <label htmlFor="">Suburb</label>
+                        <input type="text" name='Suburb' />
+                    </div>
+                    <div id='UserAddress-State'>
+                        {/* <label htmlFor="">Postcode</label> */}
+                        <select name="State" id="">
+                            <option value="">State/territory</option>
+                            <option value="Vicotoria">Victoria</option>
+                        </select>
+                    </div>
+                    <div id='UserAddress-Postcode'>
+                        <label htmlFor="">Postcode</label>
+                        <input type="text" name='Postcode' />
+                    </div>
+                </div>
+                <div id='UserAddress-Phone'>
+                    <label htmlFor="">Adress</label>
+                    <input type="text" name='Phone' />
+                </div>
+                <div id='OfferNewsCheckbox'>
+                    <input type="Checkbox" />
+                    <label htmlFor="">Text me with news and offers</label>
+                </div>
+            </div>
+            <div id='AddressFormSubmit'>
+                <button id='returntocart'> <i class="fa-solid fa-angle-left"></i> Return to Cart</button>
+            <button type='submit' id='ContinueToShipping'>Continue to shipping</button>
+            </div>
+           
+        </form>
+        <div id='Checkout-Policy'>
+            <p>Refund Policy</p>
+            <p>Shipping Policy</p>
+            <p>Privacy Policy</p>
+            <p>Terms of Service</p>
+        </div>
+    </div>
+  )
+}
+
+export default CheckoutInformation
