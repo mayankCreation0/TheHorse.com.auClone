@@ -1,0 +1,126 @@
+@import url(//db.onlinewebfonts.com/c/43372a4ce8dc3abbca31595815be7cf3?family=Atlas+Grotesk+Web+Light);
+@import url(//db.onlinewebfonts.com/c/b1edfa746f416280b3502ba39df2c3ae?family=Canela);
+@import url(//db.onlinewebfonts.com/c/b1edfa746f416280b3502ba39df2c3ae?family=Canela);
+#homepage{
+    background: #f7f2ed;
+}
+#line1{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    margin-top: 90px;
+    margin-bottom: 70px;
+    cursor: pointer;
+}
+/* svg */
+.arrow-1 {
+    width:60px;
+    height:23px;
+    display: flex;
+  }
+   .hoverfun:hover::before {
+    content: "";
+    background: currentColor;
+    width:5px;
+    clip-path: polygon(0 12px,calc(100% - 10px) 10px,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,calc(100% - 10px) calc(100% - 10px),0 calc(100% - 10px));
+    animation: a1 1.5s infinite linear;
+  }
+  /* .arrow-1:hover::after {
+    content: "";
+    background: currentColor;
+    width:5px;
+    clip-path: polygon(0 10px,calc(100% - 15px) 10px,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,calc(100% - 15px) calc(100% - 10px),0 calc(100% - 10px));
+    animation: a1 1.5s infinite linear;
+  } */
+  @keyframes a1 {
+    30%,80%{flex-grow: 1}
+  }
+.line1 > p{
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #545540;
+    font-weight: 300;
+    margin-top: 15px;
+    justify-content: center;
+    cursor: pointer;
+}
+.trending{
+    font-size: 26px;
+    letter-spacing: .04em;
+    font-family:Canela,san-serif;
+    font-weight: light;
+    line-height: 1.4;
+    color: #545540;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 30px;
+}
+#line3 , #line5{
+    margin-bottom: 20px;
+}
+#star{
+    margin-top: 100px;
+    font-size: 23px;
+    letter-spacing:.04em;
+    color: #ffc700;
+}
+#lambaline{
+    font-family: Canela,Times,serif;
+    font-size: 20px;
+    font-weight: 600;
+    width: 60%;
+    margin: auto;
+    font-size: 1.17em;
+    letter-spacing:  0.09em;
+    margin-top: 30px;
+}
+#lambaline2{
+    margin-top: 20px;
+    font-size: 13px;
+    letter-spacing: .04em;
+    font-family: AtlasGrotesk,Helvetica,san-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #545540;
+}
+#smallpic{
+    display: flex;
+    justify-content: space-evenly;
+}
+#nicherow{
+    margin-top: 90px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
+}
+#nicherow > img {
+    width: 100%;
+    height: 100%;
+}
+#icondiv{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+    align-items: center;
+    margin: 20px;
+}
+.iconbox{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+.iconboxi{
+    font-size: 1.17em;
+    font-family: Canela,Times,serif;
+    font-weight: 600;
+    letter-spacing: .08em;
+}
+.iconbox > p {
+    font-size: 13px;
+    line-height: 1.4;
+    letter-spacing: .08em;
+}
