@@ -1,35 +1,51 @@
-import { Fade, ScaleFade, Slide, SlideFade } from '@chakra-ui/react'
+import { Fade } from '@chakra-ui/react'
 import React from 'react';
 import { useDisclosure } from '@chakra-ui/react';
-import { Button,Box } from '@chakra-ui/react';
-import {BsArrowDown} from "react-icons/bs"
+import { Button, Box } from '@chakra-ui/react';
+import { BsArrowDown } from "react-icons/bs"
+import { Text } from '@chakra-ui/react';
+import { useDispatch, useSelector } from 'react-redux';
 
-export function FadeEx() {
-    const { isOpen, onToggle } = useDisclosure();
-  
-    return (
-      <>
+export function FadeEx({getfetchData}) {
+  const { isOpen, onToggle } = useDisclosure();
 
-        <Button onClick={onToggle} border="none" bg="none">Sort By <BsArrowDown/></Button>
-        <Button onClick={onToggle} border="none" bg="none">Filter <BsArrowDown/></Button>  
-        <Fade in={isOpen}>
-          <Box
-             p="10px"
-            color='white'
-            mt='4'
-            bg='#545540'
-             
-            shadow='md'
-            width="100%"
-            display="flex"
-            flexDirection="column"
-            gap="10px"
-          >
-           <text>Price Low to High</text> 
-           <text>Price High to Low</text> 
-           <text>Best Selling</text> 
-          </Box>
-        </Fade>
-      </>
-    )
+  let getDatafun=useSelector((storeData)=>storeData.getDatafun);
+  let dispatch=useDispatch();
+
+  const handle = (value) => {
+    
+
+    getDatafun(`http://localhost:3001/posts?_sort=price&_order=${value}`,dispatch);
+     
+    
+
   }
+
+  return (
+    <>
+
+      <Button display="flex" alignItems="center" padding="5px" fontSize="15px" onClick={onToggle} border="none" bg="none"> <Text marginRight="7px">Sort By</Text><BsArrowDown /></Button>
+
+      <Fade in={isOpen} >
+        <Box
+          p="10px"
+          color='white'
+          mt='4'
+          bg='#545540'
+
+          shadow='md'
+          width="140%"
+          display="flex"
+          flexDirection="column"
+          gap="10px"
+          fontFamily="Canela,Times,serif" position="absolute" zIndex="9999"
+        >
+          <Text   onClick={(e) => handle("asc")}>Best Selling</Text>
+          <Text onClick={()=>handle("asc")}>Price Low to High</Text>
+          <Text  onClick={()=>handle("desc")}>Price High to Low</Text>
+
+        </Box>
+      </Fade>
+    </>
+  )
+}
