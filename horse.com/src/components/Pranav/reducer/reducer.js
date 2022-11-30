@@ -17,12 +17,15 @@ const getfetchData = (url,dispatch) => {
 let initialData = {
 
     ProductData: [],
-    getDatafun:getfetchData
+    getDatafun:getfetchData,
+    cartData:[],
+    ProductDetail:{},
+    rating:4.2
 }
 
 export const myReducer = (storeData = initialData, action) => {
 
-
+ 
     switch (action.type) {
 
         case "AddData":
@@ -31,6 +34,19 @@ export const myReducer = (storeData = initialData, action) => {
                 ...storeData,ProductData:action.Payload
 
             }
+
+        case "ProDetails":
+            return{
+                ...storeData,ProductDetail:action.Payload
+            }
+        case "UpdateRating":
+            return{
+                ...storeData,rating:action.Payload
+            }
+        case "AddCart":
+        return{
+            ...storeData,cartData:[...storeData.cartData,action.Payload]
+        }
 
 
         default: {
