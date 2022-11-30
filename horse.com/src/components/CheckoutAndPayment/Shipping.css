@@ -1,12 +1,12 @@
-#page-location a:nth-child(5){
-    color: gray;
-    font-weight: 600;
-}
+
 #page-location a:nth-child(3){
     color: rgb(24, 120, 185);
     font-weight: 400;
 }
-
+/* #page-location a:nth-child(5){
+    color: gray;
+    font-weight: 600;
+} */
 #ShippingDetails{
     display: flex;
     flex-direction: column;

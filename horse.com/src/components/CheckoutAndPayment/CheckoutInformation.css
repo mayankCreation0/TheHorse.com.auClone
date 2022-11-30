@@ -20,7 +20,7 @@ a{
 
 #CheckoutWebSiteName-Header{
     font-size: 28px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 #page-location{

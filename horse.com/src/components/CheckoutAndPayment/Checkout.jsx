@@ -3,14 +3,18 @@ import './Checkout.css'
 import './CheckoutInformation.css'
 import './CartItems.css'
 import CartItems from './CartItems.jsx'
+import Payment from './Payment'
+// import './Payment.css'
 import CheckoutInformation from './CheckoutInformation'
 import Shipping from './Shipping'
-
+import {Link} from 'react-router-dom'
 function Checkout() {
   return (
     <div id='CheckoutMain'>
         <div id='CheckoutLeft'>
-          <Shipping/>
+          {/* <Link to={}/> */}
+          <Payment/>
+          {/* <Shipping/> */}
             {/* <CheckoutInformation/> */}
         </div>
         <div id='CheckoutRight'>

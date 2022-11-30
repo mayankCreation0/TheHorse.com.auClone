@@ -12,9 +12,9 @@ function Shipping() {
         <a href="">Cart </a> &nbsp; <span><i class="fa-solid fa-chevron-right"></i> </span> &nbsp;
         <a href=""> Information</a>&nbsp;
         <span><i class="fa-solid fa-chevron-right"></i></span>&nbsp;
-        <a href=""> Shipping</a>&nbsp;
+        <a href="" style={{color: "gray", fontWeight:"500"}}> Shipping</a>&nbsp;
         <span><i class="fa-solid fa-chevron-right"></i></span>&nbsp;
-        <a href=""> Shipping</a>&nbsp;
+        <a href="" style={{color: "rgb(24, 120, 185)",fontWeight:"400"}}> Payment</a>&nbsp;
     </div>
     <div id='ShippingDetails'>
             <div id='ShippingDetails-contact'>
