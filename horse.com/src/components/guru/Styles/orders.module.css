@@ -1,7 +1,32 @@
+.div1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    margin-top: 0px;
+
+
+}
+
 .p1 {
     color: RGB(84, 85, 64);
     font-family: "Canela";
     font-size: 27px;
     text-align: start;
+}
 
+.div2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: -50px;
+}
+
+.alert {
+    position: sticky;
+    top: 30px;
+    left: 50%;
+    z-index: 10;
+    width: fit-content;
+    transform: translateX(-50%);
+    background-color: whitesmoke;
 }

@@ -1,7 +1,6 @@
 .div1 {
     display: flex;
     justify-content: start;
-    border: solid 1px black;
 }
 
 .div2 {
@@ -13,7 +12,6 @@
     width: 20%;
     margin: 70px 70px;
     height: 200px;
-    border: solid 1px green;
 }
 
 .links {
@@ -24,14 +22,11 @@
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 18.2px;
-
 }
 
 .div3 {
     margin-top: 100px;
-    border: solid 1px red;
     width: 80%;
     display: flex;
     padding-right: 20%;
-
 }
