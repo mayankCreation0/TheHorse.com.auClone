@@ -24,7 +24,7 @@ export function FadeEx({getfetchData}) {
   return (
     <>
 
-      <Button display="flex" alignItems="center" padding="5px" fontSize="15px" onClick={onToggle} border="none" bg="none"> <Text marginRight="7px">Sort By</Text><BsArrowDown /></Button>
+      <Button display="flex" alignItems="center" padding="5px" fontSize="15px" onClick={onToggle} border="none" bg="none"> <Text marginRight="7px" fontFamily="Canela,Times,serif" fontWeight="400" letterSpacing=".15em" color='#545540'>Sort By</Text><BsArrowDown /></Button>
 
       <Fade in={isOpen} >
         <Box
@@ -38,7 +38,7 @@ export function FadeEx({getfetchData}) {
           display="flex"
           flexDirection="column"
           gap="10px"
-          fontFamily="Canela,Times,serif" position="absolute" zIndex="9999"
+          fontFamily="Canela,Times,serif" position="absolute" zIndex="9999 "
         >
           <Text   onClick={(e) => handle("asc")}>Best Selling</Text>
           <Text onClick={()=>handle("asc")}>Price Low to High</Text>
