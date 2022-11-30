@@ -4,11 +4,14 @@ import './CheckoutInformation.css'
 import './CartItems.css'
 import CartItems from './CartItems.jsx'
 import CheckoutInformation from './CheckoutInformation'
+import Shipping from './Shipping'
+
 function Checkout() {
   return (
     <div id='CheckoutMain'>
         <div id='CheckoutLeft'>
-            <CheckoutInformation/>
+          <Shipping/>
+            {/* <CheckoutInformation/> */}
         </div>
         <div id='CheckoutRight'>
           <CartItems/>

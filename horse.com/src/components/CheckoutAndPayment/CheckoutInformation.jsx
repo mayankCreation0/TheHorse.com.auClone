@@ -1,8 +1,26 @@
-import React from 'react'
+import React,{useRef, useState} from 'react'
 import './CheckoutInformation.css'
 import { Link } from 'react-router-dom'
 
 function CheckoutInformation() {
+
+    let ShipDelivery = useRef(null)
+    let Pickup = useRef(null)
+    let [DeliveryDefault,setDeliveryDefault] = useState(true)
+    let [deliveryType,setDeliveryType] = useState(true)
+    let deliveryShip =()=>{
+        setDeliveryDefault(true);
+        ShipDelivery.current.hidden = false;
+        Pickup.current.hidden = true;
+    }
+    let deliveryPickup = ()=>{
+        setDeliveryDefault(false);
+        ShipDelivery.current.hidden = true;
+        Pickup.current.hidden = false;
+    }
+
+
+
   return (
     <div id='CheckoutInformation'>
         <div id='CheckoutWebSiteName'>
@@ -49,18 +67,18 @@ function CheckoutInformation() {
             </label>
             </div>
         </div>
-        <form action="">
-            <div id='DeliveryMethod'>
+        <div id='DeliveryMethod'>
                 <p>Delivery Method</p>
                 <div id='DeliveryMethod-ship'>
-                    <input type="radio" name='DeliveryMethod'/>
+                    <input type="radio" name='DeliveryMethod' checked={DeliveryDefault} onChange={deliveryShip}/>
                     <label htmlFor="">Ship</label>
                 </div>
                 <div id='DeliveryMethod-pickup'>
-                    <input type="radio" name='DeliveryMethod'/>
+                    <input type="radio" name='DeliveryMethod' onChange={deliveryPickup}/>
                     <label htmlFor="">Pick Up</label>
                 </div>
             </div>
+        <form action="" ref={ShipDelivery}>
             <div id='ShippingAddress'>
                 <p>Shipping Address</p>
                 <div id='AddressOption'>
@@ -122,8 +140,29 @@ function CheckoutInformation() {
                 <button id='returntocart'> <i class="fa-solid fa-angle-left"></i> Return to Cart</button>
             <button type='submit' id='ContinueToShipping'>Continue to shipping</button>
             </div>
-           
         </form>
+        <div id='PickupAddress' ref={Pickup} hidden={true}>
+            <p>Pickup locations</p>
+            <div id='pickup-location'>
+                <div>
+                    <input type="radio" />
+                </div>
+                <div>
+                    <p>	
+                        Place order by midnight for next business day pick up between 10am - 4pm
+                        10 Kiama Street, Miranda NSW
+                    </p>
+                </div>
+                <div>
+                    <p>Free</p>
+                    <p>Usually ready in 4 hours</p>
+                </div>
+            </div>
+            <div id='AddressFormSubmit'>
+                <button id='returntocart'> <i class="fa-solid fa-angle-left"></i> Return to Cart</button>
+            <button type='submit' id='ContinueToShipping'>Continue to payment</button>
+            </div>
+        </div>
         <div id='Checkout-Policy'>
             <p>Refund Policy</p>
             <p>Shipping Policy</p>

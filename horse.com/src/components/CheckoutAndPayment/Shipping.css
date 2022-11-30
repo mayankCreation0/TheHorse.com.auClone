@@ -1,0 +1,103 @@
+#page-location a:nth-child(5){
+    color: gray;
+    font-weight: 600;
+}
+#page-location a:nth-child(3){
+    color: rgb(24, 120, 185);
+    font-weight: 400;
+}
+
+#ShippingDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    border: 1px solid#c8c5c5;
+    border-radius: 5px;
+}
+#ShippingDetails>p{
+    margin-bottom: 15px;
+}
+#ShippingDetails-contact,#ShippingDetails-shipto{
+    display: flex;
+    height: 40px;
+    width: 95%;
+    justify-content: space-between;
+    /* border: 1px solid #c8c5c5; */
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    color: gray;
+    }
+
+#ShippingDetails-contact>div:nth-child(2),
+#ShippingDetails-shipto>div:nth-child(2){
+    width: 60%;
+}
+
+#ShippingDetails-contact>button,
+#ShippingDetails-shipto>button{
+    background-color: transparent;
+    border: none;
+    color: rgb(24, 120, 185);
+    cursor: pointer;
+}
+
+#ShippingMethod{
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+#ShippingMethod>p{
+    margin-bottom: 20px;
+}
+#Shipping-free,
+#Shipping-express{
+    display: flex;
+    height: 40px;
+    width: 98%;
+    /* border: 1px solid #c8c5c5; */
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    color: gray;
+}
+#Shipping-free>div,
+#Shipping-express>div{
+    display: flex;
+    align-items: center;
+}
+#Shipping-free{
+    border: 1px solid #c8c5c5;
+    border-bottom: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+#Shipping-express{
+    border: 1px solid #c8c5c5;
+    border-top: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+input[type="radio"]{
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    accent-color: rgb(24, 120, 185);
+}
+
+#ShippingMethod>hr{
+    width: 100%;
+}
+
+hr{
+  width: 95%;
+  align-self: center;
+  background-color: #c8c5c5;
+  border: none;
+  border-top: 1.4px solid #c8c5c5;
+}
