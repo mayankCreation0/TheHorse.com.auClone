@@ -12,7 +12,6 @@ const Account = () => {
                 <Link className={Styles.links} to="">Dashboard</Link>
                 <Link className={Styles.links} to="wishlist">Wishlist</Link>
                 <Link className={Styles.links} to="orders">Orders</Link>
-                <Link className={Styles.links} to="orders">Orders</Link>
                 <Link className={Styles.links} to="addresses">Addresses</Link>
                 <Link className={Styles.links} to="logout">Logout</Link>
             </div>
