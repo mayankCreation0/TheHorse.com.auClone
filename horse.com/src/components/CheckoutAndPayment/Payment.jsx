@@ -49,9 +49,10 @@ function Payment() {
     function CardData(e){
         let {name, value} = e.target;
         setStoreCardData({...StoreCardData,[name]:value})
-        if(StoreCardData.CardNumber.length>15){
-            alert("Digits can not be more that 16")
-        }
+        // if(StoreCardData.CardNumber.length>15){
+        //     alert("Digits can not be more that 16")
+        // }
+
         console.log(StoreCardData);
     }
     let navigateToPaymentGateway= useNavigate();
@@ -62,7 +63,7 @@ function Payment() {
         }
         else{
         localStorage.setItem('CatrdData',JSON.stringify(StoreCardData));
-        navigateToPaymentGateway('/checkout/paymentgateway');
+        navigateToPaymentGateway('/paymentgateway');
         }
         
     }
@@ -121,7 +122,7 @@ function Payment() {
                     <input type="text"onChange={CardData} name='Name' placeholder='Name on card'/>
                     <div id='CardDetail-SubEntry'>
                         <input type="text"onChange={CardData} name='ExpiryDate' placeholder='Expiration date (MM / YY)'/>
-                        <input type="number" onChange={CardData} name='cvv' placeholder='Security code' />
+                        <input type="password" onChange={CardData} name='cvv' placeholder='Security code' />
                     </div>
                 </div>
             </div>
