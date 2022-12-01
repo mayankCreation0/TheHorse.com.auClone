@@ -6,6 +6,7 @@ function PaymentGateway() {
     let [minute,setMinute] = useState(4)
     let [seconds,setSeconds] =useState(59)
     let [runStatus, setRunStatus] = useState(false)
+    let [OTPVerificationFail,setOTPVerificationFail] = useState(true)
     useEffect(()=>{
         // setRunStatus(true)
         // if(runStatus===true){
@@ -25,7 +26,14 @@ function PaymentGateway() {
     let NavigateToHome = useNavigate();
     function VerifyOTP(){
         console.log(OTP);
-        NavigateToHome('/');
+        // NavigateToHome('/paymentprocessing');
+        if(OTP==="123456"){
+            NavigateToHome('/paymentprocessing');
+        }
+        else{
+            setOTPVerificationFail(false);
+        }
+       
     }
 
   return (
@@ -40,6 +48,7 @@ function PaymentGateway() {
             <input type="password" placeholder='Enter OTP' onChange={GetOTP}/>
             <button onClick={VerifyOTP}>Submit</button>
         </div>
+        <div id='wrongOTP' hidden={OTPVerificationFail}><p>Wrong OTP</p></div>
         <div>
             <p id='resendOTP'>Resend OTP</p>
         </div>
