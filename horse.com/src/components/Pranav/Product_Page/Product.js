@@ -16,17 +16,16 @@ function Product() {
     let dispatch = useDispatch();
     let getDatafun = useSelector((storeData) => storeData.getDatafun);
     let cartData = useSelector((state) => state.cartData);
-    console.log(cartData);
+   
 
     useEffect(() => {
 
         getDatafun('http://localhost:3001/posts', dispatch);
 
-    }, []);
+    },[]);
 
 
     let showData = useSelector(((storeData) => storeData.ProductData));
-
 
 
 
