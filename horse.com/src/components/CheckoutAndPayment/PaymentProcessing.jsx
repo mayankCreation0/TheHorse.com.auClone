@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react'
+import React,{useEffect, useState}  from 'react'
 import {useNavigate} from 'react-router-dom'
-import './Redirect.css'
-function Redirect() {
+import './PaymentProcessing.css'
+function PaymentProcessing() {
     let navigatetoPaymentGateWay = useNavigate();
     let [dot, setDot] = useState("")
     useEffect(()=>{
         setTimeout(()=>{
-            navigatetoPaymentGateWay('/paymentgateway')
+            navigatetoPaymentGateWay('/orderconfirmation')
         },3000)
 
     },[])
@@ -14,15 +14,15 @@ function Redirect() {
         setDot((dot)=>dot+".")
     },1000)
   return (
-    <div id='redirectDiv'>
+    <div id='PaymentProcessingDiv'>
         <div id='imgProcess'>
             <img src="https://flevix.com/wp-content/uploads/2019/12/Quarter-Circle-Loading-Image-1.gif" alt="" />
         </div>
-        <div id='infoRedirect'>
-        <p>Redirecting you to Payment Gateway </p><div id='dot'>{dot}</div>
+        <div id='infoPaymentProcessing'>
+        <p>Processinging your Payment </p><div id='dot'>{dot}</div>
         </div>
     </div>
   )
 }
 
-export default Redirect
+export default PaymentProcessing

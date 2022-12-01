@@ -1,4 +1,4 @@
-#redirectDiv{
+#PaymentProcessingDiv{
     width: 60%;
     margin: auto;
     margin-top: 50px;
@@ -14,15 +14,15 @@
     margin: auto;
 }
 
-#redirectDiv img{
+#PaymentProcessingDiv img{
     width: 100%;
 }
 
-#infoRedirect{
+#infoPaymentProcessing{
     display: flex;
-    width: 43%;
+    width: 30%;
     align-items: center;
-      /* border: 1px solid red; */
+    /* border: 1px solid red; */
     margin: auto;
 }
 
