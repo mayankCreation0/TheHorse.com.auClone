@@ -1,6 +1,6 @@
 import React from 'react';
 import Styles from './Styles/wishlist.module.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import WishlistCard from './WishlistCard';
 import {
     Alert,
@@ -11,13 +11,15 @@ import {
 import { Spinner } from '@chakra-ui/react';
 
 
+
 const Wishlist = () => {
     const [wishlist, setWishlist] = useState([]);
     const [alert, setAlert] = useState(false);
     const [load, setLoad] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:3001/wishlist').then((res) => (res.json())).then((data) => { setWishlist(data); setLoad(true) });
+        fetch(`http://localhost:3001/wishlist`).then((res) => (res.json())).then((Data) => { setWishlist(Data); setLoad(true) });
     }, [])
+
 
 
     async function addtocart(Id) {

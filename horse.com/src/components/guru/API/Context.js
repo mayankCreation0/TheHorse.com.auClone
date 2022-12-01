@@ -12,12 +12,12 @@ export const AuthContextProvider = ({ children }) => {
             (async () => {
                 let res = await fetch(`http://localhost:3001/users?token=${token}`);
                 let data = await res.json();
-                setIsAuth({ ...isAuth, data: data, loggedin: true });
+                setIsAuth({ ...isAuth, data: data, loggedin: true })
             })()
-            console.log(isAuth)
+
         }
     }, [])
-    console.log(isAuth);
+
     return <AuthContext.Provider value={{ isAuth, setIsAuth }}>
         {children}
     </AuthContext.Provider>

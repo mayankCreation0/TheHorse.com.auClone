@@ -1,6 +1,6 @@
 import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Heading, Input, StylesProvider, Text } from "@chakra-ui/react";
 import { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import {
     Alert,
     AlertIcon,
@@ -32,12 +32,14 @@ const Login = () => {
             setIsAuth({ ...isAuth, data: usersData[0], loggedin: true });
 
             setSuccess(true);
+            navigate("/challenge")
 
-            setTimeout(() => {
+            // setTimeout(() => {
 
-                setSuccess(false);
-                navigate("/account");
-            }, 3000);
+            //     setSuccess(false);
+            //     navigate("/account");
+            // }, 3000);
+
         } catch (error) {
             setAlert(true);
             setTimeout(() => {
@@ -49,6 +51,11 @@ const Login = () => {
     useEffect(() => {
         document.querySelector("title").innerText = "Login | thehourse";
     }, []);
+
+    if (isAuth.loggedin) {
+        return (<Navigate to="/account" />)
+    }
+
     return (
         <>
 
