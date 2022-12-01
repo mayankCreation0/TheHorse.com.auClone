@@ -32,18 +32,18 @@ const Recaptcha = () => {
         <>
             <Slide
                 in={success}
-                direction="left"
+                direction="top"
                 position="fixed"
                 top="0px"
                 style={{ zIndex: 10 }}
             >
-                <Alert status="success" w="80vw" mx="10vw" mt="50px" flexWrap="wrap">
+                <Alert status="success" w="40vw" mx="30vw" mt="50px" flexWrap="wrap">
                     <AlertIcon />
                     <AlertTitle>Logged In Succesfully!</AlertTitle>
                     <AlertDescription>Redirecting to Home page</AlertDescription>
                 </Alert>
             </Slide>
-            <div style={{ display: 'flex', flexDirection: 'column', width: '100%', minHeight: "300px", justifyContent: 'center', justifyContent: 'space-evenly', alignItems: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', width: '100%', minHeight: "300px", justifyContent: 'center', justifyContent: 'space-evenly', alignItems: 'center', marginTop: '80px' }}>
                 <ReCAPTCHA sitekey="6LcnE0EjAAAAAPC228EO_jngbUFQgY6m4apOsG_L" onChange={onChange} />
                 <button disabled={verify ? false : true} onClick={verification}
                     style={{

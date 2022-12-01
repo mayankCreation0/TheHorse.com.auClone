@@ -2,19 +2,15 @@ import React from 'react';
 import Styles from './Styles/wishlist.module.css';
 import { useState, useEffect, useContext } from 'react';
 import WishlistCard from './WishlistCard';
-import {
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
-} from '@chakra-ui/react';
-import { Spinner } from '@chakra-ui/react';
+import { Alert, AlertIcon, AlertTitle, AlertDescription, Slide } from '@chakra-ui/react';
+
 
 
 
 const Wishlist = () => {
     const [wishlist, setWishlist] = useState([]);
     const [alert, setAlert] = useState(false);
+    const [dlte, setDlte] = useState(false);
     const [load, setLoad] = useState(false);
     useEffect(() => {
         fetch(`http://localhost:3001/wishlist`).then((res) => (res.json())).then((Data) => { setWishlist(Data); setLoad(true) });
@@ -40,8 +36,16 @@ const Wishlist = () => {
             setAlert(true);
             setTimeout(() => { setAlert(false) }, 2000);
         });
+    }
+
+
+
+    async function deleteW(Id) {
         await fetch(`http://localhost:3001/wishlist/${Id}`, {
             method: "DELETE"
+        }).then(() => {
+            setDlte(true);
+            setTimeout(() => { setDlte(false) }, 2000);
         });
         await fetch('http://localhost:3001/wishlist').then((res) => (res.json())).then((data) => { setWishlist(data) });
     }
@@ -50,30 +54,37 @@ const Wishlist = () => {
 
 
     return (
-        load ? (
-            <div>
-                < div className={Styles.alert} >
-                    {alert && <Alert p="5px" m="0px" status='success' variant='subtle' >
-                        <AlertIcon />
-                        Product added to cart. Happy shopping!
-                    </Alert>
-                    }
-                </div >
-                <div className={Styles.div1}>
-                    <p className={Styles.p1}>Wishlist</p>
-                    <div className={Styles.div2}>
-                        {
-                            wishlist.map((ele) => {
-                                return (<WishlistCard key={ele.id} imgURL={ele.imgURL} title={ele.title} price={ele.price} Id={ele.id}
-                                    addtocart={addtocart} />);
-                            })
-                        }
-                    </div>
-                </div>
-            </div >
-        ) : <Spinner />
 
+        <div>
+            <Slide in={alert} direction='top' position='fixed' top='0px' style={{ zIndex: 10 }}>
+                <Alert status='success' w='40vw' mx='30vw' mt='50px' flexWrap='wrap'>
+                    <AlertIcon />
+                    <AlertTitle>Product Added Succesfully!</AlertTitle>
+                    <AlertDescription>Visit cart page to checkout</AlertDescription>
+                </Alert>
+            </Slide>
+            <Slide in={dlte} direction='top' position='fixed' top='0px' style={{ zIndex: 10 }}>
+                <Alert status='success' w='40vw' mx='30vw' mt='50px' flexWrap='wrap'>
+                    <AlertIcon />
+                    <AlertTitle>Product removed Succesfully!</AlertTitle>
+                    <AlertDescription>Happy Shoping!</AlertDescription>
+                </Alert>
+            </Slide>
+            <div className={Styles.div1}>
+                <p className={Styles.p1}>Wishlist</p>
+                <div className={Styles.div2}>
+                    {load ? (
+                        wishlist.map((ele) => {
+                            return (<WishlistCard key={ele.id} imgURL={ele.imgURL} title={ele.title} price={ele.price} Id={ele.id}
+                                addtocart={addtocart} deleteW={deleteW} />);
+                        })) : <p className={Styles.loader}>Wishlist is Loading...</p>
+                    }
+                </div>
+            </div>
+        </div >
     )
+
+
 
 
 }

@@ -7,6 +7,7 @@
     margin: 20px 20px;
     /* border: solid 1px black; */
     row-gap: 20px;
+    position: relative;
 
 
 }
@@ -15,8 +16,8 @@
     width: 250px;
 }
 
-.div1 button {
-    margin-left: -160px;
+.a_btn {
+    margin-left: -180px;
     text-decoration: underline;
     font-family: AtlasGrotesk, Helvetica, san-serif;
     font-size: 13px;
@@ -44,4 +45,18 @@
     font-family: AtlasGrotesk, Helvetica, san-serif;
     font-size: 13px;
     color: #545540;
+}
+
+.w_btn {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    background-color: #7596b8;
+    height: 26px;
+    width: 26px;
+    padding: 3px;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

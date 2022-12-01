@@ -59,13 +59,13 @@ const Login = () => {
 
             <Slide
                 in={alert}
-                direction="left"
+                direction="top"
                 position="fixed"
                 top="0px"
                 style={{ zIndex: 10 }}
                 bg="white"
             >
-                <Alert status="error" w="80vw" mx="10vw" mt="50px" flexWrap="wrap">
+                <Alert status="error" w="40vw" mx="30vw" mt="50px" flexWrap="wrap">
                     <AlertIcon />
                     <AlertTitle>User with given credentials doesn't exist!</AlertTitle>
                     <AlertDescription>Try signing up.</AlertDescription>

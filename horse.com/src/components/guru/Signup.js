@@ -44,15 +44,15 @@ const Signup = () => {
     return <>
 
 
-        <Slide in={alert} direction='left' position='fixed' top='0px' style={{ zIndex: 10 }}>
-            <Alert status='error' w='80vw' mx='10vw' mt='50px' flexWrap='wrap'>
+        <Slide in={alert} direction='top' position='fixed' top='0px' style={{ zIndex: 10 }}>
+            <Alert status='error' w='40vw' mx='30vw' mt='50px' flexWrap='wrap'>
                 <AlertIcon />
                 <AlertTitle>This Email already used | User already exists!</AlertTitle>
                 <AlertDescription>Try logging in.</AlertDescription>
             </Alert>
         </Slide>
-        <Slide in={success} direction='left' position='fixed' top='0px' style={{ zIndex: 10 }}>
-            <Alert status='success' w='80vw' mx='10vw' mt='50px' flexWrap='wrap'>
+        <Slide in={success} direction='top' position='fixed' top='0px' style={{ zIndex: 10 }}>
+            <Alert status='success' w='40vw' mx='30vw' mt='50px' flexWrap='wrap'>
                 <AlertIcon />
                 <AlertTitle>Account Created Succesfully!</AlertTitle>
                 <AlertDescription>Redirecting to login page</AlertDescription>
@@ -65,7 +65,8 @@ const Signup = () => {
                 fontSize="27px"
                 fontWeight="500"
                 textAlign="center"
-                fontFamily="Canela">Create an Account</Heading>
+                fontFamily="Canela"
+                marginTop="50px">Create an Account</Heading>
             <form onSubmit={handleSignup}>
                 <Box borderBottom="solid 1px #bdbdbd" mt="20px" p="7px 14px">
                     <Input outline='none'

@@ -30,3 +30,14 @@
     transform: translateX(-50%);
     background-color: whitesmoke;
 }
+
+.loader {
+    color: RGB(84, 85, 64);
+    font-family: AtlasGrotesk, Helvetica, san-serif;
+    font-size: 14px;
+    text-align: start;
+    margin: 200px 400px;
+    font-weight: 500;
+    width: 200px;
+
+}
