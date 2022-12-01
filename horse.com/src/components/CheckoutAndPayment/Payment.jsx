@@ -63,7 +63,7 @@ function Payment() {
         }
         else{
         localStorage.setItem('CatrdData',JSON.stringify(StoreCardData));
-        navigateToPaymentGateway('/paymentgateway');
+        navigateToPaymentGateway('/redirect');
         }
         
     }
