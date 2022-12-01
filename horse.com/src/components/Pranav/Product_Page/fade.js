@@ -16,8 +16,6 @@ export function FadeEx({getfetchData}) {
     
 
     getDatafun(`http://localhost:3001/posts?_sort=price&_order=${value}`,dispatch);
-     
-    
 
   }
 

@@ -10,8 +10,6 @@ function Productdetails() {
             
             <Details_card/>
 
-
-
     </div>
   )
 }
