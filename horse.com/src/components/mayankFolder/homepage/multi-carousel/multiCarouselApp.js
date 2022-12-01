@@ -3,9 +3,7 @@ import MultiCarousel from "./multiCarousel"
 const MultiCarouselApp = () => {
     return (
         <div style={{ maxWidth: 1300, marginLeft: 'auto', marginRight: 'auto', marginTop: 64 }}>
-            <MultiCarousel
-                show={4}
-            >
+            { <MultiCarousel show={4}>
                 <div>
                     <div style={{padding: 1, marginRight:'20px'}}>
                         <img src="//cdn.shopify.com/s/files/1/0233/5133/products/WEB_732x.jpg?v=1666132703" alt="placeholder" style={{width: '100%',height:'414px'}} />
@@ -94,7 +92,8 @@ const MultiCarouselApp = () => {
                         <p className="offer">30% off at checkout</p>
                     </div>
                 </div>
-            </MultiCarousel>
+            {/* </MultiCarousel> */}
+            </MultiCarousel>}
         </div>
     )
 }

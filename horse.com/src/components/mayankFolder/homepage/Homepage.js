@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from './Carousel/Carousel'
-import "../homepage/Homepage.css"
+import "./Homepage.css"
 import MultiCarouselApp from './multi-carousel/multiCarouselApp'
 import conversation from './icons/conversation.png'
 import bag from './icons/bag.png'
@@ -10,15 +10,15 @@ function Homepage() {
         <Carousel />
         <div id='line1'>
             <div className='line1'>
-                <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Category_Template_-_Cyber_632x.jpg?v=1668980500" alt="img" style={{width:'401px',height:'492px'}}/>
+                <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Category_Template_-_Cyber_632x.jpg?v=1668980500" alt="img"/>
                 <p className='hoverfun' style={{display:'flex'}}>Women's Backpacks&#8594; <div class="arrow-1"></div></p>
             </div>
             <div className='line1'>
-                <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Category_Template_-_Cyber2_632x.jpg?v=1668980541" alt="img" style={{width:'401px',height:'492px'}}/>
+                <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Category_Template_-_Cyber2_632x.jpg?v=1668980541" alt="img"/>
                 <p className='hoverfun' style={{display:'flex'}}>Women's Watches <span>&#8594;</span></p>
             </div>
             <div className='line1'>
-                <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Category_Template4_d53d4467-bab3-46f5-892e-7233a1ec2eac_632x.jpg?v=1669253804" alt="img" style={{width:'401px',height:'492px'}}/>
+                <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Category_Template4_d53d4467-bab3-46f5-892e-7233a1ec2eac_632x.jpg?v=1669253804" alt="img"/>
                 <p className='hoverfun' style={{display:'flex'}}>Women's bags <span>&#8594;</span></p>
             </div>
         </div>

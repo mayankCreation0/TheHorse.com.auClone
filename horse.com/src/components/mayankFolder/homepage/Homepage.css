@@ -12,6 +12,9 @@
     margin-bottom: 70px;
     cursor: pointer;
 }
+.line1 > img{
+    width: 100%;
+}
 /* svg */
 .arrow-1 {
     width:60px;
@@ -85,8 +88,8 @@
     color: #545540;
 }
 #smallpic{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
 }
 #nicherow{
     margin-top: 90px;
@@ -123,4 +126,18 @@
     font-size: 13px;
     line-height: 1.4;
     letter-spacing: .08em;
+}
+@media screen and (min-width:200px) and (max-width:769px){
+    #icondiv{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+        align-items: center;
+        margin: 20px;
+    }
+    #smallpic{
+        display: grid;
+        grid-template-columns: repeat(4,3fr);
+        align-items: center;
+    }
 }

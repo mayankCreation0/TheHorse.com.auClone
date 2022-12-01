@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import "../multi-carousel/multiCarousel.css"
+import "./multiCarousel.css"
 
 const MultiCarousel = (props) => {
     const {children, show} = props
