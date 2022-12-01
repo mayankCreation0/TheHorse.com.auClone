@@ -13,6 +13,7 @@ import { BsArrowDown } from "react-icons/bs";
 import CartAction from '../action/CartAction';
 import { useState } from 'react';
 import MultiCarouselApp from './multiCarouselApp';
+import { MdOutlineLocalShipping } from "react-icons/md"
 
 
 function Details_card() {
@@ -34,7 +35,7 @@ function Details_card() {
         getData(`http://localhost:3001/posts/?id=${id.id}`);
 
 
-    }, [])
+    }, []);
 
     const getData = (url) => {
         fetch(url).then((res) => res.json()).then((data1) => {
@@ -75,12 +76,12 @@ function Details_card() {
             <Box textAlign="center" color="white" bg="black" height="60px">
                 <Text padding="15px">NavBar</Text>
             </Box>
-            <ul style1="list-style-type:circle" style={{ display: "flex", gap: "30px", padding: "20px", fontSize: "11px", fontWeight: "400", width: "95%", margin: "auto", fontFamily: "AtlasGrotesk,Helvetica,san-serif", textTransform: "uppercase", letterSpacing: "0.15em", color: "#545540" }}>
+            <ul style1="list-style-type:circle" style={{ display: "flex", gap: "30px", padding: "20px", fontSize: "11px", fontWeight: "400", width: "95%", margin: "auto", fontFamily: "AtlasGrotesk,Helvetica,san-serif", textTransform: "uppercase", letterSpacing: "0.15em", color: "#545540", marginTop: "10px" }}>
                 <li>The Coast</li>
                 <li>
                     The Coast</li>
             </ul>
-            <Grid templateColumns='repeat(2, 1fr)' gap={6} w="90%" margin="auto">
+            <Grid templateColumns='repeat(2, 1fr)' gap={6} w="90%" margin="auto" marginTop="10px">
                 <GridItem w='100%'>
 
                     <Box>
@@ -91,7 +92,7 @@ function Details_card() {
                             <Image
                                 src={showData.img1}
                                 alt='Green double couch with wooden legs'
-                                borderRadius='lg' w="100%" height="100%"
+                                w="100%" height="800px"
                                 onMouseOver={handle1} onMouseOut={handle2} transition="opacity 0.5s ease-in-out" transitionTimingFunction="linear"
                             />
 
@@ -105,7 +106,7 @@ function Details_card() {
                 </GridItem>
                 <GridItem w='100%'>
 
-                    <Container w="70%" margin="auto" marginTop="220px">
+                    <Container w="70%" margin="auto" marginTop="220px" >
 
                         <Box>
                             <Box h="80%" w="100%">
@@ -155,15 +156,20 @@ function Details_card() {
                                                 headers: {
                                                     "Content-Type": "application/json",
                                                 },
-                                            }).then(() => {
+                                            }).then((ans) => {
 
 
-                                                fetch("http://localhost:3001/cartPage").then((res) => res.json()).then((data1) => {
+                                                if (ans.ok == false) {
+                                                    alert("Already Added in Cart");
+                                                }
+                                                else {
+                                                    fetch("http://localhost:3001/cartPage").then((res) => res.json()).then((data1) => {
 
 
-                                                    CartAction(data1, dispatch);
+                                                        CartAction(data1, dispatch);
 
-                                                });
+                                                    });
+                                                }
 
                                             })
 
@@ -186,8 +192,17 @@ function Details_card() {
 
                                 <Container w="70%" m="auto" fontSize="13px" letterSpacing="0.04em" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" lineHeight="1.4" color="#545540" marginTop="10px"  >
 
-                                    <div style={{ display: "flex" }} ><Text p="10px">Make 4 payments of $24.98 with</Text><div><img src='https://cdn.shopify.com/s/files/1/0233/5133/t/305/assets/afterpay.svg?v=154353693706356318501647225381' alt="1" ></img></div> </div>
-                                    <Text p="10px">Make 6 payments of $16.65 with</Text>
+                                    <div style={{ display: "flex" }} ><Text p="10px">Make 4 payments of $24.98 with <b>afterPay</b> </Text></div>
+                                    <Text p="10px">Make 6 payments of $16.65 with <b>LAYBUY</b></Text>
+
+                                </Container>
+
+                                <Container display="flex" gap="40px" marginTop="50px" borderTop="1px solid grey" padding="40px" paddingTop="80px" >
+
+                                    <Image width="40%" margin="auto" height="110px" src="https://img.freepik.com/premium-vector/fast-delivery-truck-with-motion-lines-online-delivery-express-delivery-quick-move-fast-shipping-truck-apps-websites-cargo-van-moving-fast-chronometer-fast-distribution-service-24-7_435184-218.jpg?w=2000" alt="one" />
+                                    <Image width="40%" margin="auto" height="100px" src="https://static.vecteezy.com/system/resources/thumbnails/012/605/404/small/simple-and-creative-easy-return-policy-icon-badge-line-art-design-isolated-on-white-background-design-vector.jpg" alt="one" />
+                                    <Image width="40%" margin="auto" height="100px" src="https://media.istockphoto.com/id/1083666684/photo/white-one-gift-box-with-red-ribbon-bow-isolated-on-white-background.jpg?s=170667a&w=0&k=20&c=Sb8RhpXOtZ7So0X4JXaQE6M5KjTjxLAApkANN0_yOIk=" alt="one" />
+
 
                                 </Container>
 
@@ -222,12 +237,12 @@ function Details_card() {
                 </GridItem>
                 <GridItem w='100%' display="flex" flexDirection="column" gap="10px" marginTop="20px" >
 
-                    <Accordion allowMultiple >
+                    <Accordion allowMultiple marginTop="5px">
                         <AccordionItem>
-                            <h2>
+                            <h2 style={{ fontSize: "13px" }}>
                                 <AccordionButton border="none" borderTop="1px solid grey" borderBottom="1px solid grey" w="80%" margin="auto" bg="none">
 
-                                    <Box flex='1' fontFamily="Canela,Times,serif" fontWeight="400" letterSpacing=".15em" color='#545540' height="30px" display="flex" gap="5px" alignItems="center" justifyContent="center">
+                                    <Box flex='1' fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" letterSpacing=".15em" color='#545540' height="30px" display="flex" gap="340px" alignItems="center" justifyContent="center" >
                                         <span>SPECIFICATIONS </span> <span><BsArrowDown fontSize="16px" /></span>
                                     </Box>
 
@@ -267,10 +282,10 @@ function Details_card() {
                     </Accordion>
                     <Accordion allowMultiple >
                         <AccordionItem>
-                            <h2>
+                            <h2 style={{ fontSize: "13px" }}>
                                 <AccordionButton border="none" borderBottom="1px solid grey" w="80%" margin="auto" bg="none">
 
-                                    <Box flex='1' fontFamily="Canela,Times,serif" fontWeight="400" letterSpacing=".15em" color='#545540' height="30px" display="flex" gap="5px" alignItems="center" justifyContent="center">
+                                    <Box flex='1' fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" letterSpacing=".15em" color='#545540' height="30px" display="flex" gap="373px" alignItems="center" justifyContent="center" marginTop="-15px">
                                         <span>NEED HELP? </span> <span><BsArrowDown fontSize="16px" /></span>
                                     </Box>
 
@@ -279,15 +294,15 @@ function Details_card() {
                             </h2>
                             <AccordionPanel pb={4} fontSize="13px" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" color="#545540" textAlign="center" padding="15px" w="90%" margin="auto" lineHeight="1.4">
                                 {/* Whether you prefer a gold, silver or rose gold men's watch, a black or a white watch dial, a resin finish or a chronograph watch, we have a men's timepiece to suit every wearer. Paired with the effortless elegance of a natural leather watch band that is designed to patina delicately with age, all of our watches are available in a range of soft tones, from black to natural tans, as well blue, blush and olive leathers. Powered by an analogue quartz movement for precise time keeping, your new watch comes packaged within a bespoke box, with the option of a customised monogram for a very special gift, or to make it truly yours */}
-                                 
-                               <box>
 
-                               <Text>Email us at info@thehorse.com.au</Text>
-                               <Text>Call us on +61 (02)9037-3921 (8:30am to 4:30pm Mon-Fri)</Text>
-                               <Text>Live chat (8:30am to 4:30pm Mon-Fri)</Text>
+                                <box>
 
-                               </box>
-                              
+                                    <Text>Email us at info@thehorse.com.au</Text>
+                                    <Text>Call us on +61 (02)9037-3921 (8:30am to 4:30pm Mon-Fri)</Text>
+                                    <Text>Live chat (8:30am to 4:30pm Mon-Fri)</Text>
+
+                                </box>
+
 
 
                             </AccordionPanel>
@@ -296,10 +311,10 @@ function Details_card() {
                     </Accordion>
                     <Accordion allowMultiple >
                         <AccordionItem>
-                            <h2>
+                            <h2 style={{ fontSize: "13px" }}>
                                 <AccordionButton border="none" borderBottom="1px solid grey" w="80%" margin="auto" bg="none">
 
-                                    <Box flex='1' fontFamily="Canela,Times,serif" fontWeight="400" letterSpacing=".15em" color='#545540' height="30px" display="flex" gap="5px" alignItems="center" justifyContent="center">
+                                    <Box flex='1' fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" letterSpacing=".15em" color='#545540' height="30px" display="flex" gap="300px" alignItems="center" justifyContent="center" marginTop="-15px">
                                         <span>SHIPPING & RETURNS </span> <span><BsArrowDown fontSize="16px" /></span>
                                     </Box>
 

@@ -71,6 +71,7 @@ function Tard({ elem, id, img1, img2, title, price, description, rating, discoun
 
         Post_cartData(el)
         async function Post_cartData(el) {
+            
 
             let update = await fetch(`http://localhost:3001/cartPage`, {
                 method: "POST",
@@ -78,15 +79,20 @@ function Tard({ elem, id, img1, img2, title, price, description, rating, discoun
                 headers: {
                     "Content-Type": "application/json",
                 },
-            }).then(() => {
+            }).then((ans) => {
 
-
+                if(ans.ok==false)
+                {
+                    alert("Already Added in Cart");
+                }
+                else{
                 fetch("http://localhost:3001/cartPage").then((res) => res.json()).then((data1) => {
 
-
+                    
                     CartAction(data1, dispatch);
 
                 });
+            }
 
             })
 
