@@ -50,11 +50,7 @@ function Product() {
             </Grid>
 
         </>
-
-
-
-
-
+ 
     )
 }
 
