@@ -16,7 +16,7 @@ const Login = () => {
     const [userData, setUserData] = useState({ email: "", password: "" });
     const [alert, setAlert] = useState(false);
     const navigate = useNavigate();
-    const [success, setSuccess] = useState(false);
+    // const [success, setSuccess] = useState(false);
     const { isAuth, setIsAuth } = useContext(AuthContext);
 
     const handleLogin = async (e) => {
@@ -29,16 +29,14 @@ const Login = () => {
             usersData = await usersData.json();
 
             localStorage.setItem("thehorse-token", usersData[0].token);
-            setIsAuth({ ...isAuth, data: usersData[0], loggedin: true });
-
-            setSuccess(true);
-            navigate("/challenge")
-
+            setIsAuth({ ...isAuth, data: usersData[0], loggedin: false });
+            navigate("/challenge");
+            // setSuccess(true);
             // setTimeout(() => {
 
-            //     setSuccess(false);
-            //     navigate("/account");
-            // }, 3000);
+            // setSuccess(false);
+            // navigate("/challenge");
+            // }, 2000);
 
         } catch (error) {
             setAlert(true);
@@ -73,19 +71,7 @@ const Login = () => {
                     <AlertDescription>Try signing up.</AlertDescription>
                 </Alert>
             </Slide>
-            <Slide
-                in={success}
-                direction="left"
-                position="fixed"
-                top="0px"
-                style={{ zIndex: 10 }}
-            >
-                <Alert status="success" w="80vw" mx="10vw" mt="50px" flexWrap="wrap">
-                    <AlertIcon />
-                    <AlertTitle>Logged In Succesfully!</AlertTitle>
-                    <AlertDescription>Redirecting to Home page</AlertDescription>
-                </Alert>
-            </Slide>
+
             <Box w={["240px", "400px"]} m="auto" mt="65px" mb="140px" zIndex={1}>
                 <Heading
                     color="RGB(84, 85, 64)"
