@@ -45,7 +45,7 @@ export const myReducer = (storeData = initialData, action) => {
             }
         case "AddCart":
         return{
-            ...storeData,cartData:[...storeData.cartData,action.Payload]
+            ...storeData,cartData:action.Payload
         }
 
 

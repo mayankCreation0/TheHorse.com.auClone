@@ -15,9 +15,12 @@ import { Rating } from '@mui/material';
 import Stack from '@mui/material/Stack';
 
 export default function HalfRating({rating}) {
+
+
+
   return (
     <Stack spacing={1}>
-      <Rating name="half-rating" defaultValue={rating} precision={0.5} />
+      <Rating name="half-rating" defaultValue={rating || 4} precision={0.5} />
     </Stack>
   );
 }

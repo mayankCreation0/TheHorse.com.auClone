@@ -11,6 +11,7 @@ import SetRating from '../action/SetRating';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel } from '@chakra-ui/react';
 import { BsArrowDown } from "react-icons/bs";
 import CartAction from '../action/CartAction';
+import { useState } from 'react';
 
 
 function Details_card() {
@@ -22,8 +23,8 @@ function Details_card() {
 
     let showData = useSelector((storeData) => storeData.ProductDetail);
     let ans = useSelector((storeData) => storeData.cartData);
+ 
      
-
     SetRating(showData.rating, dispatch);
 
 
@@ -34,7 +35,7 @@ function Details_card() {
         getData(`http://localhost:3001/posts/?id=${id.id}`);
 
 
-    }, [])
+    },[])
 
     const getData = (url) => {
         fetch(url).then((res) => res.json()).then((data1) => {
@@ -112,18 +113,46 @@ function Details_card() {
                                     <Text pt="35px" marginBottom="30px">
                                         {showData.description}
                                     </Text>
- 
-                                   
 
-                                    <Button  onClick={(e)=>{
-                                        CartAction(showData, dispatch);
-                                    
-                                    }} onMouseOver={(e)=>{
-                                        e.target.style.backgroundColor="#545540"
-                                        e.target.style.cursor="pointer"
-                                    }}  onMouseOut={(e)=>{
-                                        e.target.style.backgroundColor="#7596B8"
-                                    }}  transition="background-color 0.5s ease-in-out" color="white" fontFamily="AtlasGrotesk,Helvetica,san-serif" border="none" fontSize="15px" letterSpacing="0.04em" fontWeight="400" lineHeight="1.4" padding="15px" bg="#7596B8" borderRadius="30px" >Add to Cart</Button>
+
+
+                                    <Button onClick={(e) => {
+                                         
+
+
+                                        Post_cartData(showData)
+                                        async function Post_cartData(showData) {
+
+                                            let update = await fetch(`http://localhost:3001/cartPage`, {
+                                                method: "POST",
+                                                body: JSON.stringify(showData),
+                                                headers: {
+                                                    "Content-Type": "application/json",
+                                                },
+                                            }).then(() => {
+
+
+                                                fetch("http://localhost:3001/cartPage").then((res) => res.json()).then((data1) => {
+
+
+                                                    CartAction(data1, dispatch);
+
+                                                });
+
+                                            })
+
+
+
+
+                                        }
+
+
+                                    }} onMouseOver={(e) => {
+                                        e.target.style.backgroundColor = "#545540"
+                                        e.target.style.cursor = "pointer"
+                                    }} onMouseOut={(e) => {
+                                        e.target.style.backgroundColor = "#7596B8"
+                                    }} transition="background-color 0.5s ease-in-out" color="white" fontFamily="AtlasGrotesk,Helvetica,san-serif" border="none" fontSize="15px" letterSpacing="0.04em" fontWeight="400" lineHeight="1.4" padding="15px" bg="#7596B8" borderRadius="30px" >Add to Cart</Button>
                                     <br></br>
 
 
@@ -213,7 +242,7 @@ function Details_card() {
                     <Accordion allowMultiple >
                         <AccordionItem>
                             <h2>
-                                <AccordionButton border="none"  borderBottom="1px solid grey" w="80%" margin="auto" bg="none">
+                                <AccordionButton border="none" borderBottom="1px solid grey" w="80%" margin="auto" bg="none">
 
                                     <Box flex='1' fontFamily="Canela,Times,serif" fontWeight="400" letterSpacing=".15em" color='#545540' height="30px" display="flex" gap="5px" alignItems="center" justifyContent="center">
                                         <span>NEED HELP? </span> <span><BsArrowDown fontSize="16px" /></span>
@@ -256,7 +285,7 @@ function Details_card() {
                     <Accordion allowMultiple >
                         <AccordionItem>
                             <h2>
-                                <AccordionButton border="none"   borderBottom="1px solid grey" w="80%" margin="auto" bg="none">
+                                <AccordionButton border="none" borderBottom="1px solid grey" w="80%" margin="auto" bg="none">
 
                                     <Box flex='1' fontFamily="Canela,Times,serif" fontWeight="400" letterSpacing=".15em" color='#545540' height="30px" display="flex" gap="5px" alignItems="center" justifyContent="center">
                                         <span>SHIPPING & RETURNS </span> <span><BsArrowDown fontSize="16px" /></span>
@@ -301,7 +330,7 @@ function Details_card() {
 
 
             </Grid>
- 
+
 
         </>
     )
