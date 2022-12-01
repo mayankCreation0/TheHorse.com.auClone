@@ -7,12 +7,13 @@ import { Link } from "react-router-dom";
 import CartAction from '../action/CartAction';
 import { useDispatch } from 'react-redux';
 import { useToast } from '@chakra-ui/react'
+import DescriptionAlerts from '../Product_details/Alert';
 
 
-function Tard({elem,id, img1, img2, title, price, description, rating, discount }) {
+function Tard({ elem, id, img1, img2, title, price, description, rating, discount }) {
 
-    let dispatch=useDispatch();
-   let toast=useToast();
+    let dispatch = useDispatch();
+    let toast = useToast();
 
     const handle1 = (event) => {
 
@@ -39,7 +40,7 @@ function Tard({elem,id, img1, img2, title, price, description, rating, discount 
 
         let p = document.getElementsByClassName(a.id);
         p[0].style.opacity = "0";
-       
+
 
         setTimeout(() => {
             event.target.style.opacity = "1";
@@ -53,6 +54,7 @@ function Tard({elem,id, img1, img2, title, price, description, rating, discount 
         event.target.style.cursor = "pointer";
         event.target.style.backgroundColor = "#545540"
         event.target.style.color = "white";
+
     }
     const handleButton2 = (event) => {
 
@@ -61,36 +63,31 @@ function Tard({elem,id, img1, img2, title, price, description, rating, discount 
         event.target.style.color = "#545540";
     }
     return (
-        <GridItem>
+            
+        <GridItem >
 
-            <Card>
-                <CardBody h="80%" w="100%" border="none">
-                    <Link to={`/product/${id}`} style={{ textDecoration: "none" }}> <Image
+            <Box>
+                <Box h="80%" w="100%" >
+                    <Link  to={`/product/${id}`} style={{ textDecoration: "none" }}> <Image 
                         src={img1}
                         alt='Green double couch with wooden legs'
-                        borderRadius='lg' w="100%" height="510px" id={id} onMouseOver={handle1} onMouseOut={handle2} transition="opacity 0.5s ease-in-out" transitionTimingFunction="linear"
+                         w="100%" height="530px" id={id} onMouseOver={handle1} onMouseOut={handle2} transition="opacity 0.5s ease-in-out" transitionTimingFunction="linear"
 
 
                     ></Image></Link>
 
-                    <Button position="absolute" onClick={() => {
-                          
-                          CartAction(elem,dispatch);
+                    <Button  onClick={() => {
 
-                          toast({
-                            title: 'Product Added Succesfully.',
-                            description: "We've created your account for you.",
-                            status: 'success',
-                            duration: 9000,
-                            isClosable: true,
-                          })
-                                 
+                        CartAction(elem, dispatch);
 
-                    }} className={id} opacity="0" onMouseOver={handleButton1} onMouseOut={handleButton2} transition="background-color 0.5s ease-in-out" top="450px" right="180px" padding="12px" border="1px solid grey" borderRadius="30px" fontSize="13px" letterSpacing="0.04em" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" lineHeight="1.4" color="#545540">Quick Add</Button>
+                        
 
-                    <Link to={`/product/${id}`} style={{ textDecoration: "none" }}>  <Stack mt='6' spacing='3' fontSize="13px" letterSpacing="0.04em" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" lineHeight="1.4" color="#545540" marginTop="10px">
-                        <Flex>
-                            <Box>
+
+                    }} className={id} opacity="0" left="150px" bottom="80px" onMouseOver={handleButton1} onMouseOut={handleButton2} transition="background-color 0.5s ease-in-out"  padding="15px" border="1px solid grey" borderRadius="30px" fontSize="13px" letterSpacing="0.04em" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" lineHeight="1.4" color="#545540">Quick Add</Button>
+                   
+                    <Link to={`/product/${id}`} style={{ textDecoration: "none" }}>  <Stack  spacing='1' fontSize="13px" letterSpacing="0.04em"  fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" lineHeight="1.4" color="#545540">
+                        <Flex mt="-32px" alignItems="center">
+                            <Box p="4">
                                 {title}
                             </Box>
                             <Spacer />
@@ -105,14 +102,14 @@ function Tard({elem,id, img1, img2, title, price, description, rating, discount 
 
 
                         <Text color="#a55741" p="5px" >
-                            {discount}% off at checkout
+                            {discount} % off at checkout
                         </Text>
 
                     </Stack></Link>
-                </CardBody>
+                </Box>
 
 
-            </Card>
+            </Box>
 
 
 
