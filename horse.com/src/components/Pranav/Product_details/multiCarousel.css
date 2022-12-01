@@ -1,0 +1,104 @@
+@import url(//db.onlinewebfonts.com/c/43372a4ce8dc3abbca31595815be7cf3?family=Atlas+Grotesk+Web+Light);
+.carousel-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-wrapper {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-content-wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-content {
+    display: flex;
+    transition: all 250ms linear;
+    -ms-overflow-style: none;  /* hide scrollbar in IE and Edge */
+    scrollbar-width: none;  /* hide scrollbar in Firefox */
+}
+
+/* hide scrollbar in webkit browser */
+.carousel-content::-webkit-scrollbar, .carousel-content::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-content > * {
+    width: 100%;
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.carousel-content.show-2 > * {
+    width: 50%;
+}
+
+.carousel-content.show-3 > * {
+    width: calc(100% / 3);
+}
+
+.carousel-content.show-4 > * {
+    width: calc(100% / 4);
+}
+
+.left-arrow, .right-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    /* border-radius: 4px; */
+    background-color: #545540;
+    border-style: none;
+    color: #ddd;
+}
+
+.left-arrow {
+    left: 24px;
+}
+
+.right-arrow {
+    right: 24px;
+}
+
+/* ========multi-carousel-app====== */
+.multiline{
+    display: flex;
+    justify-content: space-between;
+}
+.multiline > h4{
+    font-size: 15px;
+    letter-spacing: .04em;
+    font-family: AtlasGrotesk,Helvetica,san-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #545540; 
+    margin-top: 10px;
+}
+.colorline{
+    text-align: left;
+    font-size: 13px;
+    letter-spacing: .04em;
+    font-family: AtlasGrotesk,Helvetica,san-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #545540; 
+    margin-top:-8px
+}
+.offer{
+    color: #a55741;
+    margin-top:-10px
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .left-arrow, .right-arrow {
+        display: none;
+    }
+}

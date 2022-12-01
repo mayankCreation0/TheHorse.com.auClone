@@ -111,7 +111,7 @@ function Tard({ elem, id, img1, img2, title, price, description, rating, discoun
 
                     ></Image></Link>
 
-                    <Button onClick={() =>cart_handle(elem)} className={id} opacity="0" left="150px" bottom="80px" onMouseOver={handleButton1} onMouseOut={handleButton2} transition="background-color 0.5s ease-in-out" padding="15px" border="1px solid grey" borderRadius="30px" fontSize="13px" letterSpacing="0.04em" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" lineHeight="1.4" color="#545540">Quick Add</Button>
+                    <Button onClick={() => cart_handle(elem)} className={id} opacity="0" left="150px" bottom="80px" onMouseOver={handleButton1} onMouseOut={handleButton2} transition="background-color 0.5s ease-in-out" padding="15px" border="1px solid grey" borderRadius="30px" fontSize="13px" letterSpacing="0.04em" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" lineHeight="1.4" color="#545540">Quick Add</Button>
 
                     <Link to={`/product/${id}`} style={{ textDecoration: "none" }}>  <Stack spacing='1' fontSize="13px" letterSpacing="0.04em" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" lineHeight="1.4" color="#545540">
                         <Flex mt="-32px" alignItems="center">

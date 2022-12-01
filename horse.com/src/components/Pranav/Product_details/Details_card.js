@@ -12,6 +12,7 @@ import { Accordion, AccordionItem, AccordionButton, AccordionPanel } from '@chak
 import { BsArrowDown } from "react-icons/bs";
 import CartAction from '../action/CartAction';
 import { useState } from 'react';
+import MultiCarouselApp from './multiCarouselApp';
 
 
 function Details_card() {
@@ -23,11 +24,9 @@ function Details_card() {
 
     let showData = useSelector((storeData) => storeData.ProductDetail);
     let ans = useSelector((storeData) => storeData.cartData);
- 
-     
+
+
     SetRating(showData.rating, dispatch);
-
-
 
 
     useEffect(() => {
@@ -35,7 +34,7 @@ function Details_card() {
         getData(`http://localhost:3001/posts/?id=${id.id}`);
 
 
-    },[])
+    }, [])
 
     const getData = (url) => {
         fetch(url).then((res) => res.json()).then((data1) => {
@@ -44,6 +43,32 @@ function Details_card() {
 
         })
     }
+
+    const handle1 = (event) => {
+
+
+        let a = event.target;
+        event.target.style.opacity = "0";
+
+
+        setTimeout(() => {
+            event.target.style.opacity = "1";
+            a.src = showData.img2;
+        }, 400);
+
+    }
+    const handle2 = (event) => {
+
+        let a = event.target;
+        event.target.style.opacity = "0";
+
+        setTimeout(() => {
+            event.target.style.opacity = "1";
+            a.src = showData.img1;
+        }, 400);
+
+    }
+
 
     return (
         <>
@@ -67,6 +92,7 @@ function Details_card() {
                                 src={showData.img1}
                                 alt='Green double couch with wooden legs'
                                 borderRadius='lg' w="100%" height="100%"
+                                onMouseOver={handle1} onMouseOut={handle2} transition="opacity 0.5s ease-in-out" transitionTimingFunction="linear"
                             />
 
 
@@ -117,7 +143,7 @@ function Details_card() {
 
 
                                     <Button onClick={(e) => {
-                                         
+
 
 
                                         Post_cartData(showData)
@@ -160,7 +186,7 @@ function Details_card() {
 
                                 <Container w="70%" m="auto" fontSize="13px" letterSpacing="0.04em" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" lineHeight="1.4" color="#545540" marginTop="10px"  >
 
-                                    <Text p="10px">Make 4 payments of $24.98 with</Text>
+                                    <div style={{ display: "flex" }} ><Text p="10px">Make 4 payments of $24.98 with</Text><div><img src='https://cdn.shopify.com/s/files/1/0233/5133/t/305/assets/afterpay.svg?v=154353693706356318501647225381' alt="1" ></img></div> </div>
                                     <Text p="10px">Make 6 payments of $16.65 with</Text>
 
                                 </Container>
@@ -176,7 +202,7 @@ function Details_card() {
 
             </Grid>
 
-            <Grid templateColumns='repeat(2, 1fr)' gap={6} w="90%" margin="auto" marginTop="25px">
+            <Grid templateColumns='repeat(2, 1fr)' gap={6} w="90%" margin="auto" marginTop="25px" marginBottom="100px">
                 <GridItem w='100%'>
 
                     <Box display="flex" flexDirection="column" gap="20px" color="#545540" fontSize="13px" letterSpacing="0.04em" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" lineHeight="1.4" marginTop="10px">
@@ -253,31 +279,17 @@ function Details_card() {
                             </h2>
                             <AccordionPanel pb={4} fontSize="13px" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" color="#545540" textAlign="center" padding="15px" w="90%" margin="auto" lineHeight="1.4">
                                 {/* Whether you prefer a gold, silver or rose gold men's watch, a black or a white watch dial, a resin finish or a chronograph watch, we have a men's timepiece to suit every wearer. Paired with the effortless elegance of a natural leather watch band that is designed to patina delicately with age, all of our watches are available in a range of soft tones, from black to natural tans, as well blue, blush and olive leathers. Powered by an analogue quartz movement for precise time keeping, your new watch comes packaged within a bespoke box, with the option of a customised monogram for a very special gift, or to make it truly yours */}
-                                Movement
+                                 
+                               <box>
 
-                                Japanese Quartz Miyota 2035
+                               <Text>Email us at info@thehorse.com.au</Text>
+                               <Text>Call us on +61 (02)9037-3921 (8:30am to 4:30pm Mon-Fri)</Text>
+                               <Text>Live chat (8:30am to 4:30pm Mon-Fri)</Text>
 
-                                Case
+                               </box>
+                              
 
-                                Stainless Steel Bezel, Case & Caseback
 
-                                Case Size
-
-                                41mm
-
-                                Resistance
-
-                                Case Water Resistant 20ATM (Waterproof to 200 metres)
-
-                                Strap
-
-                                100% Webbed Nylon
-
-                                Strap Dimensions
-
-                                Length: 120mm / 90mm
-
-                                Width: 22mm
                             </AccordionPanel>
                         </AccordionItem>
 
@@ -296,31 +308,18 @@ function Details_card() {
                             </h2>
                             <AccordionPanel pb={4} fontSize="13px" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" color="#545540" textAlign="center" padding="15px" w="90%" margin="auto" lineHeight="1.4">
                                 {/* Whether you prefer a gold, silver or rose gold men's watch, a black or a white watch dial, a resin finish or a chronograph watch, we have a men's timepiece to suit every wearer. Paired with the effortless elegance of a natural leather watch band that is designed to patina delicately with age, all of our watches are available in a range of soft tones, from black to natural tans, as well blue, blush and olive leathers. Powered by an analogue quartz movement for precise time keeping, your new watch comes packaged within a bespoke box, with the option of a customised monogram for a very special gift, or to make it truly yours */}
-                                Movement
+                                Shipping Timeframes:
 
-                                Japanese Quartz Miyota 2035
+                                Express delivery within Australia: 1-2 business days.
 
-                                Case
 
-                                Stainless Steel Bezel, Case & Caseback
+                                Standard delivery within Australia: 2-4 business days.
 
-                                Case Size
 
-                                41mm
+                                New Zealand and International Delivery: 3-7 business days.
 
-                                Resistance
-
-                                Case Water Resistant 20ATM (Waterproof to 200 metres)
-
-                                Strap
-
-                                100% Webbed Nylon
-
-                                Strap Dimensions
-
-                                Length: 120mm / 90mm
-
-                                Width: 22mm
+                                Same Day Delivery:
+                                We offer a same day shipping service to customers located in the Sydney metro area.
                             </AccordionPanel>
                         </AccordionItem>
 
@@ -330,6 +329,15 @@ function Details_card() {
 
 
             </Grid>
+
+            <Box h="550px" borderTop="1px solid grey" display="flex" flexDirection="column" pb="30" marginBottom="10px" marginTop="40px" w="80%" margin="auto">
+
+                <Text p="10px" fontSize="15px" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" color="#545540" w="90%" margin="auto" marginTop="50px" marginBottom="-30px" lineHeight="1.4">You May Also Like</Text>
+
+                <MultiCarouselApp />
+
+            </Box>
+
 
 
         </>
