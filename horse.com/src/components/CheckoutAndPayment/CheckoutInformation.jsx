@@ -1,5 +1,6 @@
 import React,{useRef, useState} from 'react'
 import './CheckoutInformation.css'
+import CartItems from './CartItems'
 import { Link, useNavigate } from 'react-router-dom'
 
 function CheckoutInformation() {
@@ -18,12 +19,59 @@ function CheckoutInformation() {
         ShipDelivery.current.hidden = true;
         Pickup.current.hidden = false;
     }
-
+    let CountryNames = ['Australia','---------', 'Argentina', 'Australia', 'Austria', 'Belgium', 'Bulgaria', 'Canada', 'Chile', 'China', 'Cook Islands', 'Croatia', 'Czechia', 'Denmark', 'Estonia', 'Fiji', 'Finland', 'France', 'French Polynesia', 'Germany', 'Greece', 'Hong Kong SAR', 'Hungary', 'Iceland', 'Indonesia', 'Ireland', 'Isle of Man', 'Israel', 'Italy', 'Japan', 'Latvia', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macao SAR', 'Malaysia', 'Malta', 'Mexico', 'Monaco', 'Netherlands', 'New Caledonia', 'New Zealand', 'Norway', 'Papua New Guinea', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Samoa', 'Singapore', 'Slovakia', 'Slovenia', 'South Africa', 'South Korea', 'Spain', 'Sweden', 'Switzerland', 'Taiwan', 'Thailand', 'Turkey', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Vanuatu', 'Vietnam']
+    let StateNames = ['State/territory','Australian Capital Territory','New South Wales','Northern Territory','Queensland','South Australia','Tasmania','Western Australia','Victoria']
+    let formData = {AddressOption:"",
+                    Country_Region:"",
+                    FirstName:"",
+                    LastName:"",
+                    CompanyAddress:"",
+                    Street:"",
+                    Suburb:"",
+                    State:"",
+                    Postcode:"",
+                    Phone:"",
+                    OffersMail:""}
+        let [UserAddress, setUserAddress] = useState(formData);
+    function FormInputs(e){
+        let {name, value,checked,type} = e.target;
+        value = type==="checkbox" ? checked:value
+        setUserAddress({...UserAddress,[name]: value});
+    }
+// let  {AddressOption,
+// Country_Region,
+// FirstName,
+// LastName,
+// CompanyAddress,
+// Street,
+// Suburb,
+// State,
+// Postcode,
+// Phone,
+// OffersMail} = UserAddress;
     let navigateShipping = useNavigate();
     function NavigateToShipping(e){
         e.preventDefault();
-        // e.preventDefault();
-        navigateShipping('/checkout/shipping')
+        console.log(UserAddress.FirstName);
+        if(DeliveryDefault===true && (UserAddress.FirstName==="" && UserAddress.Country_Region==="" && UserAddress.LastName===""
+        && UserAddress.Street===""&& UserAddress.Suburb===""&& UserAddress.State===""
+        && UserAddress.Postcode==="" && UserAddress.Phone==="")){
+            alert("Please fill all the deatails")
+        }
+        else{
+            localStorage.setItem("UserAddress",JSON.stringify(UserAddress))
+            navigateShipping('/checkout/shipping')
+        }
+    }
+
+        let [enableCartWindow,setenableCartWindow] = useState(true)
+    function ShowCartCompInMobileView(){
+        if(enableCartWindow===true){
+            setenableCartWindow(false);
+        }
+        else{
+            setenableCartWindow(true);
+        }
     }
 
   return (
@@ -34,13 +82,24 @@ function CheckoutInformation() {
         </div>
         <div id='page-location'>
             {/* <Link to='#'>Cart</Link> */}
-            <a href="">Cart </a> &nbsp; <span><i class="fa-solid fa-chevron-right"></i> </span> &nbsp;
+            <a href="">Cart </a> &nbsp; <span><i className="fa-solid fa-chevron-right"></i> </span> &nbsp;
             <a href="" style={{color: "gray", fontWeight:"500"}}> Information</a>&nbsp;
-            <span><i class="fa-solid fa-chevron-right"></i></span>&nbsp;
+            <span><i className="fa-solid fa-chevron-right"></i></span>&nbsp;
             <a href=""> Shipping</a>&nbsp;
-            <span><i class="fa-solid fa-chevron-right"></i></span>&nbsp;
+            <span><i className="fa-solid fa-chevron-right"></i></span>&nbsp;
             <a href="" style={{color: "rgb(24, 120, 185)",fontWeight:"400"}}>Payment</a>&nbsp;
         </div>
+
+        <div id='CartItemsForMobileView'>
+            <div id='ShowHideSummary'>
+            <i className="fa-solid fa-cart-shopping"></i> <button onClick={ShowCartCompInMobileView}> 
+                {enableCartWindow===true ? "Show oreder summary":"Hide order summery"}</button>
+            </div>
+            <div id='CartComponentInMobileView' hidden={enableCartWindow}>
+                <CartItems/>
+            </div>
+        </div>
+
         <div id='ExpressCheckOut'>
             <div id='ExpressCheckOut-Head'> 
                 <p>Express Checkout</p> 
@@ -87,62 +146,70 @@ function CheckoutInformation() {
             <div id='ShippingAddress'>
                 <p>Shipping Address</p>
                 <div id='AddressOption'>
-                    <select name="Address Option" id="AddressSelection">
+                    <select name="AddressOption" id="AddressSelection" onChange={FormInputs}>
                         <option value="">Use a new address</option>
                     </select>
                 </div>
                 <div id='SlectCountryOrRegion'>
                     {/* <label htmlFor="">Country/region</label> */}
-                    <select name="Country/Region" id="CountrySelection">
-                        <option value="">Country/region</option>
-                        <option value="Australia">Australia</option>
+                    <select name="Country_Region" id="CountrySelection" onChange={FormInputs}>
+                        <option value="">Country/Region</option>
+                        {/* <option value="">---------</option> */}
+                        {CountryNames.map((ele)=>{
+                            return (
+                                <option value={ele}>{ele}</option>
+                            )
+                        })}
                     </select>
                 </div>
                 <div id='Address-Username'>
                   <div id='Address-FirstName'>
                     <label htmlFor="">First Name</label>
-                    <input type="text" name='First-Name' />
+                    <input type="text" name='FirstName' onChange={FormInputs}/>
                   </div>
                   <div id='Address-SecondName'>
                   <label htmlFor="">Last Name</label>
-                    <input type="text" name='Last-Name' />
+                    <input type="text" name='LastName' onChange={FormInputs}/>
                   </div>
                 </div>
                 <div id='CompanyAddress'>
-                    <input type="text" placeholder='Company (Optional)' name="" id="" />
+                    <input type="text" placeholder='Company (Optional)' name="CompanyAddress" onChange={FormInputs} id="" />
                 </div>
                 <div id='UserAddress-Street'>
                     <label htmlFor="">Address</label>
-                    <input type="text" name='Street' />
+                    <input type="text" name='Street' onChange={FormInputs}/>
                 </div>
                 <div id='UserAddress-Suburb-PostCode'>
                     <div id='UserAddress-Suburb'>
                         <label htmlFor="">Suburb</label>
-                        <input type="text" name='Suburb' />
+                        <input type="text" name='Suburb' onChange={FormInputs}/>
                     </div>
                     <div id='UserAddress-State'>
                         {/* <label htmlFor="">Postcode</label> */}
-                        <select name="State" id="">
-                            <option value="">State/territory</option>
-                            <option value="Vicotoria">Victoria</option>
+                        <select name="State" id="" onChange={FormInputs}>
+                        {StateNames.map((ele)=>{
+                            return (
+                                <option value={ele}>{ele}</option>
+                            )
+                        })}
                         </select>
                     </div>
                     <div id='UserAddress-Postcode'>
                         <label htmlFor="">Postcode</label>
-                        <input type="text" name='Postcode' />
+                        <input type="text" name='Postcode' onChange={FormInputs}/>
                     </div>
                 </div>
                 <div id='UserAddress-Phone'>
-                    <label htmlFor="">Address</label>
-                    <input type="text" name='Phone' />
+                    <label htmlFor="">Phone</label>
+                    <input type="text" name='Phone' onChange={FormInputs}/>
                 </div>
                 <div id='OfferNewsCheckbox'>
-                    <input type="Checkbox" />
+                    <input type="Checkbox" name='OffersMail' onChange={FormInputs}/>
                     <label htmlFor="">Text me with news and offers</label>
                 </div>
             </div>
             <div id='AddressFormSubmit'>
-                <button id='returntocart'> <i class="fa-solid fa-angle-left"></i> Return to Cart</button>
+                <button id='returntocart'> <i className="fa-solid fa-angle-left"></i> Return to Cart</button>
             <button type='submit' id='ContinueToShipping' onClick={NavigateToShipping}>Continue to shipping</button>
             </div>
         </form>
@@ -164,7 +231,7 @@ function CheckoutInformation() {
                 </div>
             </div>
             <div id='AddressFormSubmit'>
-                <button id='returntocart'> <i class="fa-solid fa-angle-left"></i> Return to Cart</button>
+                <button id='returntocart'> <i className="fa-solid fa-angle-left"></i> Return to Cart</button>
                 <button  id='ContinueToShipping' onClick={NavigateToShipping}>Continue to shipping</button>
             </div>
         </div>

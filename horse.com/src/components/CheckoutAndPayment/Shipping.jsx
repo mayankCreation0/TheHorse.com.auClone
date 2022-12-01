@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState, useRef, useEffect } from 'react';
 import { Link , useNavigate} from 'react-router-dom'
 import './Shipping.css'
 function Shipping() {
@@ -11,6 +12,29 @@ function Shipping() {
     function ContinueToShippingPage(){
         ContinueToShipping('/checkout/payment')
     }
+    let ShipToAddress = JSON.parse(localStorage.getItem("UserAddress"));
+    let isFree = useRef()
+    let isExpress = useRef()
+    let [Total,setTotal] = useState(null)
+    useEffect(()=>{
+        isFree.current.checked=true;
+    },[])
+   
+    function FreeDelivery(){
+        console.log(isFree.current.checked===true);
+        if(isFree.current.checked===true){
+            // setTotal(Total)
+            localStorage.setItem("TotalCartValue",JSON.stringify(Total))
+        }
+        else if(isExpress.current.checked===true){
+            // setTotal(Total-10)
+            localStorage.setItem("TotalCartValue",JSON.stringify(Total-10))
+        }
+    }
+function change(){
+    console.log("j")
+}
+   
   return (
     <div id='CheckoutInformation'>
     <div id='CheckoutWebSiteName'>
@@ -35,7 +59,8 @@ function Shipping() {
             <hr />
             <div id='ShippingDetails-shipto'>
                 <div><p>Ship to</p></div>
-                <div>38 Park Street, South Melbourne VIC 3205, Australia</div>
+                <div>{`${ShipToAddress.Street},${ShipToAddress.Suburb},${ShipToAddress.State},
+                ${ShipToAddress.Country_Region},${ShipToAddress.Postcode}`}</div>
                 <button>Change</button>
             </div>
         </div>
@@ -43,7 +68,7 @@ function Shipping() {
             <p>Shipping Method</p>
             <div id='Shipping-free'>
                 <div>
-                <input type="radio" name='DeliveryMethod' />
+                <input type="radio" name='DeliveryMethod'  ref={isFree} onClick={change} onChange={FreeDelivery}/>
                 <label htmlFor="">Free Shipping (2-5 Business days)</label>
                 </div>
                 <div><p>Free</p></div>
@@ -51,8 +76,8 @@ function Shipping() {
             <hr />
             <div id='Shipping-express'>
                 <div>
-                <input type="radio" name='DeliveryMethod'/>
-                <label htmlFor="">	Express Shipping (1-3 Business days)</label>
+                <input type="radio" name='DeliveryMethod'ref={isExpress} onChange={FreeDelivery}/>
+                <label htmlFor="" >	Express Shipping (1-3 Business days)</label>
                 </div>
                 <div><p>$10</p></div>
             </div>

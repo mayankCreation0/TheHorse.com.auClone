@@ -1,10 +1,14 @@
 import React from 'react'
+import { useState } from 'react';
 import {Link, Navigate, useNavigate} from 'react-router-dom'
 function CartItems() {
   const navigate= useNavigate();
   function nav(){
       navigate('shipping')
   }
+  let [Total,setTotal1] = useState();
+  let x= JSON.parse(localStorage.getItem("TotalCartValue"))
+  // setTotal1()
   return (
     <div id='Checkout-CartDetails'>
         <div className="Checkout-AddedCartItems">
@@ -37,12 +41,8 @@ function CartItems() {
         <hr />
         <div id='Total'>
           <p>Total</p>
-          <p><span>Aud</span> $342</p>
+          <p><span>Aud</span>${342}</p>
         </div>
-        <button onClick={nav}>Navigate</button>
-        <Link to='information'>Next</Link>
-        <Link to='shipping'>Next</Link>
-        <Link to='payment'>Next</Link>
     </div>
  
   )

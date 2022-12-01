@@ -24,7 +24,8 @@
 #PaymentDetails-contact,#PaymentDetails-shipto,
 #PaymentDetails-method{
     display: flex;
-    height: 40px;
+    min-height: 40px;
+    max-height: fit-content;
     width: 95%;
     justify-content: space-between;
     /* border: 1px solid #c8c5c5; */

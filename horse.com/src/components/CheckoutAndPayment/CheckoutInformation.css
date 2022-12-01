@@ -367,3 +367,96 @@ input[type="radio"]{
     font-size: 14px;
     color: gray;
 }
+option{
+    color: black;
+}
+
+#CartItemsForMobileView{
+    width: 100%;
+    margin-top: 40PX;
+    margin-bottom: 20px;
+    display: none;
+    /* border: 1px solid red; */
+}
+
+#ShowHideSummary{
+    padding-top: 20PX;
+    padding-bottom: 20px;
+    border-top: 1px solid #c8c5c5;
+    border-bottom: 1PX solid #c8c5c5;
+
+}
+
+#ShowHideSummary>button{
+    color: rgb(24, 120, 185);
+    margin-left: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+#CartComponentInMobileView{
+    margin-top: -40px;
+}
+.fa-cart-shopping{
+    color: rgb(24, 120, 185);
+}
+
+@media screen and (min-width: 501px) and (max-width: 900px){
+    
+}
+
+@media only screen and (max-width: 500px){
+    #CartItemsForMobileView{
+        width: 100%;
+        margin-top: 40PX;
+        margin-bottom: 20px;
+        display: block;
+    }
+    #CartItemsForMobileView{
+        display: block;
+    }
+    #ExpressCheckOut-PaymentOptions{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 120px;
+    }
+    #ExpressCheckOut-PaymentOptions-1,
+    #ExpressCheckOut-PaymentOptions-2,
+    #ExpressCheckOut-PaymentOptions-3{
+        width: 100%;
+        height: 30px;
+    }
+
+    #ExpressCheckOut-PaymentOptions-1>img,
+    #ExpressCheckOut-PaymentOptions-2>img
+    {
+        width: 22%;
+    }
+    #ExpressCheckOut-PaymentOptions-3>img{
+        width: 17%;
+    }
+
+    #ExpressCheckOut-ContactInfo-UserImage{
+        width: 50px;
+        height: 42px;
+        border-radius: 10px;
+        background-color: rgb(221, 219, 219);
+    }
+    #ExpressCheckOut-ContactInfo-UserImage>img{
+        width: 100%;
+    }
+    #ExpressCheckOut-ContactInfo-UserEmail{
+      font-size: 12px;
+    }
+    #CheckOut-NewsLetter{
+        font-size: 12px;
+    }
+    #ExpressCheckOut-ContactInfo input{
+        width: 12px;
+        height: 12px;
+    }
+ 
+}

@@ -19,7 +19,7 @@ function Checkout() {
             {/* <CheckoutInformation/> */}
         </div>
         <div id='CheckoutRight'>
-          <CartItems/>
+            <CartItems/>
         </div>
     </div>
   )

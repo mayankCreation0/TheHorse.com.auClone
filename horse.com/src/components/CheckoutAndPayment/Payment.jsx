@@ -2,6 +2,7 @@ import React,{useRef} from 'react'
 import { Form } from 'react-router-dom'
 import './Payment.css'
 import {Link, useNavigate} from 'react-router-dom'
+import { useState } from 'react'
 function Payment() {
     let CreditCardRef = useRef(null)
     let PaypalRef = useRef(null)
@@ -36,7 +37,35 @@ function Payment() {
     function returnToShippingComp(){
         returnToShipping('/checkout/shipping')
     }
+    let ShipToAddress = JSON.parse(localStorage.getItem("UserAddress"));
 
+    let CardDetails = {
+        CardNumber:"",
+        Name:"",
+        ExpiryDate:"",
+        cvv:""
+    }
+    let [StoreCardData, setStoreCardData] = useState(CardDetails)
+    function CardData(e){
+        let {name, value} = e.target;
+        setStoreCardData({...StoreCardData,[name]:value})
+        if(StoreCardData.CardNumber.length>15){
+            alert("Digits can not be more that 16")
+        }
+        console.log(StoreCardData);
+    }
+    let navigateToPaymentGateway= useNavigate();
+    function CompletePayament(){
+        if(StoreCardData.CardNumber==="" && StoreCardData.Name==="" &&
+        StoreCardData.ExpiryDate==="" && StoreCardData.cvv===""){
+            alert("Please fill all the card details")
+        }
+        else{
+        localStorage.setItem('CatrdData',JSON.stringify(StoreCardData));
+        navigateToPaymentGateway('/checkout/paymentgateway');
+        }
+        
+    }
   return (
     <div id='CheckoutInformation'>
     <div id='CheckoutWebSiteName'>
@@ -61,7 +90,8 @@ function Payment() {
             <hr />
             <div id='PaymentDetails-shipto'>
                 <div><p>Ship to</p></div>
-                <div>38 Park Street, South Melbourne VIC 3205, Australia</div>
+                <div>{`${ShipToAddress.Street},${ShipToAddress.Suburb},${ShipToAddress.State},
+                ${ShipToAddress.Country_Region},${ShipToAddress.Postcode}`}</div>
                 <button>Change</button>
             </div>
             <hr />
@@ -87,11 +117,11 @@ function Payment() {
             </div>
             <div id='CardDetails' ref={CreditCardRef}>
                 <div>
-                <input type="number" placeholder='Card number' />
-                    <input type="text" placeholder='Name on card'/>
+                <input type="number" onChange={CardData} name='CardNumber' placeholder='Card number' />
+                    <input type="text"onChange={CardData} name='Name' placeholder='Name on card'/>
                     <div id='CardDetail-SubEntry'>
-                        <input type="text" placeholder='Expiration date (MM / YY)'/>
-                        <input type="number" placeholder='Security code' />
+                        <input type="text"onChange={CardData} name='ExpiryDate' placeholder='Expiration date (MM / YY)'/>
+                        <input type="number" onChange={CardData} name='cvv' placeholder='Security code' />
                     </div>
                 </div>
             </div>
@@ -159,7 +189,7 @@ function Payment() {
         </div>
         <div id='AddressFormSubmit'>
             <button id='returntocart' onClick={returnToShippingComp}> <i class="fa-solid fa-angle-left"></i> Return to Shipping</button>
-            <button id='ContinueToPayment'>Complete payment</button>
+            <button id='ContinueToPayment' onClick={CompletePayament}>Complete payment</button>
         </div>
         <div id='Checkout-Policy'>
             <p>Refund Policy</p>
