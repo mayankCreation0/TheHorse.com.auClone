@@ -23,7 +23,7 @@ export default function Carousel() {
       <MDBCarouselItem
         className='w-100 d-block'
         itemId={3}
-        src='https://cdn.shopify.com/s/files/1/0233/5133/products/ROLLOVER_0116_GU1_1400x.jpg?v=1658702797'
+        src='https://cdn.shopify.com/s/files/1/0233/5133/files/gifting_page_2_1536x.jpg?v=1669756653'
         alt='...'
       />
     </MDBCarousel>
