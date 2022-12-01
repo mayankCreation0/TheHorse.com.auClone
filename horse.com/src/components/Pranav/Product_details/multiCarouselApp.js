@@ -2,7 +2,7 @@ import MultiCarousel from "./multiCarousel"
 
 const MultiCarouselApp = () => {
     return (
-        <div style={{ maxWidth: 1300, marginLeft: 'auto', marginRight: 'auto', marginTop: 64 }}>
+        <div style={{ maxWidth: 1300, marginLeft: 'auto', marginRight: 'auto', marginTop: 64,fontSize:15 }}>
             <MultiCarousel
                 show={4}
             >

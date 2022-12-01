@@ -28,7 +28,7 @@ function StaticData() {
 
             <Container w="40%" m="auto">
 
-                <Box display="flex" flexDirection="column" gap="30px">
+                <Box display="flex" flexDirection="column" gap="5px">
 
                     <Text textTransform="uppercase" textAlign="center" fontSize='11px' color='#545540' fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" letterSpacing=".15em" >
                         MEN'S WATCHES
@@ -39,11 +39,11 @@ function StaticData() {
 
                     <Accordion allowMultiple >
                         <AccordionItem>
-                            <h2>
+                            <h2 border="none" style={{fontSize:"16px"}}>
                                 <AccordionButton border="none" bg="none">
 
                                     <Box flex='1'  fontFamily="Canela,Times,serif" fontWeight="400" letterSpacing=".15em" color='#545540' height="30px" display="flex" gap="5px" alignItems="center" justifyContent="center">
-                                        <span>READ MORE </span> <span><BsArrowDown fontSize="16px"/></span>
+                                        <span style={{marginTop:"4px"}} >READ MORE </span>  <span><BsArrowDown  fontSize="15px"/></span>
                                     </Box>
 
 

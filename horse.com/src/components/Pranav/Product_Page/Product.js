@@ -7,7 +7,9 @@ import { FadeEx } from "./fade";
 
 import StaticData from "./StaticData";
 import Tard from "./Card";
-import DescriptionAlerts from "../Product_details/Alert";
+import { FadeE } from "./filter";
+
+
 
 
 
@@ -35,9 +37,10 @@ function Product() {
 
             <StaticData />
 
-            <Box position="absolute" right="100px" p="5px" top="450px" zIndex="1" >
+            <Box position="absolute" right="130px" p="5px" top="435px" zIndex="1" >
                 <FadeEx ></FadeEx>
             </Box>
+            
 
             <Grid templateColumns="repeat(3, 1fr)" gap={50} w="92%" margin="auto" marginTop="120px">
 
