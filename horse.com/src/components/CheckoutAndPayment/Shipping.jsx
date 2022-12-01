@@ -1,6 +1,16 @@
 import React from 'react'
+import { Link , useNavigate} from 'react-router-dom'
 import './Shipping.css'
 function Shipping() {
+    let returnToInformation = useNavigate();
+    function returnToInformationComp(){
+        returnToInformation('/checkout/information')
+    }
+
+    let ContinueToShipping = useNavigate();
+    function ContinueToShippingPage(){
+        ContinueToShipping('/checkout/payment')
+    }
   return (
     <div id='CheckoutInformation'>
     <div id='CheckoutWebSiteName'>
@@ -48,8 +58,9 @@ function Shipping() {
             </div>
         </div>
         <div id='AddressFormSubmit'>
-            <button id='returntocart'> <i class="fa-solid fa-angle-left"></i> Return to Information</button>
-            <button type='submit' id='ContinueToShipping'>Continue to payment</button>
+            <button id='returntocart' onClick={returnToInformationComp}> <i class="fa-solid fa-angle-left"></i> Return to Information</button>
+            <button id='ContinueToShipping' onClick={ContinueToShippingPage}>Continue to payment</button>
+
         </div>
         <div id='Checkout-Policy'>
             <p>Refund Policy</p>

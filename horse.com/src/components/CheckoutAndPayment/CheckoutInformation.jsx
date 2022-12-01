@@ -1,6 +1,6 @@
 import React,{useRef, useState} from 'react'
 import './CheckoutInformation.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function CheckoutInformation() {
 
@@ -19,7 +19,12 @@ function CheckoutInformation() {
         Pickup.current.hidden = false;
     }
 
-
+    let navigateShipping = useNavigate();
+    function NavigateToShipping(e){
+        e.preventDefault();
+        // e.preventDefault();
+        navigateShipping('/checkout/shipping')
+    }
 
   return (
     <div id='CheckoutInformation'>
@@ -138,7 +143,7 @@ function CheckoutInformation() {
             </div>
             <div id='AddressFormSubmit'>
                 <button id='returntocart'> <i class="fa-solid fa-angle-left"></i> Return to Cart</button>
-            <button type='submit' id='ContinueToShipping'>Continue to shipping</button>
+            <button type='submit' id='ContinueToShipping' onClick={NavigateToShipping}>Continue to shipping</button>
             </div>
         </form>
         <div id='PickupAddress' ref={Pickup} hidden={true}>
@@ -160,7 +165,7 @@ function CheckoutInformation() {
             </div>
             <div id='AddressFormSubmit'>
                 <button id='returntocart'> <i class="fa-solid fa-angle-left"></i> Return to Cart</button>
-            <button type='submit' id='ContinueToShipping'>Continue to payment</button>
+                <button  id='ContinueToShipping' onClick={NavigateToShipping}>Continue to shipping</button>
             </div>
         </div>
         <div id='Checkout-Policy'>

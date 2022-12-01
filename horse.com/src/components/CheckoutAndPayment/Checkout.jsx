@@ -7,13 +7,14 @@ import Payment from './Payment'
 // import './Payment.css'
 import CheckoutInformation from './CheckoutInformation'
 import Shipping from './Shipping'
-import {Link} from 'react-router-dom'
+import {Link,Outlet} from 'react-router-dom'
 function Checkout() {
   return (
     <div id='CheckoutMain'>
         <div id='CheckoutLeft'>
+          <Outlet/>
           {/* <Link to={}/> */}
-          <Payment/>
+          {/* <Payment/> */}
           {/* <Shipping/> */}
             {/* <CheckoutInformation/> */}
         </div>

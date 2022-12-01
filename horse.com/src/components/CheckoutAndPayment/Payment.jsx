@@ -1,6 +1,7 @@
 import React,{useRef} from 'react'
+import { Form } from 'react-router-dom'
 import './Payment.css'
-
+import {Link, useNavigate} from 'react-router-dom'
 function Payment() {
     let CreditCardRef = useRef(null)
     let PaypalRef = useRef(null)
@@ -30,6 +31,12 @@ function Payment() {
         AfterPayRef.current.style.display = "none"
         LaybuyRef.current.style.display = "flex"
     }
+
+    let returnToShipping = useNavigate();
+    function returnToShippingComp(){
+        returnToShipping('/checkout/shipping')
+    }
+
   return (
     <div id='CheckoutInformation'>
     <div id='CheckoutWebSiteName'>
@@ -151,8 +158,8 @@ function Payment() {
             </div>
         </div>
         <div id='AddressFormSubmit'>
-            <button id='returntocart'> <i class="fa-solid fa-angle-left"></i> Return to Shipping</button>
-            <button type='submit' id='ContinueToPayment'>Complete payment</button>
+            <button id='returntocart' onClick={returnToShippingComp}> <i class="fa-solid fa-angle-left"></i> Return to Shipping</button>
+            <button id='ContinueToPayment'>Complete payment</button>
         </div>
         <div id='Checkout-Policy'>
             <p>Refund Policy</p>
