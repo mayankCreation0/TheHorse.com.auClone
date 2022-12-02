@@ -63,9 +63,17 @@ hr{
 #Checkout-Coupon{
     display: flex;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     align-items: center;
     justify-content: space-between;
+}
+#CouponCodeMessasge{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
 }
 #Checkout-Coupon>input{
     width: 78%;
@@ -87,6 +95,7 @@ hr{
     font-size: 16px;
     background-color: #c8c5c5;
     border: none;
+    cursor: pointer;
 }
 
 #Subtotal{
