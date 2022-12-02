@@ -1,0 +1,141 @@
+@import url(//db.onlinewebfonts.com/c/b1edfa746f416280b3502ba39df2c3ae?family=Canela);
+@import url(//db.onlinewebfonts.com/c/43372a4ce8dc3abbca31595815be7cf3?family=Atlas+Grotesk+Web+Light);
+ 
+ 
+
+ 
+ 
+ 
+ h3 {
+    margin: 25px 25px 0;
+    padding: 0 0 25px;
+    font-family: Canela,times,serif;
+    font-size: 20px;
+    font-weight: 400;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    letter-spacing: .04em;
+}
+
+
+#offcanvasRight{
+    background-color: #fff;
+    position: fixed !important;
+  }
+
+.btn-close{
+    margin-top: 20px;
+    font-family: Canela,times,serif !important;
+}
+
+
+
+
+header {
+    width: 90%;
+    line-height: 10rem;
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 0.5px solid #bdbdbd;
+    transform: rotate(-0.05deg);
+    margin-bottom: 7rem;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+
+  .cart-title{
+    font-size: 13px;
+    letter-spacing: .04em;
+    font-family: AtlasGrotesk,Helvetica,san-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #545540;
+  }
+
+  .cart-price{
+    font-size: 13px;
+    letter-spacing: .04em;
+    font-family: AtlasGrotesk,Helvetica,san-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #545540;
+  }
+
+  #cart-q-button{
+    border: 1px solid #bdbdbd;
+    border-radius: 40px;
+    margin-left: auto;
+    padding: 4px;
+    font-family: Atlas+Grotesk+Web+Light, Helvetica, sans-serif;
+    width: 70px;
+    
+   
+  }
+  .g-checkout-btn{
+    display: block;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+  }
+  .g-checkout-btn{
+    background-color: #fff;
+    border: 1px solid #bdbdbd;
+    border-radius: 40px;
+    color: #545540;
+    display: inline-block;
+    line-height: 1.1;
+    overflow: hidden;
+    padding: 14px 32px;
+    position: relative;
+    text-transform: capitalize;
+    transition: color .3s ease-in-out;
+    background-color: #7596b8;
+    color: #fff;
+    border: 0;
+  }
+
+  .card_details{
+    overflow-y: scroll;
+  }
+  .checkout-wrapper{
+    border-top: 0.5px solid #bdbdbd;
+    margin: 25px;
+    padding: 25px 0 0;
+  }
+
+  .g-checkout-btn{
+    opacity: 1;
+    position: relative;
+    visibility: visible;
+    z-index: 1;
+  }
+  .g-subtotal-div{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    letter-spacing: .04em;
+    font-family: Atlas+Grotesk+Web+Light,Helvetica,san-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #545540;
+    margin: 0 0 20px;
+  }
+
+  .g-empty-cart{
+    font-family: Canela,times,serif;
+    font-weight: 700;
+
+  }
+
+  .g-gift-wrap{
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    font-size: 13px;
+  }
