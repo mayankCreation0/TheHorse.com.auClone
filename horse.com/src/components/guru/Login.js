@@ -29,6 +29,7 @@ const Login = () => {
             usersData = await usersData.json();
 
             localStorage.setItem("thehorse-token", usersData[0].token);
+            localStorage.setItem("thehorse-name", usersData[0].fname);
             setIsAuth({ ...isAuth, data: usersData[0], loggedin: false });
             navigate("/challenge");
             // setSuccess(true);
