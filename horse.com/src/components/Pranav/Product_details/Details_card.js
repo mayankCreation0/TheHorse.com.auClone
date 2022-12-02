@@ -14,6 +14,7 @@ import CartAction from '../action/CartAction';
 import { useState } from 'react';
 import MultiCarouselApp from './multiCarouselApp';
 import { MdOutlineLocalShipping } from "react-icons/md"
+import IconCheckboxes from './heart';
 
 
 function Details_card() {
@@ -89,6 +90,7 @@ function Details_card() {
 
 
                             <Spacer />
+                            <Text marginBottom="-50px" marginLeft="8px"><IconCheckboxes element={showData}/></Text>
                             <Image
                                 src={showData.img1}
                                 alt='Green double couch with wooden legs'
