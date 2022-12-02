@@ -3,7 +3,7 @@ import { Accordion,
     AccordionItem,
     AccordionButton,
     AccordionPanel,
-    AccordionIcon, Box, border, color} from '@chakra-ui/react';
+    AccordionIcon, Box} from '@chakra-ui/react';
 import './footer.css';
 import ins from "./IconsF/instagram.png"
 import fb from  "./IconsF/facebook.png"

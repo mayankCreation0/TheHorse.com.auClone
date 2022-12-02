@@ -5,7 +5,7 @@
     /* border: 1px solid red; */
     display: grid;
     height: 70px;
-    grid-template-columns: .1fr .5fr 2fr 1fr ;
+    grid-template-columns: .1fr .7fr 2.5fr 1fr ;
     top: 0;
     position: sticky;
     z-index: 10;
@@ -28,7 +28,16 @@ ul,li{
     opacity: 0;
     transition:opacity 1s linear;
  } */
- .MainMenu:hover .SubMenu_1{
+ .MainMenu>ul>li{
+    /* border: 1px solid red; */
+    height: 46px;
+ }
+ .MainMenu>ul>li:hover{
+    border-bottom:3px solid #545540;
+    /* border-radius: 5px; */
+    /* z-index: inherit; */
+ }
+ .MainMenu > ul >li:hover .SubMenu_1{
     display: grid;
     grid-template-columns: 1fr 2fr 2fr;
     width: 100%;
@@ -40,6 +49,7 @@ ul,li{
     left: 0;
     padding: 2%  10%;
     z-index: 11;
+    
     /* transition: 0.05s; */
     /* opacity: 1; */
  }
@@ -117,16 +127,28 @@ cursor: pointer;
     /* background: #ffffff;
     color: #545540; */
 }
-#logo{
-     background: #ffffff;
-    color: #545540;
-    font-family: AtlasGrotesk,sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 0.02em;;
+#logo>p{
+    margin-bottom: -6px;
+        background: #ffffff;
+        color: #545540;
+        font-family: AtlasGrotesk,sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: 0.02em;;
 }
 .MainMenu ul {
     font-size: 16px;
     font-family: AtlasGrotesk,sans-serif;
 }
 
+#sidenav{
+    display: none;
+}
+@media screen and (min-width:200px) and (max-width:769px){
+    .navbar{
+        display: none;
+    }
+    #sidenav{
+        display: block;
+    }
+}
