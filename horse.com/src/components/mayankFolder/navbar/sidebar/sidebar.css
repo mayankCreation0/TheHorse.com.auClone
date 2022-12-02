@@ -1,0 +1,22 @@
+/* @import url(//db.onlinewebfonts.com/c/9da955c8511328b8b914cf9163add256?family=canela); */
+/* @import url(//db.onlinewebfonts.com/c/9da955c8511328b8b914cf9163add256?family=canela); */
+@import url(//db.onlinewebfonts.com/c/43372a4ce8dc3abbca31595815be7cf3?family=Atlas+Grotesk+Web+Light);
+#logo>p{
+    margin-bottom: -6px;
+        background: #ffffff;
+        color: #545540;
+        font-family: canela,Helvetica,san-serif;
+        font-size: 24px;
+        font-weight: 900;
+        /* font-style: bolder; */
+        letter-spacing: 0.1em;
+}
+.drawerheader  Button{
+    border:1px solid #BDBDBD;
+    border-radius: 50px;
+    font: 15px;   
+}
+.btn1:hover{
+    background-color: #545540;
+    color: #ffffff;
+}
