@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useSelector } from "react-redux";
 import "./Cart.css";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import Table from 'react-bootstrap/esm/Table';
 import CloseButton from 'react-bootstrap/CloseButton';
 import {ADD, REMOVE, DLT} from './Action/action'
@@ -123,7 +123,8 @@ export default function Cart() {
                         <div>CHF  {price}</div>
                     </div>
                     <br />
-                    <div className="g-checkout-btn"><a><span>Checkout</span></a></div>
+                    <Link to="/checkout"><div className="g-checkout-btn"><a><span>Checkout</span></a></div></Link>
+                    
                    </div>
                 </div>
             </div>
