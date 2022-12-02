@@ -4,8 +4,12 @@ import "./Homepage.css"
 import MultiCarouselApp from './multi-carousel/multiCarouselApp'
 import conversation from './icons/conversation.png'
 import bag from './icons/bag.png'
+import Navbar from '../navbar/Navbar'
+import Footer from '../footer/footer'
 function Homepage() {
   return (
+    <>
+    <Navbar/>
     <div id='homepage'>
         <Carousel />
         <div id='line1'>
@@ -104,6 +108,8 @@ function Homepage() {
         </div>
 
     </div>
+    <Footer/>
+    </>
   )
 }
 

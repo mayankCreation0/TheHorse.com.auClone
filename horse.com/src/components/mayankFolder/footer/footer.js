@@ -117,10 +117,10 @@ const Footer = () => {
           <AccordionPanel pb={4}>
           <div className='f_div_4'>
             <div className='f_div_2p'>
-              <p><span><img src={ins} alt='icon'style={{width:'18px'}}/></span>&nbsp; Instagram</p>
-              <p><span><img src={fb} alt='icon'style={{width:'18px'}}/></span>&nbsp;Facebook</p>
-              <p><span><img src={pin} alt='icon'style={{width:'18px'}}/></span>&nbsp;Pinterest</p>
-              <p><span><img src={vim} alt='icon'style={{width:'18px'}}/></span>&nbsp;Vimeo</p>
+              <p><span><img src={ins} alt='icon'style={{width:'18px'}}/></span>&nbsp;Instagram</p>
+              <p><span><img src={fb} alt='icon'style={{width:'18px'}}/></span>&nbsp; Facebook</p>
+              <p><span><img src={pin} alt='icon'style={{width:'18px'}}/></span>&nbsp; Pinterest</p>
+              <p><span><img src={vim} alt='icon'style={{width:'18px'}}/></span>&nbsp; Vimeo</p>
             </div>
           </div>
           </AccordionPanel>
