@@ -9,6 +9,7 @@ import StaticData from "./StaticData";
 import Tard from "./Card";
 import { FadeE } from "./filter";
 import { Text } from "@chakra-ui/react";
+import { BsArrowDown } from "react-icons/bs"
 
 
 
@@ -23,9 +24,16 @@ function Product() {
 
     useEffect(() => {
 
-        getDatafun('http://localhost:3001/posts', dispatch);
+        getDatafun(`http://localhost:3001/posts/?q=watches`, dispatch);
 
-    }, []);
+    },[]);
+
+    const handle_checkbox = (event) => {
+        let ans=event.target.value;
+
+        getDatafun(`http://localhost:3001/posts/?q=${ans}`, dispatch);
+
+    }
 
 
     let showData = useSelector(((storeData) => storeData.ProductData));
@@ -41,10 +49,10 @@ function Product() {
             <Box position="absolute" right="230px" p="5px" top="435px" zIndex="1" >
                 <FadeEx ></FadeEx>
             </Box>
-            <Box position="absolute" right="130px" p="5px" top="450px" zIndex="1">
+            <Box position="absolute" right="120px" p="5px" top="450px" zIndex="1">
                 <div class="dropdown">
-                    <button style={{ border: "none", padding: "5px", backgroundColor: "white", color: "#545540", fontSize: "16px", border: "none", marginRight: "7px", fontFamily: "Canela,Times,serif", fontWeight: "400", letterSpacing: ".15em" }} class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Filters
+                    <button  style={{ border: "none", padding: "5px", backgroundColor: "white", color: "#545540", fontSize: "16px", border: "none", marginRight: "7px", fontFamily: "Canela,Times,serif", fontWeight: "400", letterSpacing: ".15em",display:"flex",gap:"5px" }}  type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       <Text>Filters</Text><Text fontSize="18px" marginTop="-3px"><BsArrowDown/></Text>
                     </button>
                     <ul class="dropdown-menu" style={{ width: "100vw", height: "400px" }}>
 
@@ -52,31 +60,31 @@ function Product() {
                             <Box display="flex" flexDirection="column" gap="10px"><Text>COLOR</Text>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="black" id="flexCheckDefault" />
+                                    <input class="form-check-input" type="checkbox" value="black" id="flexCheckDefault" onClick={handle_checkbox} />
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Black
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="olive" id="flexCheckDefault" />
+                                    <input class="form-check-input" type="checkbox" value="olive" id="flexCheckDefault" onClick={handle_checkbox} />
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Olive
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="tan" id="flexCheckDefault" />
+                                    <input class="form-check-input" type="checkbox" value="tan" id="flexCheckDefault" onClick={handle_checkbox} />
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Tan
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="gun metal" id="flexCheckDefault" />
+                                    <input class="form-check-input" type="checkbox" value="gun metal" id="flexCheckDefault" onClick={handle_checkbox} />
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Gun Metal
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="silver" id="flexCheckDefault" />
+                                    <input class="form-check-input" type="checkbox" value="silver" id="flexCheckDefault" onClick={handle_checkbox} />
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Silver
                                     </label>
@@ -87,13 +95,13 @@ function Product() {
                             <Box display="flex" flexDirection="column" gap="10px"><Text>MATERIAL</Text>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="leather" id="flexCheckDefault" />
+                                    <input class="form-check-input" type="checkbox" value="leather" id="flexCheckDefault" onClick={handle_checkbox} />
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Leather
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="webbed" id="flexCheckDefault" />
+                                    <input class="form-check-input" type="checkbox" value="webbed" id="flexCheckDefault" onClick={handle_checkbox} />
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Webbed
                                     </label>
@@ -102,33 +110,33 @@ function Product() {
                             <Box display="flex" flexDirection="column" gap="10px" ><Text>OCCASION</Text>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="everyday" id="flexCheckDefault" />
+                                    <input class="form-check-input" type="checkbox" value="everyday" id="flexCheckDefault" onClick={handle_checkbox} />
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Everyday
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="formal" id="flexCheckDefault" />
+                                    <input class="form-check-input" type="checkbox" value="formal" id="flexCheckDefault" onClick={handle_checkbox} />
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Formal
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="travel" id="flexCheckDefault" />
+                                    <input class="form-check-input" type="checkbox" value="travel" id="flexCheckDefault" onClick={handle_checkbox} />
                                     <label class="form-check-label" for="flexCheckDefault">
-                                       Travel
+                                        Travel
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="work" id="flexCheckDefault" />
+                                    <input class="form-check-input" type="checkbox" value="work" id="flexCheckDefault" onClick={handle_checkbox} />
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Work
                                     </label>
                                 </div>
-                                 
+
 
                             </Box>
-                             
+
                         </Box>
 
                     </ul>

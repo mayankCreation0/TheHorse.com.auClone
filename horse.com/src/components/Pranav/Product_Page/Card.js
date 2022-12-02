@@ -91,6 +91,7 @@ function Tard({ elem, id, img1, img2, title, price, description, rating, discoun
                     
                     CartAction(data1, dispatch);
 
+
                 });
             }
 
