@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import {Store} from "./components/Pranav/store/Store"
+import { AuthContextProvider } from './components/guru/API/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +16,11 @@ root.render(
 
     <Provider store={Store}>
 
-      <App />
+      <AuthContextProvider>
+
+           <App />
+
+      </AuthContextProvider>
 
 
     </Provider>
