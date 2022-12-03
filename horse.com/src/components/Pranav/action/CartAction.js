@@ -4,7 +4,7 @@ function CartAction(data,dispatch) {
   return (
     
           dispatch({
-            type:"AddCart",
+            type:"Add_Cart",
             Payload:data
           })
 
