@@ -30,7 +30,6 @@ function AllRoutes() {
             <Route path="/products/:category" element={<Product />} />
             <Route path="/product/:id" element={<Details_card />} />
 
-
             <Route path='/checkout' element={<Checkout />}>
                 <Route path='' element={<Navigate to="information" />} />
                 <Route path='information' element={<CheckoutInformation />} />
@@ -39,13 +38,8 @@ function AllRoutes() {
             </Route>
             <Route path='/redirect' element={<Redirect />} />
             <Route path='/paymentprocessing' element={<PaymentProcessing />} />
-            <Route path='/paymentgateway' element={<PaymentGateway/>} />
+            <Route path='/paymentgateway' element={<PaymentGateway />} />
             <Route path='orderconfirmation' element={<OrderConfirmation />} />
-
-
-
-
-
 
         </Routes>
 

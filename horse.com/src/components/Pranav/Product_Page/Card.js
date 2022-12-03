@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import CartAction from '../action/CartAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { useToast } from '@chakra-ui/react'
-import DescriptionAlerts from '../Product_details/Alert';
+// import DescriptionAlerts from '../Product_details/Alert';
 
 
 function Tard({ elem, id, img1, img2, title, price, description, rating, discount }) {
@@ -71,7 +71,7 @@ function Tard({ elem, id, img1, img2, title, price, description, rating, discoun
 
         Post_cartData(el)
         async function Post_cartData(el) {
-            
+
 
             let update = await fetch(`http://localhost:3001/cartPage`, {
                 method: "POST",
@@ -81,19 +81,18 @@ function Tard({ elem, id, img1, img2, title, price, description, rating, discoun
                 },
             }).then((ans) => {
 
-                if(ans.ok==false)
-                {
+                if (ans.ok == false) {
                     alert("Already Added in Cart");
                 }
-                else{
-                fetch("http://localhost:3001/cartPage").then((res) => res.json()).then((data1) => {
-
-                    
-                    CartAction(data1, dispatch);
+                else {
+                    fetch("http://localhost:3001/cartPage").then((res) => res.json()).then((data1) => {
 
 
-                });
-            }
+                        CartAction(data1, dispatch);
+
+
+                    });
+                }
 
             })
 

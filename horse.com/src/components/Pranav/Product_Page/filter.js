@@ -6,16 +6,16 @@ import { BsArrowDown } from "react-icons/bs"
 import { Text } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 
-export function FadeE({getfetchData}) {
+export function FadeE({ getfetchData }) {
   const { isOpen, onToggle } = useDisclosure();
 
-  let getDatafun=useSelector((storeData)=>storeData.getDatafun);
-  let dispatch=useDispatch();
+  let getDatafun = useSelector((storeData) => storeData.getDatafun);
+  let dispatch = useDispatch();
 
   const handle = (value) => {
-    
 
-    getDatafun(`http://localhost:3001/posts?_sort=price&_order=${value}`,dispatch);
+
+    getDatafun(`http://localhost:3001/posts?_sort=price&_order=${value}`, dispatch);
 
   }
 
@@ -38,9 +38,9 @@ export function FadeE({getfetchData}) {
           gap="10px"
           fontFamily="Canela,Times,serif" position="absolute" zIndex="9999 "
         >
-          <Text   onClick={(e) => handle("asc")}>Best Selling</Text>
-          <Text onClick={()=>handle("asc")}>Price Low to High</Text>
-          <Text  onClick={()=>handle("desc")}>Price High to Low</Text>
+          <Text onClick={(e) => handle("asc")}>Best Selling</Text>
+          <Text onClick={() => handle("asc")}>Price Low to High</Text>
+          <Text onClick={() => handle("desc")}>Price High to Low</Text>
 
         </Box>
       </Fade>
