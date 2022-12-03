@@ -17,28 +17,19 @@ import Privateroute from './routes/Privateroute';
 
 const Appaccount = () => {
     return (
-        <BrowserRouter>
-            <AuthContextProvider>
-                <ChakraProvider>
-                    <div className={Styles.div1}>
 
-                        <Routes>
-                            <Route path="/account/login" element={<Login />} />
-                            <Route path="/account/register" element={<Signup />} />
-                            <Route path="/challenge" element={<Recaptcha />} />
-                            <Route path="/account" element={<Privateroute><Account /></Privateroute>}>
-                                <Route path="" element={<Dashboard />} />
-                                <Route path="wishlist" element={<Wishlist />} />
-                                <Route path="orders" element={<Orders />} />
-                                <Route path="addresses" element={<Addresses />} />
-                                <Route path="logout" element={<Logout />} />
-                            </Route>
-                        </Routes>
+        <AuthContextProvider>
+            <ChakraProvider>
+                <div className={Styles.div1}>
 
-                    </div>
-                </ChakraProvider>
-            </AuthContextProvider>
-        </BrowserRouter>
+
+
+                     
+
+                </div>
+            </ChakraProvider>
+        </AuthContextProvider>
+
     )
 }
 

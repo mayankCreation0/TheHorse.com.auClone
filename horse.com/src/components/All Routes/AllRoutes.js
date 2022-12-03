@@ -13,6 +13,19 @@ import PaymentProcessing from '../CheckoutAndPayment/PaymentProcessing';
 import PaymentGateway from '../CheckoutAndPayment/PaymentGateway';
 import OrderConfirmation from '../CheckoutAndPayment/OrderConfirmation';
 import { Navigate } from 'react-router-dom';
+import Appaccount from '../guru/Appaccount';
+import Login from '../guru/Login';
+import Signup from '../guru/Signup';
+import Recaptcha from '../guru/Recaptcha';
+import Privateroute from '../guru/routes/Privateroute';
+import Dashboard from '../guru/Dashboard';
+import Wishlist from '../guru/Wishlist';
+import Orders from '../guru/Orders';
+import Addresses from '../guru/Addresses';
+import Logout from '../guru/Logout';
+import Account from '../guru/Account';
+import { AuthContextProvider } from '../guru/API/Context';
+import { ChakraProvider } from '@chakra-ui/react';
 
 
 function AllRoutes() {
@@ -40,6 +53,28 @@ function AllRoutes() {
             <Route path='/paymentprocessing' element={<PaymentProcessing />} />
             <Route path='/paymentgateway' element={<PaymentGateway />} />
             <Route path='orderconfirmation' element={<OrderConfirmation />} />
+
+
+
+            <Route path="/logout" element={<Logout />} />
+              
+            <Route path="/account/login" element={<ChakraProvider><Login/></ChakraProvider>} />
+            <Route path="/account/register" element={<ChakraProvider><Signup /></ChakraProvider>} />
+            <Route path="/challenge" element={<ChakraProvider><Recaptcha /></ChakraProvider>} />
+            <Route path="/account" element={<ChakraProvider><Privateroute><Account /></Privateroute></ChakraProvider>}>
+                <Route path="" element={<Dashboard />} />
+                <Route path="wishlist" element={<Wishlist />} />
+                <Route path="orders" element={<Orders />} />
+                <Route path="addresses" element={<Addresses />} />
+                 
+            </Route>
+         
+
+            
+            
+
+
+
 
         </Routes>
 
