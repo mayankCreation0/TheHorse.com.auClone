@@ -10,7 +10,7 @@ const Account = () => {
                 <Link className={Styles.links} to="wishlist">Wishlist</Link>
                 <Link className={Styles.links} to="orders">Orders</Link>
                 <Link className={Styles.links} to="addresses">Addresses</Link>
-                <Link className={Styles.links} to="logout">Logout</Link>
+                <Link className={Styles.links} to="/logout">Logout</Link>
             </div>
             <div className={Styles.div3}><Outlet /></div>
 

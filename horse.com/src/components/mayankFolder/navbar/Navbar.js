@@ -529,9 +529,9 @@ function Navbar() {
         <div id='logohorse' style={{ display: 'flex', justifyContent: 'center' }}><p><Link to='/' style={{ color: '#545540' }}>THE HORSE</Link></p></div>
         <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
           <div>AUD</div>
-          <div style={{ fontSize: '15px', letterSpacing: '0.05em' }}>My Account</div>
+          <div style={{ fontSize: '15px', letterSpacing: '0.05em' }}><Link to="/account">My Account</Link></div>
           {/* <div style={{display:'flex',justifyContent:'space-evenly'}}> */}
-          <div id='heartdiv'><img src={heart} alt="img" style={{ width: '18px', marginTop: '-5px' }} /></div>
+          <Link to="/account/wishlist"><div id='heartdiv'><img src={heart} alt="img" style={{ width: '18px', marginTop: '-5px' }} /></div></Link>
           <div id='search'><button style={{ border: 'none', backgroundColor: 'transparent', marginTop: '-5px' }}><img src={search} alt="img" style={{ width: '18px' }} /></button></div>
           <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
           <div id='bagdiv'><img src={bag} alt="img" style={{ width: '18px', marginTop: '-5px' }} /></div>
