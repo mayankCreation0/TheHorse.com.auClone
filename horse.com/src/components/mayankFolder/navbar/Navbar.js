@@ -16,6 +16,7 @@ function Navbar() {
 
   return (
     <navbar>
+      <Cart/>
       <div className='navbar' style={{ borderBottom: '1px solid #545540' }}>
         <div><button style={{ borderStyle: 'none', backgroundColor: 'transparent' }}><img src={menu} alt='img' style={{ width: '24px' }} /></button></div>
         <div style={{ display: 'flex', justifyContent: 'space-evenly', height: '71px', padding: '24px 0 0 0' }} className="MainMenu">

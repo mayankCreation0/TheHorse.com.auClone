@@ -18,10 +18,11 @@ let initialData = {
 
     ProductData:[],
     getDatafun:getfetchData,
-    cartData:[],
+    carts:[],
     ProductDetail:{},
     rating:4.2,
     WishList:[]
+    
 }
 
 export const myReducer = (storeData = initialData, action) => {
@@ -44,14 +45,70 @@ export const myReducer = (storeData = initialData, action) => {
             return{
                 ...storeData,rating:action.Payload
             }
-        case "AddCart":
-        return{
-            ...storeData,cartData:action.Payload
-        }
+        // case "AddCart":
+        // return{
+        //     ...storeData,cartData:action.Payload
+        // }
         case "AddWishList":
             return{
                 ...storeData,WishList:action.Payload
             }
+
+            case "Add_Cart":
+                return{
+                    ...storeData,carts:action.Payload
+                }
+
+            case "ADD_CART":
+                
+    
+      const IteamIndex = storeData.carts.findIndex((item)=> item.id === action.payload.id);
+
+      if(IteamIndex >= 0){
+          storeData.carts[IteamIndex].quantity +=1
+          return {
+              ...storeData,
+              carts:[...storeData.carts]
+          }
+      }else{
+          const temp = {...action.payload,quantity:action.payload.quantity}
+           return {
+              ...storeData,
+              carts: [...storeData.carts, temp]
+          }
+      }
+
+
+
+      case "RMV_CART":
+        const data = storeData.carts.filter((el)=>el.id !== action.payload); 
+        // console.log(data);
+
+        return {
+            ...storeData,
+            carts:data
+        }
+
+    case "RMV_ONE":
+        const IteamIndex_dec = storeData.carts.findIndex((iteam)=> iteam.id === action.payload.id);
+
+        if(storeData.carts[IteamIndex_dec].quantity >= 1){
+            const dltiteams = storeData.carts[IteamIndex_dec].quantity -= 1
+            console.log([...storeData.carts,dltiteams]);
+
+            return {
+                ...storeData,
+                carts:[...storeData.carts]
+            }
+        }else if(storeData.carts[IteamIndex_dec].quantity === 1 ){
+            const data = storeData.carts.filter((el)=>el.id !== action.payload);
+
+            return {
+                ...storeData,
+                carts:data
+            }
+        }
+
 
 
         default: {
