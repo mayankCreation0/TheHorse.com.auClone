@@ -24,7 +24,7 @@ const Recaptcha = () => {
         setSuccess(true);
         setTimeout(() => {
             setSuccess(false);
-            navigate("/account");
+            navigate("/");
         }, 3000);
 
     }

@@ -21,7 +21,7 @@ const Orders = () => {
                 dataobj = { ...ele, "id": Id };
             }
         });
-        await fetch('http://localhost:3001/cart', {
+        await fetch('http://localhost:3001/cartPage', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const Orders = () => {
                 <div className={Styles.div2}>
                     {load ? (
                         order.map((ele) => {
-                            return (<OrderCard key={ele.id} imgURL={ele.imgURL} title={ele.title} price={ele.price} Id={ele.id}
+                            return (<OrderCard key={ele.id} imgURL={ele.img1} title={ele.title} price={ele.price} Id={ele.id}
                                 reorder={reorder} />);
                         })
                     ) : <p className={Styles.loader}>Order history is Loading...</p>

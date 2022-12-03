@@ -75,7 +75,7 @@ const Wishlist = () => {
                 <div className={Styles.div2}>
                     {load ? (
                         wishlist.map((ele) => {
-                            return (<WishlistCard key={ele.id} imgURL={ele.imgURL} title={ele.title} price={ele.price} Id={ele.id}
+                            return (<WishlistCard key={ele.id} imgURL={ele.img1} title={ele.title} price={ele.price} Id={ele.id}
                                 addtocart={addtocart} deleteW={deleteW} />);
                         })) : <p className={Styles.loader}>Wishlist is Loading...</p>
                     }

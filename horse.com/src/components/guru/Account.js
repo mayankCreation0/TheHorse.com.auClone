@@ -1,15 +1,7 @@
 import React from 'react'
 import { Link, Outlet } from "react-router-dom";
 import Styles from "./Styles/account.module.css";
-
-
-
-
-
-
 const Account = () => {
-
-
     return (
 
         <div className={Styles.div1}>
