@@ -161,7 +161,7 @@ function Details_card() {
                                             }).then((ans) => {
 
 
-                                                if (ans.ok == false) {
+                                                if (ans.ok === false) {
                                                     alert("Already Added in Cart");
                                                 }
                                                 else {

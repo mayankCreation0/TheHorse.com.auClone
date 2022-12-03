@@ -15,10 +15,6 @@ function StaticData() {
     return (
         <div>
 
-            <Box textAlign="center" color="white" bg="black" height="60px">
-                <Text padding="15px">NavBar</Text>
-            </Box>
-
             <Box padding="5px" marginTop="20px">
                 <Text textTransform="uppercase" textAlign="start" padding="10px" fontSize='12px' color='#545540' fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" letterSpacing=".15em" >
                     MEN'S WATCHES
@@ -33,17 +29,17 @@ function StaticData() {
                     <Text textTransform="uppercase" textAlign="center" fontSize='11px' color='#545540' fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" letterSpacing=".15em" >
                         MEN'S WATCHES
                     </Text>
-                    <Text fontSize='20px'  color='#545540' fontFamily="Canela,Times,serif" fontWeight="400" letterSpacing="0.04em" textAlign="center" lineHeight="1.4">
+                    <Text fontSize='20px'  color='#545540' fontFamily="Canela,Times,serif" fontWeight="500" letterSpacing="0.04em" textAlign="center" lineHeight="1.4">
                         The Horse's collection of men’s watches effortlessly balance bo ld and understated to deliver a timeless leather design that ages with you to tell your story. Designed in our studios in Sydney, Australia, our men's watches honour unembellished natural materials and classic design, marked not by heavy detailing, but by simplicity, practicality and precision finishes.
                     </Text>
 
                     <Accordion allowMultiple >
                         <AccordionItem>
-                            <h2 border="none" style={{fontSize:"16px"}}>
+                            <h2 border="none" style={{fontSize:"13px"}}>
                                 <AccordionButton border="none" bg="none">
 
                                     <Box flex='1'  fontFamily="Canela,Times,serif" fontWeight="400" letterSpacing=".15em" color='#545540' height="30px" display="flex" gap="5px" alignItems="center" justifyContent="center">
-                                        <span style={{marginTop:"4px"}} >READ MORE </span>  <span><BsArrowDown  fontSize="15px"/></span>
+                                        <span style={{marginTop:"4px"}} >READ MORE </span>  <span><BsArrowDown  fontSize="13px"/></span>
                                     </Box>
 
 

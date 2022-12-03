@@ -6,29 +6,29 @@ import { BsArrowDown } from "react-icons/bs"
 import { Text } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 
-export function FadeEx({getfetchData}) {
+export function FadeEx({ getfetchData }) {
   const { isOpen, onToggle } = useDisclosure();
 
-  let getDatafun=useSelector((storeData)=>storeData.getDatafun);
-  let dispatch=useDispatch();
+  let getDatafun = useSelector((storeData) => storeData.getDatafun);
+  let dispatch = useDispatch();
 
   const handle = (value) => {
-    
 
-    getDatafun(`http://localhost:3001/posts?_sort=price&_order=${value}`,dispatch);
+
+    getDatafun(`http://localhost:3001/posts?_sort=price&_order=${value}`, dispatch);
 
   }
   const handle1 = (value) => {
-    
 
-    getDatafun(`http://localhost:3001/posts?_sort=rating&_order=${value}`,dispatch);
+
+    getDatafun(`http://localhost:3001/posts?_sort=rating&_order=${value}`, dispatch);
 
   }
 
   return (
     <>
 
-      <Button display="flex"  alignItems="center" padding="5px" fontSize="16px" onClick={onToggle} border="none" bg="none"> <Text marginRight="7px" fontFamily="Canela,Times,serif" fontWeight="400" letterSpacing=".15em" color='#545540' marginTop="16px">Sort By</Text><BsArrowDown /></Button>
+      <Button display="flex" alignItems="center" padding="5px" fontSize="16px" onClick={onToggle} border="none" bg="none"> <Text marginRight="7px" fontFamily="Canela,Times,serif" fontWeight="600" letterSpacing=".15em" color='#545540' marginTop="16px">Sort By</Text><BsArrowDown /></Button>
 
       <Fade in={isOpen} >
         <Box
@@ -41,13 +41,13 @@ export function FadeEx({getfetchData}) {
           width="180%"
           display="flex"
           flexDirection="column"
-           fontSize="18px"
-          fontFamily="Canela" position="absolute" zIndex="9999 "
-          onMouseOver={(e)=>e.target.style.cursor="pointer"}
+          fontSize="18px"
+          fontFamily="Canela,Times,serif" position="absolute" zIndex="9999 "
+          onMouseOver={(e) => e.target.style.cursor = "pointer"}
         >
-          <Text   onClick={(e) => handle1("desc")}>Best Selling</Text>
-          <Text onClick={()=>handle("asc")}>Price Low to High</Text>
-          <Text  onClick={()=>handle("desc")}>Price High to Low</Text>
+          <Text onClick={(e) => handle1("desc")}>Best Selling</Text>
+          <Text onClick={() => handle("asc")}>Price Low to High</Text>
+          <Text onClick={() => handle("desc")}>Price High to Low</Text>
 
         </Box>
       </Fade>
