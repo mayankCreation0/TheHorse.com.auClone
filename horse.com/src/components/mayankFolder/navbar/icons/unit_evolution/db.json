@@ -1,0 +1,84 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "brand": "Roadster",
+        "title": "cotton Checked Casual Shirt",
+        "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1376577/2016/9/15/11473928353466-Roadster-Men-Black-Regular-Fit-Checked-Casual-Shirt-4501473928353310-1.jpg",
+        "category": "men",
+        "price": 844
+      },
+      {
+        "id": 2,
+        "brand": "Blackberry's",
+        "title": "Regukar Fit Printed Shirt",
+        "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/10944602/2020/3/5/da4c1a83-987b-4afa-baad-f72039dbdedb1583385686526-Roadster-Men-Teal-Blue--Black-Regular-Fit-Printed-Casual-Shi-4.jpg",
+        "category": "men",
+        "price": 699
+      },
+      {
+        "id": 3,
+        "brand": "Van Heusen",
+        "title": "Regukar Fit Printed Shirt",
+        "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/2164551/2019/3/12/45950906-09a8-4e72-9717-16448ce161a41552375230864-Roadster-Men-Grey--Olive-Green-Camouflage-Print-Regular-Fit--1.jpg",
+        "category": "men",
+        "price": 844
+      },
+      {
+        "id": 4,
+        "brand": "Van Heusen",
+        "title": "Cotton Fit Printed Shirt",
+        "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/2283230/2018/2/2/11517573007171-Roadster-Men-Green-Regular-Fit-Printed-Casual-Shirt-6301517573007001-1.jpg",
+        "category": "men",
+        "price": 1500
+      },
+      {
+        "id": 5,
+        "brand": "Van Heusen",
+        "title": "Cotton Fit Printed Shirt",
+        "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/8889511/2019/4/3/f3e974a4-1680-487f-8e9a-3a2df1b3157f1554281507539-Roadster-Men-Navy-Blue--Beige-Regular-Fit-Checked-Casual-Shi-1.jpg",
+        "category": "men",
+        "price": 1299
+      },
+      {
+        "id": 6,
+        "brand": "Allen Solly",
+        "title": "Checked Regular Fit Printed Shirt",
+        "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/8889511/2019/4/3/f3e974a4-1680-487f-8e9a-3a2df1b3157f1554281507539-Roadster-Men-Navy-Blue--Beige-Regular-Fit-Checked-Casual-Shi-1.jpg",
+        "category": "men",
+        "price": 999
+      },
+      {
+        "id": 7,
+        "brand": "Allen Solly",
+        "title": "Checked Regular Fit Printed Shirt",
+        "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1862808/2019/4/15/18bcab2f-3977-4956-a32f-aaae5962cecf1555322110322-Roadster-Time-Travlr-Men-Green--Black-Regular-Fit-Checked-Ca-1.jpg",
+        "category": "men",
+        "price": 999
+      },
+      {
+        "id": 8,
+        "brand": "Roadster",
+        "title": "Men Linen Regular Fit",
+        "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/11008602/2020/1/20/8b494575-e040-4560-853d-0ddb4d4a42021579510958229-Roadster-Men-Shirts-7641579510955741-1.jpg",
+        "category": "men",
+        "price": 599
+      },
+      {
+        "id": 9,
+        "brand": "Park Avenue",
+        "title": "Men Linen Regular Fit",
+        "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/2164551/2019/3/12/45950906-09a8-4e72-9717-16448ce161a41552375230864-Roadster-Men-Grey--Olive-Green-Camouflage-Print-Regular-Fit--1.jpg",
+        "category": "men",
+        "price": 799
+      },
+      {
+        "id": 10,
+        "brand": "Park Avenue",
+        "title": "Men Linen Regular Fit",
+        "image": "https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/6791214/2018/7/23/a194bd48-f1f1-4ce5-ab73-5feea12857f51532336453194-Roadster-Men-Blue-Regular-Fit-Solid-Casual-Shirt-89615323364-1.jpg",
+        "category": "men",
+        "price": 1099
+      }
+    ]
+  }
