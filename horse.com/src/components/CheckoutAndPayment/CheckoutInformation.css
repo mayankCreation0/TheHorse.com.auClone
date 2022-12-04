@@ -159,7 +159,7 @@ a{
     width: 100%;
 }
 #ExpressCheckOut-ContactInfo-UserEmail{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: fit-content;
     align-self: center;
     margin-left: 10px;

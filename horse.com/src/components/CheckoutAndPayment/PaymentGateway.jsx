@@ -44,7 +44,7 @@ function PaymentGateway() {
                  } 
               console.log(uniqueIDArr)
               uniqueIDArr.map((ele)=>{
-                  fetch (`https://mock-server-app-fqpl.onrender.com/cartPage/${ele.id}`,{
+                  fetch (`http://localhost:3001/cartPage/${ele.id}`,{
                   method : "DELETE",
               })
               })
