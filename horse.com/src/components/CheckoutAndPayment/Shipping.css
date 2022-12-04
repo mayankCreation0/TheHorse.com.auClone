@@ -47,6 +47,7 @@
 }
 
 #ShippingMethod{
+   
     width: 100%;
     margin-top: 50px;
     margin-bottom: 30px;
@@ -54,11 +55,15 @@
 #ShippingMethod>p{
     margin-bottom: 20px;
 }
+#ShippingMethod>hr{
+    border: 1px solidwhite;
+}
 #Shipping-free,
 #Shipping-express{
     display: flex;
     height: 40px;
     width: 98%;
+
     /* border: 1px solid #c8c5c5; */
     align-items: center;
     justify-content: space-between;
@@ -67,8 +72,13 @@
     font-size: 14px;
     color: gray;
 }
+#Shipping-free{
+    margin-bottom: -34px;
+    border-bottom: 1px solid #c8c5c5;
+}
 #Shipping-free>div,
 #Shipping-express>div{
+    
     display: flex;
     align-items: center;
 }
@@ -101,4 +111,18 @@ hr{
   background-color: #c8c5c5;
   border: none;
   border-top: 1.4px solid #c8c5c5;
+}
+
+
+
+@media only screen and (max-width: 585px){
+    #CartItemsForMobileView{
+        width: 100%;
+        margin-top: 40PX;
+        margin-bottom: 20px;
+        display: block;
+    }
+    #CartItemsForMobileView{
+        display: block;
+    }
 }

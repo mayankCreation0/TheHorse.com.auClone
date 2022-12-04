@@ -17,13 +17,13 @@ export default function Carousel() {
       <MDBCarouselItem
         className='w-100 d-block'
         itemId={2}
-        src='https://cdn.shopify.com/s/files/1/0233/5133/files/Category_Template_-_Cyber_1632x.jpg?v=1668980500'
+        src='https://cdn.shopify.com/s/files/1/0233/5133/files/travel_cap_2048x.jpg?v=1669760144'
         alt='...'
       />
       <MDBCarouselItem
         className='w-100 d-block'
         itemId={3}
-        src='https://cdn.shopify.com/s/files/1/0233/5133/files/gifting_page_2_1536x.jpg?v=1669756653'
+        src='https://cdn.shopify.com/s/files/1/0233/5133/files/th_x_ls_2048x.jpg?v=1669845995'
         alt='...'
       />
     </MDBCarousel>

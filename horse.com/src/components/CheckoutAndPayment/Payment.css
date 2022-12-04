@@ -225,3 +225,16 @@ hr{
 #RedirecttoPayment-Paypal{
     display: none;
 }
+
+
+@media only screen and (max-width: 585px){
+    #CartItemsForMobileView{
+        width: 100%;
+        margin-top: 40PX;
+        margin-bottom: 20px;
+        display: block;
+    }
+    #CartItemsForMobileView{
+        display: block;
+    }
+}

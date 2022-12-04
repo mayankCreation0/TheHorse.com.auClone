@@ -3,15 +3,33 @@ import { useSelector } from "react-redux";
 import "./Cart.css";
 import { NavLink,Link } from "react-router-dom";
 import Table from 'react-bootstrap/esm/Table';
-import CloseButton from 'react-bootstrap/CloseButton';
-import {ADD, REMOVE, DLT} from './Action/action'
+// import CloseButton from 'react-bootstrap/CloseButton';
+import {ADD, REMOVE, DLT} from "../Action/action";
 import {useDispatch} from  'react-redux'
+import CartAction from "../../Pranav/action/CartAction";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
-    const getdata = useSelector((storedata) => {
-        return storedata.carts;
-    });
+
     const dispatch=useDispatch();
+
+    useEffect(()=>{
+
+          fetch("http://localhost:3001/cartPage").then((res)=>res.json()).then((data)=>{
+
+          console.log(data);
+
+            CartAction(data,dispatch);
+
+          })        
+
+    },[]);
+
+   let getdata=useSelector((state)=>state.carts);
+     
+
+
+   
 
     const [price,setPrice] = useState(0);
 
@@ -22,7 +40,19 @@ export default function Cart() {
       }
 
       const dlt = (id)=>{
-        dispatch(DLT(id));
+        console.log(id);
+
+        fetch(`http://localhost:3001/cartPage/${id}`, { method: 'DELETE' })
+       .then((res) =>{
+
+        if(res.ok)
+        {
+            dispatch(DLT(id));
+        }
+        
+       });
+
+        
         
     }
 
@@ -78,7 +108,7 @@ export default function Cart() {
                                                 <tr height="120px">
                                                     <td>
                                                         <NavLink to={`/cart/${e.id}`}>
-                                                            <img src={e.img} style={{ width: "5rem", height: "5rem" }} alt="" />
+                                                            <img src={e.img1} style={{ width: "5rem", height: "5rem" }} alt="" />
                                                         </NavLink>
                                                     </td>
                                                     <td >
@@ -123,8 +153,8 @@ export default function Cart() {
                         <div>CHF  {price}</div>
                     </div>
                     <br />
-                    <Link to="/checkout"><div className="g-checkout-btn"><a><span>Checkout</span></a></div></Link>
-                    
+    <Link to="/checkout"><div className="g-checkout-btn"><a><span>Checkout</span></a></div></Link>
+
                    </div>
                 </div>
             </div>

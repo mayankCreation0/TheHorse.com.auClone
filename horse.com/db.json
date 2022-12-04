@@ -196,7 +196,8 @@
       "TAG2": "watches"
     }
   ],
-  "cartPage": [
+  "cartPage": [],
+  "wishlist": [
     {
       "id": 1,
       "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/SO5-1_732x.jpg?v=1635481523",
@@ -209,146 +210,28 @@
       "quantity": 1,
       "Tag1": "WATCH",
       "TAG2": "watches"
-    },
+    }
+  ],
+  "users": [
     {
-      "id": 4,
-      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/0A4-3_732x.jpg?v=1669599327",
-      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/13_1874copy_732x.jpg?v=1669599327",
-      "title": "The Original",
-      "description": "Matte Black / Tan Leather",
-      "price": 159.95,
-      "discount": 30,
-      "rating": 4,
-      "quantity": 1,
-      "Tag1": "WATCH",
-      "TAG2": "watches"
-    },
+      "fname": "Pranav",
+      "lname": "Purohit",
+      "email": "adi089076@gmail.com",
+      "password": "143296",
+      "token": "Pranav1670094030106Purohit",
+      "id": 1
+    }
+  ],
+  "order": [
     {
-      "id": 8,
-      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/CH2-1_2e9a704d-8bf1-4ef6-b84f-50f3dcaacd9c_732x.jpg?v=1635407393",
-      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/CH2-2_7d0aee74-93e2-465d-925d-1c21237965da_732x.jpg?v=1635407393",
-      "title": "The Chronograph",
-      "description": "Matte Black / Khaki Dial / Tan Leather",
-      "price": 219.95,
-      "discount": 20,
-      "rating": 3,
-      "quantity": 1,
-      "Tag1": "WATCH",
-      "TAG2": "watches"
-    },
-    {
-      "id": 11,
-      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/RH5-1_732x.jpg?v=1635479176",
-      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/06_1108_732x.jpg?v=1631845186",
-      "title": "The Uniform",
-      "description": "All Black",
-      "price": 219.95,
-      "discount": 50,
-      "rating": 4.6,
-      "quantity": 1,
-      "Tag1": "WATCH",
-      "TAG2": "watches"
-    },
-    {
-      "id": 2,
-      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/SO4-1_732x.jpg?v=1635481227",
-      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/SO4-2_732x.jpg?v=1635481227",
+      "id": 1,
+      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/SO5-1_732x.jpg?v=1635481523",
+      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/SO5-2_732x.jpg?v=1635481523",
       "title": "The Coast",
-      "description": "Matte Black Case / Olive Dial / Olive Webbed Strap",
-      "price": 179.95,
-      "discount": 30,
-      "rating": 2,
-      "quantity": 1,
-      "Tag1": "WATCH",
-      "TAG2": "watches"
-    },
-    {
-      "id": 13,
-      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/20210901_THEHORSE_AS2A_835copy_90d66152-48b6-4222-9613-cbc7e1f4b498_732x.jpg?v=1635721582",
-      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/20210901_THEHORSE_AS2A_8351copy_732x.jpg?v=1635721582",
-      "title": "The Apple Watch Strap",
-      "description": "42-44mm Tan",
-      "price": 219.95,
-      "discount": 50,
-      "rating": 4.6,
-      "quantity": 1,
-      "Tag1": "WATCH",
-      "TAG2": "watches"
-    },
-    {
-      "id": 5,
-      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/A29-3_732x.jpg?v=1635404767",
-      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/13_1880copy_732x.jpg?v=1635386121",
-      "title": "The Original",
-      "description": "Matte Black / Black Sunray / Black Leather",
-      "price": 159.95,
-      "discount": 30,
-      "rating": 5,
-      "quantity": 1,
-      "Tag1": "WATCH",
-      "TAG2": "watches"
-    },
-    {
-      "id": 6,
-      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/0A3-1_7b3d6298-38b3-4b3d-a4bb-abc59d7afe14_732x.jpg?v=1635399751",
-      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/13_1857copy_732x.jpg?v=1635386432",
-      "title": "The Original",
-      "description": "Polished Steel / White Face / Tan Leather",
-      "price": 159.95,
-      "discount": 30,
-      "rating": 1,
-      "quantity": 1,
-      "Tag1": "WATCH",
-      "TAG2": "watches"
-    },
-    {
-      "id": 9,
-      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/CH6-1_bd210f7f-4021-4a6e-ab0f-7f6fc929e534_732x.jpg?v=1635409040",
-      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/CH6-2_e5d42c7e-888d-430f-b965-7600447de1b4_732x.jpg?v=1635409040",
-      "title": "The Chronograph",
-      "description": "Matte Black / Black Dial / Rose Gold Indexing / Black Croc Leather",
-      "price": 219.95,
-      "discount": 20,
-      "rating": 4,
-      "quantity": 1,
-      "Tag1": "WATCH",
-      "TAG2": "watches"
-    },
-    {
-      "id": 3,
-      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/SO6-1_732x.jpg?v=1635481759",
-      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/SO6-2_732x.jpg?v=1635481758",
-      "title": "The Coast",
-      "description": "Matte Black Case / Black Dial / Black Webbed Strap",
+      "description": "Matte Black Case / Olive Dial / Tan Webbed Strap",
       "price": 179.95,
       "discount": 30,
       "rating": 3,
-      "quantity": 1,
-      "Tag1": "WATCH",
-      "TAG2": "watches"
-    },
-    {
-      "id": 15,
-      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/RH6-1_732x.jpg?v=1635479256",
-      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/06_1144_732x.jpg?v=1631845246",
-      "title": "The Uniform",
-      "description": "Gunmetal Case / Black Dial / Olive Webbed Strap",
-      "price": 219.95,
-      "discount": 50,
-      "rating": 4.6,
-      "quantity": 1,
-      "Tag1": "WATCH",
-      "TAG2": "watches"
-    },
-    {
-      "id": 14,
-      "img1": "https://cdn.shopify.com/s/files/1/0233/5133/products/SO7-1_732x.jpg?v=1635481849",
-      "img2": "https://cdn.shopify.com/s/files/1/0233/5133/products/SO7-2_732x.jpg?v=1635481849",
-      "title": "The Coast",
-      "description": "Matte Black Case / White Dial / Black Webbed Strap",
-      "price": 219.95,
-      "discount": 50,
-      "rating": 4.6,
       "quantity": 1,
       "Tag1": "WATCH",
       "TAG2": "watches"

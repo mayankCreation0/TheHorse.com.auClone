@@ -24,7 +24,7 @@ export default function IconCheckboxes({element}) {
 Post_wishListData(element)
 async function Post_wishListData(element) {
 
-    let update = await fetch(`http://localhost:3001/wishList`, {
+    let update = await fetch(`http://localhost:3001/wishlist`, {
         method: "POST",
         body: JSON.stringify(element),
         headers: {
@@ -37,7 +37,7 @@ async function Post_wishListData(element) {
             alert("Already Added in WishList");
         }
         else {
-            fetch("http://localhost:3001/cartPage").then((res) => res.json()).then((data1) => {
+            fetch("http://localhost:3001/wishlist").then((res) => res.json()).then((data1) => {
 
 
                 WishListAction(data1, dispatch);

@@ -10,6 +10,8 @@ import Tard from "./Card";
 import { FadeE } from "./filter";
 import { Text } from "@chakra-ui/react";
 import { BsArrowDown } from "react-icons/bs"
+import Navbar from "../../mayankFolder/navbar/Navbar";
+import { useParams } from "react-router-dom";
 
 
 
@@ -20,18 +22,25 @@ function Product() {
     let dispatch = useDispatch();
     let getDatafun = useSelector((storeData) => storeData.getDatafun);
     let cartData = useSelector((state) => state.cartData);
+    let category=useParams();
+     
+     
 
 
     useEffect(() => {
 
-        getDatafun(`http://localhost:3001/posts/?q=watches`, dispatch);
+        getDatafun(`http://localhost:3001/posts/?q=${category.category}`, dispatch);
 
-    },[]);
+    }, []);
 
     const handle_checkbox = (event) => {
-        let ans=event.target.value;
+        let ans = event.target.value;
+
+        if(event.target.checked)
+        {
 
         getDatafun(`http://localhost:3001/posts/?q=${ans}`, dispatch);
+        }
 
     }
 
@@ -44,15 +53,17 @@ function Product() {
 
         <>
 
+        <Navbar/>
+
             <StaticData />
 
-            <Box position="absolute" right="230px" p="5px" top="435px" zIndex="1" >
+            <Box position="absolute" right="230px" p="5px" top="440px" zIndex="1" >
                 <FadeEx ></FadeEx>
             </Box>
-            <Box position="absolute" right="120px" p="5px" top="450px" zIndex="1">
+            <Box position="absolute" right="120px" p="5px" top="453px" zIndex="1">
                 <div class="dropdown">
-                    <button  style={{ border: "none", padding: "5px", backgroundColor: "white", color: "#545540", fontSize: "16px", border: "none", marginRight: "7px", fontFamily: "Canela,Times,serif", fontWeight: "400", letterSpacing: ".15em",display:"flex",gap:"5px" }}  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                       <Text>Filters</Text><Text fontSize="18px" marginTop="-3px"><BsArrowDown/></Text>
+                    <button style={{ border: "none", padding: "5px", backgroundColor: "white", color: "#545540", fontSize: "16px", border: "none", marginRight: "7px", fontFamily: "Canela,Times,serif", fontWeight: "450", letterSpacing: ".15em", display: "flex", gap: "5px" }} type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <Text>Filters</Text><Text fontSize="16px" marginTop="-1px"><BsArrowDown /></Text>
                     </button>
                     <ul class="dropdown-menu" style={{ width: "100vw", height: "400px" }}>
 

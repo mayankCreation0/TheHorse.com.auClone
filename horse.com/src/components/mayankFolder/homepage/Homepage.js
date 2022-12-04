@@ -4,23 +4,20 @@ import "./Homepage.css"
 import MultiCarouselApp from './multi-carousel/multiCarouselApp'
 import conversation from './icons/conversation.png'
 import bag from './icons/bag.png'
+import Navbar from '../navbar/Navbar'
+import Footer from '../footer/footer'
 function Homepage() {
   return (
+    <>
+    <Navbar/>
     <div id='homepage'>
         <Carousel />
         <div id='line1'>
             <div className='line1'>
-                <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Category_Template_-_Cyber_632x.jpg?v=1668980500" alt="img"/>
+                <img src="https://sslimages.shoppersstop.com/sys-master/root/hd4/hb5/28736703332382/Main-Banner-Multiclick-Web_73829nbhjhsjjsskksbcgg.gif" alt="img"/>
                 <p className='hoverfun' style={{display:'flex'}}>Women's Backpacks&#8594; <div class="arrow-1"></div></p>
             </div>
-            <div className='line1'>
-                <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Category_Template_-_Cyber2_632x.jpg?v=1668980541" alt="img"/>
-                <p className='hoverfun' style={{display:'flex'}}>Women's Watches <span>&#8594;</span></p>
-            </div>
-            <div className='line1'>
-                <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Category_Template4_d53d4467-bab3-46f5-892e-7233a1ec2eac_632x.jpg?v=1669253804" alt="img"/>
-                <p className='hoverfun' style={{display:'flex'}}>Women's bags <span>&#8594;</span></p>
-            </div>
+            
         </div>
         <div id='line2'>
             <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Travel_now_available_1536x.jpg?v=1669158391" alt="img" srcset="" style={{width:'100%',height:'100%'}}/>
@@ -69,7 +66,7 @@ function Homepage() {
             <img src="https://scontent.cdninstagram.com/v/t51.2885-15/316705771_1121948111800932_2254888192851595727_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=-NxrRLAslksAX-axbIQ&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAuS_joINz0CbKk58Ib8j5NPoPdeIZHTofGl8I1Zoxzdw&oe=6389F212" alt="" srcset="" />
             <img src="https://scontent.cdninstagram.com/v/t51.29350-15/315653659_1371811670225957_1705502938649023014_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=isYi3lostygAX-QlyIc&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDL10cwncGiwGqYzmQWUrPBitsSitabLh4BtDgXMrlyWA&oe=638ABA0F" alt="" srcset="" />
             <img src="https://scontent.cdninstagram.com/v/t51.29350-15/315865306_1270145477166129_1413989968034381988_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=QUReOhsQOWQAX9oAyPT&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfA_CtWu7ILHvMFY294upFBtacxwvFMPXh6vEp8ZBkDkKw&oe=638A9264" alt="" srcset="" />
-            <img src="https://scontent.cdninstagram.com/v/t51.2885-15/315504693_814343023181699_5172956527947835540_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=iZX6SnsDXP0AX_U33dz&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAUvz2LyBKWUlsxnF_TknHTsZhUA3XRk1UPsrzv3EZLGQ&oe=63892917" alt="" srcset="" />
+            <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/backpack_600x.jpg?v=1651724232" alt="" srcset="" />
             <img src="https://scontent.cdninstagram.com/v/t51.2885-15/315435316_678462006960847_6628115535468807493_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=zg4rl3cuNCsAX_yOxHp&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAYcFZbaNZcB9e3lRo6kRj5HpEBIhMM-xHAPDiTtlmTRw&oe=638A8CCC" alt="" srcset="" />
         </div>
         <hr style={{border:"1px solid #545542", marginTop:'100px'}}/>
@@ -104,6 +101,8 @@ function Homepage() {
         </div>
 
     </div>
+    <Footer/>
+    </>
   )
 }
 

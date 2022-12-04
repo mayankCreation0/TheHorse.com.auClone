@@ -36,14 +36,14 @@ footer{
     border-style: none;
     border-bottom: 2px solid #fff;
 }
-input::placeholder{
+#finput input::placeholder{
     color: #fff;
     border: none;
     font-size: 14px;
     font-family: canela;
     font-weight: 200;
 }
-input[type=email]:focus{
+#finput input[type=email]:focus{
      outline: none;
      color: #fff;
      font-size: 20px;

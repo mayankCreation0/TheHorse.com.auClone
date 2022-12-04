@@ -5,7 +5,7 @@
     /* border: 1px solid red; */
     display: grid;
     height: 70px;
-    grid-template-columns: .1fr .5fr 2fr 1fr ;
+    grid-template-columns: .1fr .7fr 3fr 1.1fr ;
     top: 0;
     position: sticky;
     z-index: 10;
@@ -28,7 +28,16 @@ ul,li{
     opacity: 0;
     transition:opacity 1s linear;
  } */
- .MainMenu:hover .SubMenu_1{
+ .MainMenu>ul>li{
+    /* border: 1px solid red; */
+    height: 46px;
+ }
+ .MainMenu>ul>li:hover{
+    border-bottom:3px solid #545540;
+    /* border-radius: 5px; */
+    /* z-index: inherit; */
+ }
+ .MainMenu > ul >li:hover .SubMenu_1{
     display: grid;
     grid-template-columns: 1fr 2fr 2fr;
     width: 100%;
@@ -40,6 +49,7 @@ ul,li{
     left: 0;
     padding: 2%  10%;
     z-index: 11;
+    
     /* transition: 0.05s; */
     /* opacity: 1; */
  }
@@ -117,16 +127,91 @@ cursor: pointer;
     /* background: #ffffff;
     color: #545540; */
 }
-#logo{
-     background: #ffffff;
-    color: #545540;
-    font-family: AtlasGrotesk,sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 0.02em;;
+#logohorse>p{
+       margin-bottom: -6px;
+        background: #ffffff;
+        color: #545540;
+        /* font-family: AtlasGrotesk,Helvetica,san-serif; */
+        font-size: 22px;
+        font-weight: 900;
+        letter-spacing: 0.2em;;
+        font-family: canela,Helvetica,san-serif;
+        align-items: center;
+        opacity: 0.8;
+}
+#logohorse>p:hover{
+    opacity: 1.3;
+}
+#bagdiv  , #heartdiv , #search{
+    opacity: 0.8;
+}
+#search:hover{
+    opacity: 1;
+}
+#heartdiv:hover{
+    opacity: 1;
+}
+#bagdiv:hover{
+    opacity: 1;
 }
 .MainMenu ul {
     font-size: 16px;
     font-family: AtlasGrotesk,sans-serif;
 }
 
+#sidenav{
+    display: none;
+}
+#finput1{
+    width: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    color: #545540;
+    align-items: center;
+    /* border: 1px solid red; */
+    /* position: fixed; */
+
+}
+#finput1>input{
+    width: 100%;
+    margin: auto;
+    height: 40px;
+    flex: 5;
+    background: transparent;
+    border-style: none;
+    border-bottom: 2px solid #545540;
+}
+#finput1 input::placeholder{
+    color: #545540;
+    border: none;
+    font-size: 25px;
+    font-family: canela;
+    font-weight:600;
+}
+#finput1 input[type=text]:focus{
+     outline: none;
+     color: #545540;
+     font-size: 20px;
+     letter-spacing: .1em;
+     font-family: canela;
+     font-weight: 400;
+     /* place-content: none; */
+}
+#finput1>button{
+    color: #545540;
+    background: transparent;
+    border-style: none;
+    position: fixed;
+    right: 0%;
+    /* border-bottom: 2px solid #545540; */
+}
+@media screen and (min-width:200px) and (max-width:769px){
+    .navbar{
+        display: none;
+    }
+    #sidenav{
+        display: block;
+    }
+}

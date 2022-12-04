@@ -74,6 +74,8 @@ function CheckoutInformation() {
         }
     }
 
+    
+
   return (
     <div id='CheckoutInformation'>
         <div id='CheckoutWebSiteName'>
