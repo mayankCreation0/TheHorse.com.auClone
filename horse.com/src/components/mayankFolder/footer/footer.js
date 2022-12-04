@@ -59,12 +59,12 @@ const Footer = () => {
       <div id='footer1'>
       <Accordion allowToggle style={{width:'100%'}}>
       <p id='join'>Join the Horse Club and get 10% off your first purchase</p>
-      <div id='finput' ><input type="Email" placeholder='EMAIL ADDRESS' /><button >&#10230;</button></div>
-        <AccordionItem style={{width:'100%',display:'flex',flexDirection:'column' , justifyContent:"left" }}>
+      <div id='finput' style={{fontSize:'15px'}} ><input type="Email" placeholder='EMAIL ADDRESS' /><button >&#10230;</button></div>
+        <AccordionItem style={{width:'100%',display:'flex',flexDirection:'column' , justifyContent:"center" }}>
           <h2>
-            <AccordionButton style={{background:'#545540',border:'none' ,height:"70px",  borderBottom:'1px solid #fff',color:'#fff',paddingLeft:'30px'}}>
-              <Box flex='1' textAlign='left' style={{background:'#545540' }}>
-              <h3 style={{color:'#fff',fontFamily:'canela',fontWeight:'600' ,letterSpacing:"0.1em", fontSize:"30px"}}>Customer Care</h3>
+            <AccordionButton style={{background:'#545540',border:'none' ,height:"70px", zIndex:'99', borderBottom:'1px solid #fff',color:'#fff',paddingLeft:'30px'}}>
+              <Box flex='1' textAlign='center' style={{background:'#545540',height:'40px' }}>
+              <h3 style={{color:'#fff',fontFamily:'canela',fontWeight:'600' ,letterSpacing:"0.1em"}}>Customer Care</h3>
               </Box>
               <AccordionIcon  />
             </AccordionButton>
@@ -86,8 +86,8 @@ const Footer = () => {
         <AccordionItem style={{width:'100%',display:'flex',flexDirection:'column' , justifyContent:"left" }}>
           <h2>
             <AccordionButton style={{background:'#545540',border:'none',height:"70px",borderBottom:'1px solid #fff',color:'#fff',paddingLeft:'30px'}}>
-              <Box flex='1' textAlign='left' style={{background:'#545540'}}>
-                <h3 style={{color:'#fff',fontFamily:'canela',fontWeight:'600' ,letterSpacing:"0.1em", fontSize:"30px"}}>Information</h3>
+              <Box flex='1' textAlign='center' style={{background:'#545540',height:'40px'}}>
+                <h3 style={{color:'#fff',fontFamily:'canela',fontWeight:'600' ,letterSpacing:"0.1em"}}>Information</h3>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -108,8 +108,8 @@ const Footer = () => {
         <AccordionItem style={{width:'100%',display:'flex',flexDirection:'column' , justifyContent:"left" }}>
           <h2>
             <AccordionButton style={{background:'#545540',border:'none' ,height:"70px",borderBottom:'1px solid #fff' ,color:"#fff",paddingLeft:'30px'}}>
-              <Box flex='1' textAlign='left' style={{background:'#545540'}}>
-                <h3 style={{color:'#fff',fontFamily:'canela',fontWeight:'600' ,letterSpacing:"0.1em", fontSize:"30px"}}>Socials</h3>
+              <Box flex='1' textAlign='center' style={{background:'#545540',height:'40px'}}>
+                <h3 style={{color:'#fff',fontFamily:'canela',fontWeight:'600' ,letterSpacing:"0.1em"}}>Socials</h3>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -125,8 +125,10 @@ const Footer = () => {
           </div>
           </AccordionPanel>
         </AccordionItem>
+        <div style={{display:'flex', justifyContent:'center'}}>
         <img src='//cdn.shopify.com/s/files/1/0233/5133/files/Group_1317_1_140x.png?v=1647570728' alt='icon' style={{width:'23%', marginTop:'30px'}}/>
-        <p style={{fontSize:'22px', marginTop:'20px'}}>© The Horse ‘22</p>
+        </div>
+        <p style={{fontSize:'15px', marginTop:'20px',textAlign:'center'}}>© The Horse ‘22</p>
       </Accordion>
       </div>
     </footer>
