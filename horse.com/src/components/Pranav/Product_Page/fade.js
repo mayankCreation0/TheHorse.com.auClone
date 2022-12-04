@@ -6,7 +6,10 @@ import { BsArrowDown } from "react-icons/bs"
 import { Text } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 
-export function FadeEx({ getfetchData }) {
+export function FadeEx({type }) {
+  
+  let category=type.toLowerCase()
+
   const { isOpen, onToggle } = useDisclosure();
 
   let getDatafun = useSelector((storeData) => storeData.getDatafun);
@@ -15,13 +18,13 @@ export function FadeEx({ getfetchData }) {
   const handle = (value) => {
 
 
-    getDatafun(`http://localhost:3001/posts?_sort=price&_order=${value}`, dispatch);
+    getDatafun(`http://localhost:3001/posts/?TAG2=${category}&_sort=price&_order=${value}`, dispatch);
 
   }
   const handle1 = (value) => {
 
 
-    getDatafun(`http://localhost:3001/posts?_sort=rating&_order=${value}`, dispatch);
+    getDatafun(`http://localhost:3001/posts/?TAG2=${category}&_sort=rating&_order=${value}`, dispatch);
 
   }
 

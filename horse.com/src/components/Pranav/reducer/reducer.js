@@ -34,12 +34,7 @@ export const myReducer = (storeData = initialData, action) => {
     switch (action.type) {
 
         case "AddData":
-
-        action.Payload.map((ele)=>{
-             storeData.ProductData.push(ele)
-        })
-
-        
+            
             return {
                 
                 ...storeData,ProductData:action.Payload
