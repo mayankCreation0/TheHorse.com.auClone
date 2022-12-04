@@ -528,8 +528,8 @@ function Navbar() {
         </div>
         <div id='logohorse' style={{display:'flex',justifyContent:'center'}}><p><Link to='/' style={{color:'black',fontFamily:"canela"}}>THE HORSE</Link></p></div>
         <div style={{ display: 'flex', justifyContent: 'space-evenly'}}>
-          <div style={{marginTop:'6px'}}>AUD</div>
-          <Link to="/account"><div style={{ display:'flex',fontSize: '15px',color:'black', letterSpacing: '0.05em', fontFamily:'canela',fontWeight:'900',marginTop:'7px' }}>My Account</div></Link>
+          {/* <div style={{marginTop:'6px'}}>AUD</div> */}
+          <Link to="/account"><div style={{ display:'flex',fontSize: '15px',color:'black', letterSpacing: '0.05em', fontFamily:'canela',fontWeight:'900',marginTop:'7px',marginLeft:'-9px' }}>My Account</div></Link>
           {/* <div style={{display:'flex',justifyContent:'space-evenly'}}> */}
           <Link to="/account/wishlist">  <div id='heartdiv'><img src={heart} alt="img" style={{ width: '18px' ,marginTop:'9px',marginRight:'-14px'}} /></div></Link>
           {/* <div id='search'><button style={{ border: 'none', backgroundColor: 'transparent',marginTop:'-5px' }}><img src={search} alt="img" style={{ width: '18px' }} /></button></div> */}

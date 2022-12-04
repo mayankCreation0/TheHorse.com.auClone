@@ -1,3 +1,7 @@
+*{
+    padding:0px;
+    margin:0px;
+}
 footer{
     padding: 90px 10px 10px 50px;
 }
@@ -102,6 +106,7 @@ footer{
     #footer{
         display: grid;
         grid-template-columns: repeat(1,1fr);
+        /* overflow:hidden; */
 
         /* gap: 40px; */
     }     
@@ -144,7 +149,7 @@ footer{
     text-align: center;
     letter-spacing: .1em;
     }
-    input::placeholder{
+    #finput input::placeholder{
         color: #fff;
         border: none;
         font-size: 24px;
@@ -156,19 +161,22 @@ footer{
         flex-direction: column;
         padding-left: 20px;
         width: 100%;
-        align-items: flex-start;
+        /* align-items: flex-start; */
     }
     .f_div_2p{
         display: flex;
         flex-direction: column;
         margin-top: 20px;
+        /* border: 1px solid red; */
+        align-items: center
+        
     }
     .f_div_2p > p {
         margin-top: -5px;
         /* color: -webkit-link; */
         cursor: pointer;
         /* text-decoration: underline; */
-        font-size: 20px;
+        font-size: 13px;
         letter-spacing: .04em;
         font-family: AtlasGrotesk,Helvetica,san-serif;
         font-weight: 400;

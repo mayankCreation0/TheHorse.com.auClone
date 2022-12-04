@@ -90,6 +90,7 @@
 #smallpic{
     display: grid;
     grid-template-columns: repeat(12,1fr);
+    align-items: center;
 }
 #nicherow{
     margin-top: 90px;

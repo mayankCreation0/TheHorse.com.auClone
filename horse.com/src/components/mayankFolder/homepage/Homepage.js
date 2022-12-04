@@ -45,7 +45,7 @@ function Homepage() {
         I've been looking for a bag I can use for work that isn't too 'worky'. This fits my giant drink bottle, laptop, charger, sunnies, and lunch. Great for work & cute enough to use for casual day to day. I recently used this for an interstate trip as well. It fits all my airport essentials easily, and the smaller pockets are great for keys and tickets. I think I'll have to grab the mini version too!
         </h3>
         <p id='lambaline2'><span style={{letterSpacing:'0.2em'}}>JAYDE</span> -<span style={{borderBottom:'1px solid #545540'}}> BACKPACK: BLACK </span></p>
-        <div id='smallpic' style={{cursor: 'pointer'}}>
+        <div id='smallpic' style={{cursor: 'pointer',justifyContent:'center'}}>
             <img src="https://cdn.shopify.com/s/files/1/0233/5133/products/20210901_THEHORSE_BA1_065_316x.png?v=1632958938" alt="img" srcset="" style={{width:'60px'}}/>
             <img src="https://cdn.shopify.com/s/files/1/0233/5133/products/20220523_THEHORSE_GU2_0069_316x.jpg?v=1655275459" alt="img" srcset="" style={{width:'60px'}}/>
             <img src="https://cdn.shopify.com/s/files/1/0233/5133/products/THEHORSE_BL4_0115copy_316x.jpg?v=1644810856" alt="img" srcset="" style={{width:'60px'}}/>
