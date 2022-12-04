@@ -2,41 +2,34 @@ import React from 'react'
 import { useEffect, useState, useRef } from 'react';
 import {Link, Navigate, useNavigate} from 'react-router-dom'
 function CartItems() {
-  const navigate= useNavigate();
+
+  const navigate = useNavigate();
   function nav(){
-      navigate('shipping')
+      navigate('shipping');
   }
-  let [Total,setTotal1] = useState();
-  let x= JSON.parse(localStorage.getItem("TotalCartValue"))
-  // setTotal1()
-  
-  let CartItems = [
-    {img:'https://cdn.shopify.com/s/files/1/0233/5133/products/20220906_THEHORSE_TCT_151_small.jpg?v=1663023568',
-      title:"The Travel Wallet: Tan",
-      discount:-41.99,
-      price:97.96,
-      strikethroughPrice: 139.95},
-      {img:'https://cdn.shopify.com/s/files/1/0233/5133/products/20220906_THEHORSE_TCT_151_small.jpg?v=1663023568',
-      title:"The Travel Wallet: Tan",
-      discount:-41.99,
-      price:100,
-      strikethroughPrice: 139.95}
-  ]
+ 
+  let [CartItems,setCartItems] = useState([]);
 
-  let [CartItemValueTotal,setCartItemValueTotal] = useState(0);
-  let [PaybleValueAfterDiscount, setPaybleValueAfterDiscount] = useState();
-  let CartTotalFixedDecimal=0;
-  let CartTotal = CartItems.reduce((prev,ele)=>{
-    return prev.price+ele.price
-  })
-
-  useEffect(()=>{
-    setCartItemValueTotal(parseFloat(CartTotal.toFixed(2)))
-    setPaybleValueAfterDiscount(parseFloat(CartTotal.toFixed(2)))
-  },[])
-
+  let [CartSubTotal,setCartSubTotal] = useState(0);
   let [CouponCode,setCouponCode] = useState('');
+  let [PaybleValueAfterDiscount, setPaybleValueAfterDiscount] = useState();
+  let [CoponSuccess, setCoponSuccess] = useState(true);
+  let [CopounFail, setCoponFail] = useState(true);
   let enableCouponButton = useRef(true);
+  
+  useEffect(()=>{
+  fetch("https://mock-server-app-fqpl.onrender.com/cartPage").
+  then((res)=>res.json()).then((data)=>{
+    setCartItems(data);
+     let sum=0
+    for(let i=0; i<data.length; i++){
+      sum=sum+(data[i].price*data[i].quantity);
+    }
+    setCartSubTotal(parseFloat(sum.toFixed(2)));
+    setPaybleValueAfterDiscount(parseFloat(sum.toFixed(2)));
+    })       
+
+},[]);
   
   function VerifyCouponCode(e){
       // setEnableCouponButton(false);
@@ -51,43 +44,40 @@ function CartItems() {
       }
       setCouponCode(e.target.value);
   }
-  // NewUser20
-  
+
   function ApplyCouponCode(){
-    console.log(PaybleValueAfterDiscount)
-          if(CouponCode==="NewUser20"){
+          if(CouponCode==="newuser20"){
             setCoponSuccess(false);
             setCoponFail(true);
-            setPaybleValueAfterDiscount((CartItemValueTotal*.8).toFixed(2))
+            setPaybleValueAfterDiscount((CartSubTotal*.8).toFixed(2))
             enableCouponButton.current.disabled=true;
             enableCouponButton.current.style.transition = "0.5s"
             enableCouponButton.current.style.backgroundColor="#c8c5c5"
           }
           else{
-            setPaybleValueAfterDiscount(parseFloat(CartTotal.toFixed(2)))
+            setPaybleValueAfterDiscount(parseFloat(CartSubTotal.toFixed(2)))
             setCoponFail(false);
             setCoponSuccess(true)
           }
   }
 
-  let [CoponSuccess, setCoponSuccess] = useState(true)
-  let [CopounFail, setCoponFail] = useState(true)
-
-
   return (
     <div id='Checkout-CartDetails'>
       {/* cart items display */}
-      {CartItems.map((ele)=>{
+        {[...CartItems].map((ele)=>{
         return (
           <div className="Checkout-AddedCartItems">
-          <div className="Checkout-Cart-Product-Image"><img src={ele.img} alt="" /></div>
+          <div className="Checkout-Cart-Product-Image">
+            <img src={ele.img1} alt="" />
+            <div id='quantitydivincheckoutpage'>{ele.quantity}</div>
+          </div>
           <div className="Checkout-CartItem-Desc">
             <p>{ele.title}</p>
-            <p> CYBER (${ele.discount})</p>
+            <p> CYBER (-${((ele.discount*ele.price)/100).toFixed(2)})</p>
           </div>
           <div className='Checkout-CartItem-Price'>
-            <p>${ele.strikethroughPrice}</p>
             <p>${ele.price}</p>
+            <p>${ele.price*ele.quantity}</p>
           </div>
         </div>
         )
@@ -105,7 +95,7 @@ function CartItems() {
         <div id='Subtotal'>
           <div>
             <p>Subtotal</p>
-            <p>${CartItemValueTotal}</p>
+            <p>${CartSubTotal}</p>
           </div>
           <div>
             <p>Shipping</p>

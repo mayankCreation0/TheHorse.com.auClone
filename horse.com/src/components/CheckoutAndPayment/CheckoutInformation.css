@@ -57,13 +57,18 @@ a{
 }
 
 #ExpressCheckOut-Head{
-    padding: 5px;
+    display: flex;
+    height: 20px;
     margin: auto;
-    margin-top: 17px;
+    padding-left: 5px;
+    padding-right: 5px;
+    align-items: center;
+    margin-top: 25px;
     font-size: 14px;
     background-color: white;
     /* border: 1px solid red; */
     position: absolute;
+    /* z-index: -2; */
 }
 
 #ExpressCheckOut-PaymentOptions{
@@ -154,12 +159,16 @@ a{
     width: 100%;
 }
 #ExpressCheckOut-ContactInfo-UserEmail{
-    /* border: 1px solid red; */
+    border: 1px solid red;
     height: fit-content;
     align-self: center;
     margin-left: 10px;
     text-align: left;
 }
+#ExpressCheckOut-ContactInfo-UserEmail>p{
+    margin-bottom: 0px;
+}
+
 #CheckOut-NewsLetter{
     display: flex;
     align-items: center;
@@ -406,7 +415,7 @@ option{
     
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 585px){
     #CartItemsForMobileView{
         width: 100%;
         margin-top: 40PX;
