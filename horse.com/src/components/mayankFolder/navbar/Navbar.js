@@ -9,7 +9,6 @@ import menu from './icons/menu.png'
 // import DrawerExample from './sidenav/sideNav'
 import Top from './sidebar/sidebar'
 import { Link } from "react-router-dom"
-// import { border } from '@chakra-ui/react'
 import Cart from "../../gopal/CartPage/Cart"
 
 function Navbar() {
