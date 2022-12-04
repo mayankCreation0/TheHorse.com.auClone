@@ -526,7 +526,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <div id='logohorse' style={{display:'flex',justifyContent:'center'}}><p><Link to='/' style={{color:'black'}}>THE HORSE</Link></p></div>
+        <div id='logohorse' style={{display:'flex',justifyContent:'center'}}><p><Link to='/' style={{color:'black',fontFamily:"canela"}}>THE HORSE</Link></p></div>
         <div style={{ display: 'flex', justifyContent: 'space-evenly'}}>
           <div style={{marginTop:'6px'}}>AUD</div>
           <Link to="/account"><div style={{ display:'flex',fontSize: '15px',color:'black', letterSpacing: '0.05em', fontFamily:'canela',fontWeight:'900',marginTop:'7px' }}>My Account</div></Link>

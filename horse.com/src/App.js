@@ -5,6 +5,7 @@ import AllRoutes from './components/All Routes/AllRoutes';
 // import Homepage from './components/mayankFolder/homepage/Homepage'
 // import Navbar from './components/mayankFolder/navbar/Navbar'
 // import BackdropExample from './components/mayankFolder/button/button';
+import "./App.css";
 
 
 
