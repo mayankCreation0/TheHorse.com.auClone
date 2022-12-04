@@ -10,7 +10,7 @@ import menu from './icons/menu.png'
 import Top from './sidebar/sidebar'
 import { Link } from "react-router-dom"
 // import { border } from '@chakra-ui/react'
-// import Cart from "../../gopal/CartPage/Cart"
+import Cart from "../../gopal/CartPage/Cart"
 
 function Navbar() {
 
@@ -554,7 +554,7 @@ function Navbar() {
       </div>
 
       <div id='sidenav'>{<Top />}</div>
-      {/* <Cart/> */}
+      <Cart/>
     </navbar>
 
 
