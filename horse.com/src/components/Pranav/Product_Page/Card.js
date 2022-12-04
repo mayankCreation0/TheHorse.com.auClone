@@ -1,22 +1,25 @@
 import React from 'react'
 
-import { Card, CardHeader, CardBody, CardFooter, Stack, Heading, Text, Divider, ButtonGroup, Button, Image } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, CardFooter, Stack, Heading, Text, Divider, ButtonGroup, Button, Image, ChakraProvider } from '@chakra-ui/react'
 import { Flex, Spacer, Box, GridItem } from '@chakra-ui/react'
 
 import { Link } from "react-router-dom";
 import CartAction from '../action/CartAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { useToast } from '@chakra-ui/react'
+import ToastStatusExample from './toast';
 // import DescriptionAlerts from '../Product_details/Alert';
+// import { ChakraProvider } from '@chakra-ui/react';
+// import { ChakraProvider } from '@chakra-ui/react';
 
 
 function Tard({ elem, id, img1, img2, title, price, description, rating, discount }) {
 
     let dispatch = useDispatch();
-    let toast = useToast();
+    
 
     let ans = useSelector((state) => state.cartData);
-    console.log(ans);
+  
 
     const handle1 = (event) => {
 
@@ -90,8 +93,9 @@ function Tard({ elem, id, img1, img2, title, price, description, rating, discoun
 
                         CartAction(data1, dispatch);
 
-
+                        
                     });
+                     
                 }
 
             })
@@ -104,6 +108,7 @@ function Tard({ elem, id, img1, img2, title, price, description, rating, discoun
     }
 
     return (
+        
 
         <GridItem >
 

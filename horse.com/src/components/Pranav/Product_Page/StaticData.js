@@ -14,6 +14,7 @@ import { BsArrowDown } from "react-icons/bs";
 function StaticData() {
     return (
         <div>
+            
 
             <Box padding="5px" marginTop="20px">
                 <Text textTransform="uppercase" textAlign="start" padding="10px" fontSize='12px' color='#545540' fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" letterSpacing=".15em" >

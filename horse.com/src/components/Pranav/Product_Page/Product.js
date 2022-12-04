@@ -11,6 +11,7 @@ import { FadeE } from "./filter";
 import { Text } from "@chakra-ui/react";
 import { BsArrowDown } from "react-icons/bs"
 import Navbar from "../../mayankFolder/navbar/Navbar";
+import { useParams } from "react-router-dom";
 
 
 
@@ -21,18 +22,25 @@ function Product() {
     let dispatch = useDispatch();
     let getDatafun = useSelector((storeData) => storeData.getDatafun);
     let cartData = useSelector((state) => state.cartData);
+    let category=useParams();
+     
+     
 
 
     useEffect(() => {
 
-        getDatafun(`http://localhost:3001/posts/?q=watches`, dispatch);
+        getDatafun(`http://localhost:3001/posts/?q=${category.category}`, dispatch);
 
     }, []);
 
     const handle_checkbox = (event) => {
         let ans = event.target.value;
 
+        if(event.target.checked)
+        {
+
         getDatafun(`http://localhost:3001/posts/?q=${ans}`, dispatch);
+        }
 
     }
 
