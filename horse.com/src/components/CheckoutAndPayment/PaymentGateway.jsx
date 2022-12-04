@@ -23,11 +23,39 @@ function PaymentGateway() {
         setOTP(e.target.value);
     }
 
+    let [DeleteData, setDeleteData]  =useState();
+            async function deleteData(){
+          
+              let fetch1 = await fetch("https://mock-server-app-fqpl.onrender.com/cartPage")
+              let data = await fetch1.json();
+              // console.log(data);
+              let uniqueIDArr = [];
+              let uniqueIDObj = {};
+                  data.forEach(function (ele) { 
+                      uniqueIDObj[ele.id] = (uniqueIDObj[ele.id] || 0) + 1; 
+                 });
+                 
+                 for (let element in uniqueIDObj) {
+                     let obj = {
+                         id:element,
+                         count:uniqueIDObj[element]
+                     }
+                     uniqueIDArr.push(obj);
+                 } 
+              console.log(uniqueIDArr)
+              uniqueIDArr.map((ele)=>{
+                  fetch (`https://mock-server-app-fqpl.onrender.com/cartPage/${ele.id}`,{
+                  method : "DELETE",
+              })
+              })
+            }
+
     let NavigateToHome = useNavigate();
     function VerifyOTP(){
         console.log(OTP);
         // NavigateToHome('/paymentprocessing');
         if(OTP==="123456"){
+            deleteData();
             NavigateToHome('/paymentprocessing');
         }
         else{
