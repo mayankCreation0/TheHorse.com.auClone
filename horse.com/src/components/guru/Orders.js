@@ -11,7 +11,7 @@ const Orders = () => {
     const [load, setLoad] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:3001/order').then((res) => (res.json())).then((data) => { setOrder(data); setLoad(true) });
+        fetch(' http://localhost:3001/order').then((res) => (res.json())).then((data) => { setOrder(data); setLoad(true) });
     }, []);
 
     async function reorder(Id) {
@@ -21,7 +21,7 @@ const Orders = () => {
                 dataobj = { ...ele, "id": Id };
             }
         });
-        await fetch('http://localhost:3001/cartPage', {
+        await fetch(' http://localhost:3001/cartPage', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

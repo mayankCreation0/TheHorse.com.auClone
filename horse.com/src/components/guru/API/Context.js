@@ -10,7 +10,7 @@ export const AuthContextProvider = ({ children }) => {
         if (token) {
 
             (async () => {
-                let res = await fetch(`http://localhost:3001/users?token=${token}`);
+                let res = await fetch(` http://localhost:3001/users?token=${token}`);
                 let data = await res.json();
                 setIsAuth({ ...isAuth, data: data, loggedin: true })
             })()

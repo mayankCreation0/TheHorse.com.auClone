@@ -2,14 +2,10 @@ import React from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
-    Slide,
-} from "@chakra-ui/react";
+import { Alert, AlertIcon, AlertTitle, AlertDescription, Slide } from "@chakra-ui/react";
 import { AuthContext } from './API/Context';
+import Navbar from '../mayankFolder/navbar/Navbar'
+import Footer from '../mayankFolder/footer/footer'
 
 const Recaptcha = () => {
     const [verify, setVerify] = useState(false);
@@ -30,6 +26,7 @@ const Recaptcha = () => {
     }
     return (
         <>
+            <Navbar />
             <Slide
                 in={success}
                 direction="top"
@@ -50,6 +47,7 @@ const Recaptcha = () => {
                         backgroundColor: '#7596b8', width: '80px', height: '40px', borderRadius: '20px', color: 'white'
                     }}>Verify</button>
             </div>
+            <Footer />
         </>
     )
 }

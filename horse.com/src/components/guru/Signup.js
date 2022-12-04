@@ -2,7 +2,9 @@ import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Heading, Input, Select
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { Alert, AlertIcon, AlertTitle, AlertDescription, Slide } from '@chakra-ui/react'
-import Styles from './Styles/signup.module.css'
+import Styles from './Styles/signup.module.css';
+import Navbar from '../mayankFolder/navbar/Navbar'
+import Footer from '../mayankFolder/footer/footer'
 
 
 const Signup = () => {
@@ -16,7 +18,7 @@ const Signup = () => {
 
     const handleSignup = async (e) => {
         e.preventDefault();
-        let usersRes = await fetch(`http://localhost:3001/users?email=${userData.email}`);
+        let usersRes = await fetch(` http://localhost:3001/users?email=${userData.email}`);
         let usersData = await usersRes.json();
 
         if (usersData.length > 0) {
@@ -26,7 +28,7 @@ const Signup = () => {
             }, 4000)
             return;
         }
-        let res = await fetch(" http://localhost:3001/users", {
+        let res = await fetch("http://localhost:3001/users", {
             method: 'POST',
             body: JSON.stringify({ ...userData, token: userData.fname + Date.now() + userData.lname }),
             headers: { "Content-Type": "application/json" }
@@ -43,7 +45,7 @@ const Signup = () => {
     }, [])
     return <>
 
-
+        <Navbar />
         <Slide in={alert} direction='top' position='fixed' top='0px' style={{ zIndex: 10 }}>
             <Alert status='error' w='40vw' mx='30vw' mt='50px' flexWrap='wrap'>
                 <AlertIcon />
@@ -107,6 +109,7 @@ const Signup = () => {
                     <Input outline='none'
                         variant='unstyled'
                         placeholder="Password"
+                        type='password'
                         border='none'
                         fontFamily="AtlasGrotesk, Helvetica, san-serif"
                         fontSize='14px'
@@ -131,6 +134,7 @@ const Signup = () => {
                 </Link>
             </Box>
         </Box>
+        <Footer />
     </>
 }
 export default Signup;
