@@ -534,8 +534,8 @@ function Navbar() {
           <div id='search'><button style={{ border: 'none', backgroundColor: 'transparent', marginTop: '-5px' }}><img src={search} alt="img" style={{ width: '18px' }} /></button></div>
           <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
           <div id='bagdiv'><img src={bag} alt="img" style={{ width: '18px', marginTop: '-5px' }} /></div>
-          </button>
-          {/* </div> */}
+          </button>  
+          {/* </div> */} 
         </div>
       </div>
 
