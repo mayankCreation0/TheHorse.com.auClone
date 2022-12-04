@@ -7,7 +7,7 @@ import Table from 'react-bootstrap/esm/Table';
 import {ADD, REMOVE, DLT} from "../Action/action";
 import {useDispatch} from  'react-redux'
 import CartAction from "../../Pranav/action/CartAction";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Cart() {
 

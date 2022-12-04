@@ -45,8 +45,8 @@ function Product() {
     }
 
 
-    let showData = useSelector(((storeData) => storeData.ProductData));
-
+    let showData = useSelector((storeData) => storeData.ProductData);
+    
 
 
     return (
@@ -58,7 +58,7 @@ function Product() {
             <StaticData />
 
             <Box position="absolute" right="230px" p="5px" top="440px" zIndex="1" >
-                <FadeEx ></FadeEx>
+                <FadeEx type={category.category} ></FadeEx>
             </Box>
             <Box position="absolute" right="120px" p="5px" top="453px" zIndex="1">
                 <div class="dropdown">

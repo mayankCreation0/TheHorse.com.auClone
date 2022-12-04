@@ -26,7 +26,7 @@ function PaymentGateway() {
     let [DeleteData, setDeleteData]  =useState();
             async function deleteData(){
           
-              let fetch1 = await fetch("https://mock-server-app-fqpl.onrender.com/cartPage")
+              let fetch1 = await fetch("http://localhost:3001/cartPage")
               let data = await fetch1.json();
               // console.log(data);
               let uniqueIDArr = [];
