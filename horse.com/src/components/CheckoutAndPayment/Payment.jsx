@@ -66,7 +66,10 @@ function Payment() {
         navigateToPaymentGateway('/redirect');
         }
         
+        
     }
+    let ans=localStorage.getItem("thehorse-name");
+
   return (
     <div id='CheckoutInformation'>
     <div id='CheckoutWebSiteName'>
@@ -85,7 +88,7 @@ function Payment() {
     <div id='PaymentDetails'>
             <div id='PaymentDetails-contact'>
                 <div><p>Contact</p></div>
-                <div>nishant810125@gmail.com</div>
+                <div>{ans}1472@gmail.com</div>
                 <button>Change</button>
             </div>
             <hr />

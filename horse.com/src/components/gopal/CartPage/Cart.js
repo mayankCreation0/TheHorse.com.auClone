@@ -96,8 +96,8 @@ export default function Cart() {
                     ></button>
                 </header>
 
-                <div class="offcanvas-body">
-                    <div className='card_details' style={{ width: "21rem", padding: 10, height:"250px" }}>
+                <div className="offcanvas-body"  style={{overflowx:"hidden"}}>
+                    <div className='card_details' style={{ width: "25rem", padding: 10, minHeight:"250px",maxHeight:"400px" }}>
                         <Table>
                             <tbody>
                                 
@@ -150,7 +150,7 @@ export default function Cart() {
                         <div>Subtotal (
                       {getdata.length} Item)</div>
                          
-                        <div>CHF  {price}</div>
+                        <div>CHF  {price.toFixed(2)}</div>
                     </div>
                     <br />
     <Link to="/checkout"><div className="g-checkout-btn"><a><span>Checkout</span></a></div></Link>

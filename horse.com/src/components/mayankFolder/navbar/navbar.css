@@ -111,6 +111,16 @@ ul,li{
 cursor: pointer;
 
 }
+.cart_length{
+    background-color: red;
+    color:white;
+    height: 17px;
+    width:15px;
+    position:absolute;
+    top:38px;
+    right:40px;
+    border-radius:50%;
+}
 .submenu_2>ul>li:hover .submenu_3{
     display: flex;
     justify-content: center;

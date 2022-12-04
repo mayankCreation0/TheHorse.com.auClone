@@ -14,14 +14,26 @@ import Cart from '../../gopal/CartPage/Cart'
 function Navbar() {
 
 
+  // let ans = localStorage.getItem("thehorse-name");
+  // let length1=0;
+  // fetch("http://localhost:3001/cartPage").then((res) => res.json()).then((data) => {
+
+  //   length1 = data.length;
+
+  // })
+
+
+
+
+
   return (
     <navbar>
-      <Cart/>
-      <div className='navbar' style={{ borderBottom: '1px solid #545540' }}>
+      <Cart />
+      <div className='navbar' style={{}}>
         <div><button style={{ borderStyle: 'none', backgroundColor: 'transparent' }}><img src={menu} alt='img' style={{ width: '24px' }} /></button></div>
         <div style={{ display: 'flex', justifyContent: 'space-evenly', height: '71px', padding: '24px 0 0 0' }} className="MainMenu">
           <ul>
-            <li style={{ fontSize: '15px', letterSpacing: '0.09em' }}><Link to="/womens" style={{ color: 'black',fontFamily:'canela',fontWeight:'900' }}>Women</Link>
+            <li style={{ fontSize: '15px', letterSpacing: '0.09em' }}><Link to="/womens" style={{ color: 'black', fontFamily: 'canela', fontWeight: '900' }}>Women</Link>
               <div className='SubMenu_1'>
                 <div class='submenu_2'>
 
@@ -249,7 +261,7 @@ function Navbar() {
             </li>
           </ul>
           <ul>
-            <li style={{ fontSize: '15px', letterSpacing: '0.05em' }}><Link to="/Men" style={{ textDecoration: 'none',letterSpacing:'0.1',color: 'black',fontFamily:'canela',fontWeight:'900' }}>Men</Link>
+            <li style={{ fontSize: '15px', letterSpacing: '0.05em' }}><Link to="/Men" style={{ textDecoration: 'none', letterSpacing: '0.1', color: 'black', fontFamily: 'canela', fontWeight: '900' }}>Men</Link>
               <div className='SubMenu_1'>
                 <div class='submenu_2'  >
 
@@ -526,34 +538,35 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <div id='logohorse' style={{display:'flex',justifyContent:'center'}}><p><Link to='/' style={{color:'black',fontFamily:"canela"}}>THE HORSE</Link></p></div>
-        <div style={{ display: 'flex', justifyContent: 'space-evenly'}}>
+        <div id='logohorse' style={{ display: 'flex', justifyContent: 'center' }}><p><Link to='/' style={{ color: 'black', fontFamily: "canela" }}>THE HORSE</Link></p></div>
+        <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
           {/* <div style={{marginTop:'6px'}}>AUD</div> */}
-          <Link to="/account"><div style={{ display:'flex',fontSize: '15px',color:'black', letterSpacing: '0.05em', fontFamily:'canela',fontWeight:'900',marginTop:'7px',marginLeft:'-9px' }}>My Account</div></Link>
+          <Link to="/account"><div style={{ display: 'flex', fontSize: '15px', color: 'black', letterSpacing: '0.05em', fontFamily: 'canela', fontWeight: '900', marginTop: '7px', marginLeft: '-9px' }} className="account">{ans.length > 0 ? `Hi ${ans}` : "My Account"}</div></Link>
           {/* <div style={{display:'flex',justifyContent:'space-evenly'}}> */}
-          <Link to="/account/wishlist">  <div id='heartdiv'><img src={heart} alt="img" style={{ width: '18px' ,marginTop:'9px',marginRight:'-14px'}} /></div></Link>
+          <Link to="/account/wishlist">  <div id='heartdiv'><img src={heart} alt="img" style={{ width: '18px', marginTop: '9px', marginRight: '-14px' }} /></div></Link>
           {/* <div id='search'><button style={{ border: 'none', backgroundColor: 'transparent',marginTop:'-5px' }}><img src={search} alt="img" style={{ width: '18px' }} /></button></div> */}
-          <div class="dropdown"  style={{backgroundColor:'transparent'}}>
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{backgroundColor:'transparent',width:'10px',color:'transparent'}}>
-              <img src={search} alt="img" style={{ width: '18px',backgroundColor:'transparent',marginLeft:'7px' }} />
+          <div class="dropdown" style={{ backgroundColor: 'transparent' }}>
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ backgroundColor: 'transparent', width: '10px', color: 'transparent' }}>
+              <img src={search} alt="img" style={{ width: '18px', backgroundColor: 'transparent', marginLeft: '7px' }} />
             </button>
-            <ul class="dropdown-menu" style={{width:'100%',position:'fixed',left:'50%',top:'56.1%',transform:'translate(-50%,-50%)',borderRadius:'0px',height:'90vh',margin:'auto'}}>
-              <div style={{position:'fixed',left:'7.5%',top:'37%',transform:'translate(-50%,-50%)'}}><p style={{fontFamily:'canela',fontSize:'17px',fontWeight:'900',borderBottom:'1px solid #545540'}}>Popular In Categories</p></div>
-              <div id='finput1'style={{width:'30%',position:'fixed',left:'50%',top:'8%',transform:'translate(-50%,-50%)'}} ><input  type="text" placeholder='Search...' /><button >&#10230;</button></div>
-              <div style={{display:'flex',flexDirection:'column',alignItems:'center',position:'fixed',left:'20%',top:'70%',transform:'translate(-50%,-50%)'}} ><iframe src='https://player.vimeo.com/video/764025864?h=526f5239d5&byline=0&portrait=0&muted=1&autoplay=1&controls=0&loop=1&background=1&app_id=122963'style={{width:'800px',height:'350px'}}></iframe></div>
-              <div><img src='https://cdn.shopify.com/s/files/1/0233/5133/files/backpacks_82905338-2b52-480a-8676-0b0f976310d8_300x.jpg?v=1669694649' alt='img' style={{height:'350px',position:'fixed',left:'85%',top:'70%',transform:'translate(-50%,-50%)'}}></img></div>
-              <div><img src='https://cdn.shopify.com/s/files/1/0233/5133/files/bags3_300x.jpg?v=1653962761' alt='img' style={{width:'300px',height:'350px',position:'fixed',left:'56%',top:'70%',transform:'translate(-50%,-50%)'}}/></div>
+            <ul class="dropdown-menu" style={{ width: '100%', position: 'fixed', left: '50%', top: '54.87%', transform: 'translate(-50%,-50%)', borderRadius: '0px', height: '90vh', margin: 'auto' }}>
+              <div style={{ position: 'fixed', left: '7.5%', top: '37%', transform: 'translate(-50%,-50%)' }}><p style={{ fontFamily: 'canela', fontSize: '17px', fontWeight: '900', borderBottom: '1px solid #545540' }}>Popular In Categories</p></div>
+              <div id='finput1' style={{ width: '30%', position: 'fixed', left: '50%', top: '8%', transform: 'translate(-50%,-50%)' }} ><input type="text" placeholder='Search...' /><button >&#10230;</button></div>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'fixed', left: '20%', top: '70%', transform: 'translate(-50%,-50%)' }} ><iframe src='https://player.vimeo.com/video/764025864?h=526f5239d5&byline=0&portrait=0&muted=1&autoplay=1&controls=0&loop=1&background=1&app_id=122963' style={{ width: '800px', height: '350px' }}></iframe></div>
+              <div><img src='https://cdn.shopify.com/s/files/1/0233/5133/files/backpacks_82905338-2b52-480a-8676-0b0f976310d8_300x.jpg?v=1669694649' alt='img' style={{ height: '350px', position: 'fixed', left: '85%', top: '70%', transform: 'translate(-50%,-50%)' }}></img></div>
+              <div><img src='https://cdn.shopify.com/s/files/1/0233/5133/files/bags3_300x.jpg?v=1653962761' alt='img' style={{ width: '300px', height: '350px', position: 'fixed', left: '56%', top: '70%', transform: 'translate(-50%,-50%)' }} /></div>
             </ul>
           </div>
           {/* <div id='bagdiv'><img src={bag} alt="img" style={{ width: '18px',marginTop:'-5px' }} /></div> */}
-          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style={{backgroundColor:'transparent',color:'transparent',width:'10px' ,border:'none',borderRadius:'none',boxShadow:'none'}}>
-          <div id='bagdiv'><img src={bag} alt="img" style={{ width: '18px',marginTop:'-5px',marginLeft:'-7px' }} /></div>
-        </button>
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style={{ postion: "relative", backgroundColor: 'transparent', color: 'transparent', width: '10px', border: 'none', borderRadius: 'none', boxShadow: 'none' }}>
+            <div id='bagdiv'><img src={bag} alt="img" style={{ width: '18px', marginTop: '-5px', marginLeft: '-7px' }} /></div>
+            <div className="cart_length">1</div>
+          </button>
         </div>
       </div>
 
       <div id='sidenav'>{<Top />}</div>
-      <Cart/>
+      <Cart />
     </navbar>
 
 

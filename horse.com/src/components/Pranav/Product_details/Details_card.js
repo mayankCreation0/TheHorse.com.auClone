@@ -15,6 +15,8 @@ import { useState } from 'react';
 import MultiCarouselApp from './multiCarouselApp';
 import { MdOutlineLocalShipping } from "react-icons/md"
 import IconCheckboxes from './heart';
+import Navbar from '../../mayankFolder/navbar/Navbar';
+import Footer from '../../mayankFolder/footer/footer';
 
 
 function Details_card() {
@@ -74,9 +76,7 @@ function Details_card() {
 
     return (
         <>
-            <Box textAlign="center" color="white" bg="black" height="60px">
-                <Text padding="15px">NavBar</Text>
-            </Box>
+            <Navbar/>
             <ul style1="list-style-type:circle" style={{ display: "flex", gap: "30px", padding: "20px", fontSize: "11px", fontWeight: "400", width: "95%", margin: "auto", fontFamily: "AtlasGrotesk,Helvetica,san-serif", textTransform: "uppercase", letterSpacing: "0.15em", color: "#545540", marginTop: "10px" }}>
                 <li>The Coast</li>
                 <li>
@@ -347,16 +347,16 @@ function Details_card() {
 
             </Grid>
 
-            <Box h="550px" borderTop="1px solid grey" display="flex" flexDirection="column" pb="30" marginBottom="10px" marginTop="40px" w="80%" margin="auto">
+            <Box h="550px" borderTop="1px solid grey" display="flex" flexDirection="column" pb="30" marginBottom="40px" marginTop="40px" w="80%" margin="auto">
 
                 <Text p="10px" fontSize="15px" fontFamily="AtlasGrotesk,Helvetica,san-serif" fontWeight="400" color="#545540" w="90%" margin="auto" marginTop="50px" marginBottom="-30px" lineHeight="1.4">You May Also Like</Text>
 
-                <MultiCarouselApp />
+                <Box ><MultiCarouselApp /></Box>
 
             </Box>
 
-
-
+<Box marginTop="100px"><Footer/></Box>
+ 
         </>
     )
 }

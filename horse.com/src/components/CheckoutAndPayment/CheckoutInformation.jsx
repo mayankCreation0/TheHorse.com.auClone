@@ -74,6 +74,9 @@ function CheckoutInformation() {
         }
     }
 
+    let ans=localStorage.getItem("thehorse-name");
+     
+
     
 
   return (
@@ -122,8 +125,8 @@ function CheckoutInformation() {
                     <img src="https://cdn.shopify.com/proxy/bca536451bdec34615bffa8243f68db067c89c287b6fdc3e37be207de3fa4d17/www.gravatar.com/avatar/6771390b5fe3f4fc4d85841699528953.jpg?s=100&d=https%3A%2F%2Fcdn.shopify.com%2Fshopifycloud%2Fshopify%2Fassets%2Fno-gravatar-new-04e7c2331218ac202e79e31be502fd5631bc96cb0206580dbcb0720ebbbd7c73_100x100.png" alt="" />
                 </div>
                 <div id='ExpressCheckOut-ContactInfo-UserEmail'>
-                    <p>Nishant Prajapati (nishant810125@gmail.com)</p>
-                    <p>Log out</p>
+                    <p>{ans}</p>
+                    <Link to="/logout">Log out</Link>
                 </div>  
             </div>
             <div id='CheckOut-NewsLetter'>

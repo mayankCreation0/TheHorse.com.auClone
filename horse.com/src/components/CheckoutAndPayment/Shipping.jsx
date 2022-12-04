@@ -34,6 +34,8 @@ function Shipping() {
 function change(){
     console.log("j")
 }
+let ans=localStorage.getItem("thehorse-name");
+
    
   return (
     <div id='CheckoutInformation'>
@@ -53,7 +55,7 @@ function change(){
     <div id='ShippingDetails'>
             <div id='ShippingDetails-contact'>
                 <div><p>Contact</p></div>
-                <div>nishant810125@gmail.com</div>
+                <div>{ans}1472@gmail.com</div>
                 <button>Change</button>
             </div>
             <hr />

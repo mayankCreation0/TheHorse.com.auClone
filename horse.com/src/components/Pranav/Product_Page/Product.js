@@ -12,6 +12,7 @@ import { Text } from "@chakra-ui/react";
 import { BsArrowDown } from "react-icons/bs"
 import Navbar from "../../mayankFolder/navbar/Navbar";
 import { useParams } from "react-router-dom";
+import Footer from "../../mayankFolder/footer/footer";
 
 
 
@@ -164,6 +165,8 @@ function Product() {
                 }) : <h1>Loading...</h1>}
 
             </Grid>
+
+            <Footer/>
 
         </>
 
