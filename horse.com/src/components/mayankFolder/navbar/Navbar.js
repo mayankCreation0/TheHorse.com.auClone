@@ -535,7 +535,7 @@ function Navbar() {
           <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
           <div id='bagdiv'><img src={bag} alt="img" style={{ width: '18px', marginTop: '-5px' }} /></div>
           </button>  
-          {/* </div> */} 
+          {/* </div> */}
         </div>
       </div>
 
