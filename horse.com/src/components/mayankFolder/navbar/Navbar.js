@@ -1,7 +1,7 @@
 // import React, { useState } from 'react'
 // import { Link } from 'react-router-dom'
 import './navbar.css'
-import heart from "./icons/wishlist.png"
+import heart from "./icons/heart.png"
 import bag from "./icons/bag.png"
 import search from "./icons/search-interface-symbol.png"
 import menu from './icons/menu.png'
@@ -21,7 +21,7 @@ function Navbar() {
         <div><button style={{ borderStyle: 'none', backgroundColor: 'transparent' }}><img src={menu} alt='img' style={{ width: '24px' }} /></button></div>
         <div style={{ display: 'flex', justifyContent: 'space-evenly', height: '71px', padding: '24px 0 0 0' }} className="MainMenu">
           <ul>
-            <li style={{ fontSize: '15px', letterSpacing: '0.05em' }}><Link to="/womens" style={{ color: '#545540' }}>Women</Link>
+            <li style={{ fontSize: '15px', letterSpacing: '0.09em' }}><Link to="/womens" style={{ color: 'black',fontFamily:'canela',fontWeight:'900' }}>Women</Link>
               <div className='SubMenu_1'>
                 <div class='submenu_2'>
 
@@ -249,7 +249,7 @@ function Navbar() {
             </li>
           </ul>
           <ul>
-            <li style={{ fontSize: '15px', letterSpacing: '0.05em' }}><Link to="/Men" style={{ textDecoration: 'none', color: '#545540' }}>Men</Link>
+            <li style={{ fontSize: '15px', letterSpacing: '0.05em' }}><Link to="/Men" style={{ textDecoration: 'none',letterSpacing:'0.1',color: 'black',fontFamily:'canela',fontWeight:'900' }}>Men</Link>
               <div className='SubMenu_1'>
                 <div class='submenu_2'  >
 
@@ -541,6 +541,7 @@ function Navbar() {
       </div>
 
       <div id='sidenav'>{<Top />}</div>
+      <Cart/>
     </navbar>
 
 

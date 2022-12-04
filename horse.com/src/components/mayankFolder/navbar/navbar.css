@@ -162,6 +162,51 @@ cursor: pointer;
 #sidenav{
     display: none;
 }
+#finput1{
+    width: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    color: #545540;
+    align-items: center;
+    /* border: 1px solid red; */
+    /* position: fixed; */
+
+}
+#finput1>input{
+    width: 100%;
+    margin: auto;
+    height: 40px;
+    flex: 5;
+    background: transparent;
+    border-style: none;
+    border-bottom: 2px solid #545540;
+}
+#finput1 input::placeholder{
+    color: #545540;
+    border: none;
+    font-size: 25px;
+    font-family: canela;
+    font-weight:600;
+}
+#finput1 input[type=text]:focus{
+     outline: none;
+     color: #545540;
+     font-size: 20px;
+     letter-spacing: .1em;
+     font-family: canela;
+     font-weight: 400;
+     /* place-content: none; */
+}
+#finput1>button{
+    color: #545540;
+    background: transparent;
+    border-style: none;
+    position: fixed;
+    right: 0%;
+    /* border-bottom: 2px solid #545540; */
+}
 @media screen and (min-width:200px) and (max-width:769px){
     .navbar{
         display: none;
