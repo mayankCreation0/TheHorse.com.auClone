@@ -1,15 +1,11 @@
 import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Heading, Input, StylesProvider, Text } from "@chakra-ui/react";
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, Navigate } from "react-router-dom";
-import {
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
-    Slide,
-} from "@chakra-ui/react";
+import { Alert, AlertIcon, AlertTitle, AlertDescription, Slide, } from "@chakra-ui/react";
 import { AuthContext } from "./API/Context";
 import Styles from './Styles/login.module.css'
+import Navbar from '../mayankFolder/navbar/Navbar'
+import Footer from '../mayankFolder/footer/footer'
 
 
 const Login = () => {
@@ -24,7 +20,7 @@ const Login = () => {
         try {
 
             let usersData = await fetch(
-                `http://localhost:3001/users?email=${userData.email}&password=${userData.password}`
+                ` http://localhost:3001/users?email=${userData.email}&password=${userData.password}`
             );
             usersData = await usersData.json();
 
@@ -32,13 +28,6 @@ const Login = () => {
             localStorage.setItem("thehorse-name", usersData[0].fname);
             setIsAuth({ ...isAuth, data: usersData[0], loggedin: false });
             navigate("/challenge");
-            // setSuccess(true);
-            // setTimeout(() => {
-
-            // setSuccess(false);
-            // navigate("/challenge");
-            // }, 2000);
-
         } catch (error) {
             setAlert(true);
             setTimeout(() => {
@@ -57,7 +46,7 @@ const Login = () => {
 
     return (
         <>
-
+            <Navbar />
             <Slide
                 in={alert}
                 direction="top"
@@ -116,6 +105,7 @@ const Login = () => {
                             outline='none'
                             variant='unstyled'
                             placeholder="Password"
+                            type='password'
                             border='none'
                             fontFamily="AtlasGrotesk, Helvetica, san-serif"
                             fontSize='14px'
@@ -155,6 +145,7 @@ const Login = () => {
                     </Link>
                 </Box>
             </Box>
+            <Footer />
         </>
     );
 };

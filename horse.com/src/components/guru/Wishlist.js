@@ -47,7 +47,7 @@ const Wishlist = () => {
             setDlte(true);
             setTimeout(() => { setDlte(false) }, 2000);
         });
-        await fetch('http://localhost:3001/wishlist').then((res) => (res.json())).then((data) => { setWishlist(data) });
+        await fetch(' http://localhost:3001/wishlist').then((res) => (res.json())).then((data) => { setWishlist(data) });
     }
 
 
