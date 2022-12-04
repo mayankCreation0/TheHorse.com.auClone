@@ -1,5 +1,7 @@
 // import React, { useState } from 'react'
 // import { Link } from 'react-router-dom'
+import React,{useEffect, useState} from 'react'
+import { useSelector } from 'react-redux'
 import './navbar.css'
 import heart from "./icons/heart.png"
 import bag from "./icons/bag.png"
@@ -12,15 +14,27 @@ import { Link } from "react-router-dom"
 import Cart from '../../gopal/CartPage/Cart'
 
 function Navbar() {
+const [state,setstate]= useState(0)
 
-
-  // let ans = localStorage.getItem("thehorse-name");
-  // let length1=0;
+  let ans = localStorage.getItem("thehorse-name");
+  // let length1;
   // fetch("http://localhost:3001/cartPage").then((res) => res.json()).then((data) => {
 
   //   length1 = data.length;
+  //   console.log(data);
+  //   console.log(data.length);
+  //   setstate(data.length)
 
   // })
+
+  // useEffect(()=>{
+     
+  // },[state])
+
+  const length1= useSelector((storedata)=>{
+              return storedata.carts
+  });
+
 
 
 
@@ -541,7 +555,7 @@ function Navbar() {
         <div id='logohorse' style={{ display: 'flex', justifyContent: 'center' }}><p><Link to='/' style={{ color: 'black', fontFamily: "canela" }}>THE HORSE</Link></p></div>
         <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
           {/* <div style={{marginTop:'6px'}}>AUD</div> */}
-          <Link to="/account"><div style={{ display: 'flex', fontSize: '15px', color: 'black', letterSpacing: '0.05em', fontFamily: 'canela', fontWeight: '900', marginTop: '7px', marginLeft: '-9px' }} className="account">{ans.length > 0 ? `Hi ${ans}` : "My Account"}</div></Link>
+          <Link to="/account"><div style={{ display: 'flex', fontSize: '15px', color: 'black', letterSpacing: '0.05em', fontFamily: 'canela', fontWeight: '900', marginTop: '7px', marginLeft: '-9px' }} className="account">{ans||'My account'}</div></Link>
           {/* <div style={{display:'flex',justifyContent:'space-evenly'}}> */}
           <Link to="/account/wishlist">  <div id='heartdiv'><img src={heart} alt="img" style={{ width: '18px', marginTop: '9px', marginRight: '-14px' }} /></div></Link>
           {/* <div id='search'><button style={{ border: 'none', backgroundColor: 'transparent',marginTop:'-5px' }}><img src={search} alt="img" style={{ width: '18px' }} /></button></div> */}
@@ -560,7 +574,7 @@ function Navbar() {
           {/* <div id='bagdiv'><img src={bag} alt="img" style={{ width: '18px',marginTop:'-5px' }} /></div> */}
           <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style={{ postion: "relative", backgroundColor: 'transparent', color: 'transparent', width: '10px', border: 'none', borderRadius: 'none', boxShadow: 'none' }}>
             <div id='bagdiv'><img src={bag} alt="img" style={{ width: '18px', marginTop: '-5px', marginLeft: '-7px' }} /></div>
-            <div className="cart_length">1</div>
+            <div className="cart_length">{length1.length}</div>
           </button>
         </div>
       </div>
