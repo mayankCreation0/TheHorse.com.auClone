@@ -76,7 +76,7 @@ function Tard({ elem, id, img1, img2, title, price, description, rating, discoun
         async function Post_cartData(el) {
 
 
-            let update = await fetch(`http://localhost:3001/cartPage`, {
+            let update = await fetch(`https://mock-server-app-fqpl.onrender.com/cartPage`, {
                 method: "POST",
                 body: JSON.stringify(el),
                 headers: {
@@ -88,7 +88,7 @@ function Tard({ elem, id, img1, img2, title, price, description, rating, discoun
                     alert("Already Added in Cart");
                 }
                 else {
-                    fetch("http://localhost:3001/cartPage").then((res) => res.json()).then((data1) => {
+                    fetch("https://mock-server-app-fqpl.onrender.com/cartPage").then((res) => res.json()).then((data1) => {
 
 
                         CartAction(data1, dispatch);

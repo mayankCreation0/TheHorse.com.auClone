@@ -30,7 +30,7 @@ function Product() {
 
     useEffect(() => {
 
-        getDatafun(`http://localhost:3001/posts/?q=${category.category}`, dispatch);
+        getDatafun(`https://mock-server-app-fqpl.onrender.com/posts/?q=${category.category}`, dispatch);
 
     }, []);
 
@@ -40,7 +40,7 @@ function Product() {
         if(event.target.checked)
         {
 
-        getDatafun(`http://localhost:3001/posts/?q=${ans}`, dispatch);
+        getDatafun(`https://mock-server-app-fqpl.onrender.com/posts/?q=${ans}`, dispatch);
         }
 
     }

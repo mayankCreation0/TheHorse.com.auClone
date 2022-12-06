@@ -13,7 +13,7 @@ const Wishlist = () => {
     const [dlte, setDlte] = useState(false);
     const [load, setLoad] = useState(false);
     useEffect(() => {
-        fetch(`http://localhost:3001/wishlist`).then((res) => (res.json())).then((Data) => { setWishlist(Data); setLoad(true) });
+        fetch(`https://mock-server-app-fqpl.onrender.com/wishlist`).then((res) => (res.json())).then((Data) => { setWishlist(Data); setLoad(true) });
     }, [])
 
 
@@ -25,7 +25,7 @@ const Wishlist = () => {
                 dataobj = { ...ele, "id": Id };
             }
         });
-        await fetch('http://localhost:3001/cart', {
+        await fetch('https://mock-server-app-fqpl.onrender.com/cartPage', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -41,13 +41,13 @@ const Wishlist = () => {
 
 
     async function deleteW(Id) {
-        await fetch(`http://localhost:3001/wishlist/${Id}`, {
+        await fetch(`https://mock-server-app-fqpl.onrender.com/wishlist/${Id}`, {
             method: "DELETE"
         }).then(() => {
             setDlte(true);
             setTimeout(() => { setDlte(false) }, 2000);
         });
-        await fetch(' http://localhost:3001/wishlist').then((res) => (res.json())).then((data) => { setWishlist(data) });
+        await fetch('https://mock-server-app-fqpl.onrender.com/wishlist').then((res) => (res.json())).then((data) => { setWishlist(data) });
     }
 
 

@@ -20,7 +20,7 @@ const Login = () => {
         try {
 
             let usersData = await fetch(
-                ` http://localhost:3001/users?email=${userData.email}&password=${userData.password}`
+                ` https://mock-server-app-fqpl.onrender.com/users?email=${userData.email}&password=${userData.password}`
             );
             usersData = await usersData.json();
 

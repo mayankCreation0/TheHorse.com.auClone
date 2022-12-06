@@ -35,7 +35,7 @@ function Details_card() {
 
     useEffect(() => {
 
-        getData(`http://localhost:3001/posts/?id=${id.id}`);
+        getData(`https://mock-server-app-fqpl.onrender.com/posts/?id=${id.id}`);
 
 
     }, []);
@@ -152,7 +152,7 @@ function Details_card() {
                                         Post_cartData(showData)
                                         async function Post_cartData(showData) {
 
-                                            let update = await fetch(`http://localhost:3001/cartPage`, {
+                                            let update = await fetch(`https://mock-server-app-fqpl.onrender.com/cartPage`, {
                                                 method: "POST",
                                                 body: JSON.stringify(showData),
                                                 headers: {
@@ -165,7 +165,7 @@ function Details_card() {
                                                     alert("Already Added in Cart");
                                                 }
                                                 else {
-                                                    fetch("http://localhost:3001/cartPage").then((res) => res.json()).then((data1) => {
+                                                    fetch("https://mock-server-app-fqpl.onrender.com/cartPage").then((res) => res.json()).then((data1) => {
 
 
                                                         CartAction(data1, dispatch);

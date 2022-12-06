@@ -15,7 +15,7 @@ export default function Cart() {
 
     useEffect(()=>{
 
-          fetch("http://localhost:3001/cartPage").then((res)=>res.json()).then((data)=>{
+          fetch("https://mock-server-app-fqpl.onrender.com/cartPage").then((res)=>res.json()).then((data)=>{
 
           console.log(data);
 
@@ -42,7 +42,7 @@ export default function Cart() {
       const dlt = (id)=>{
         console.log(id);
 
-        fetch(`http://localhost:3001/cartPage/${id}`, { method: 'DELETE' })
+        fetch(`https://mock-server-app-fqpl.onrender.com/cartPage/${id}`, { method: 'DELETE' })
        .then((res) =>{
 
         if(res.ok)

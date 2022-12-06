@@ -18,7 +18,7 @@ const Signup = () => {
 
     const handleSignup = async (e) => {
         e.preventDefault();
-        let usersRes = await fetch(` http://localhost:3001/users?email=${userData.email}`);
+        let usersRes = await fetch(`https://mock-server-app-fqpl.onrender.com/users?email=${userData.email}`);
         let usersData = await usersRes.json();
 
         if (usersData.length > 0) {
@@ -28,7 +28,7 @@ const Signup = () => {
             }, 4000)
             return;
         }
-        let res = await fetch("http://localhost:3001/users", {
+        let res = await fetch("https://mock-server-app-fqpl.onrender.com/users", {
             method: 'POST',
             body: JSON.stringify({ ...userData, token: userData.fname + Date.now() + userData.lname }),
             headers: { "Content-Type": "application/json" }

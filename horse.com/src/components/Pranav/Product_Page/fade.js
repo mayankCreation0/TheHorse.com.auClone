@@ -18,13 +18,13 @@ export function FadeEx({type }) {
   const handle = (value) => {
 
 
-    getDatafun(`http://localhost:3001/posts/?TAG2=${category}&_sort=price&_order=${value}`, dispatch);
+    getDatafun(`https://mock-server-app-fqpl.onrender.com/posts/?TAG2=${category}&_sort=price&_order=${value}`, dispatch);
 
   }
   const handle1 = (value) => {
 
 
-    getDatafun(`http://localhost:3001/posts/?TAG2=${category}&_sort=rating&_order=${value}`, dispatch);
+    getDatafun(`https://mock-server-app-fqpl.onrender.com/posts/?TAG2=${category}&_sort=rating&_order=${value}`, dispatch);
 
   }
 

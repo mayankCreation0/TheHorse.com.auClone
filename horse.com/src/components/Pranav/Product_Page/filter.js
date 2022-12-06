@@ -15,7 +15,7 @@ export function FadeE({ getfetchData }) {
   const handle = (value) => {
 
 
-    getDatafun(`http://localhost:3001/posts?_sort=price&_order=${value}`, dispatch);
+    getDatafun(`https://mock-server-app-fqpl.onrender.com/posts?_sort=price&_order=${value}`, dispatch);
 
   }
 

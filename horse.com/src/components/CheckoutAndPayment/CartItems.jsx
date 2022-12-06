@@ -18,7 +18,7 @@ function CartItems() {
   let enableCouponButton = useRef(true);
   
   useEffect(()=>{
-  fetch("http://localhost:3001/cartPage").
+  fetch("https://mock-server-app-fqpl.onrender.com/cartPage").
   then((res)=>res.json()).then((data)=>{
     setCartItems(data);
      let sum=0
