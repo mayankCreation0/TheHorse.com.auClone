@@ -26,7 +26,7 @@ const Recaptcha = () => {
     }
     return (
         <>
-            <Navbar />
+             
             <Slide
                 in={success}
                 direction="top"
@@ -41,7 +41,7 @@ const Recaptcha = () => {
                 </Alert>
             </Slide>
             <div style={{ display: 'flex', flexDirection: 'column', width: '100%', minHeight: "300px", justifyContent: 'center', justifyContent: 'space-evenly', alignItems: 'center', marginTop: '80px' }}>
-                <ReCAPTCHA sitekey="6LcnE0EjAAAAAPC228EO_jngbUFQgY6m4apOsG_L" onChange={onChange} />
+                <ReCAPTCHA sitekey="6LdWZ1cjAAAAABUQWUOErIjEG8_QM8aXmT9RDor-" onChange={onChange} />
                 <button disabled={verify ? false : true} onClick={verification}
                     style={{
                         backgroundColor: '#7596b8', width: '80px', height: '40px', borderRadius: '20px', color: 'white'

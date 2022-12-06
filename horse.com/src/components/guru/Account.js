@@ -6,7 +6,7 @@ import Footer from '../mayankFolder/footer/footer'
 
 const Account = () => {
     return (
-        <><Navbar />
+        <> 
             <div className={Styles.div1}>
                 <div className={Styles.div2}>
                     <Link className={Styles.links} to="">Dashboard</Link>

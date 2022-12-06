@@ -83,7 +83,7 @@ function CheckoutInformation() {
     <div id='CheckoutInformation'>
         <div id='CheckoutWebSiteName'>
             {/* <Link to={'/'}>The Horse</Link> */}
-            <a href="#" id='CheckoutWebSiteName-Header'>The Hourse</a>
+            <a href="#" id='CheckoutWebSiteName-Header'>The Horse</a>
         </div>
         <div id='page-location'>
             {/* <Link to='#'>Cart</Link> */}

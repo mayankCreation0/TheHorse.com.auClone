@@ -45,7 +45,7 @@ const Signup = () => {
     }, [])
     return <>
 
-        <Navbar />
+         
         <Slide in={alert} direction='top' position='fixed' top='0px' style={{ zIndex: 10 }}>
             <Alert status='error' w='40vw' mx='30vw' mt='50px' flexWrap='wrap'>
                 <AlertIcon />

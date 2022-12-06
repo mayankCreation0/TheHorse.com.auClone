@@ -46,7 +46,7 @@ const Login = () => {
 
     return (
         <>
-            <Navbar />
+             
             <Slide
                 in={alert}
                 direction="top"

@@ -11,7 +11,7 @@ function Homepage() {
     <>
     <Navbar/>
     <div id='homepage'>
-        <Carousel />
+       <div style={{width:"100%"}} ><Carousel /></div> 
         <div id='line1'>
             <div className='line1'>
                 <img src="https://sslimages.shoppersstop.com/sys-master/root/hd4/hb5/28736703332382/Main-Banner-Multiclick-Web_73829nbhjhsjjsskksbcgg.gif" alt="img"/>
@@ -23,7 +23,7 @@ function Homepage() {
             <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Travel_now_available_1536x.jpg?v=1669158391" alt="img" srcset="" style={{width:'100%',height:'100%'}}/>
         </div>
         <h3 className='trending'>Trending Now</h3>
-        <MultiCarouselApp/>
+       <div className='carousel123' style={{width:"100%"}}><MultiCarouselApp/></div> 
         <div id='line3'>
             <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Feature_Banner_Template_950e03f9-f7d8-4802-86cc-aa0ba77f6baf_1536x.jpg?v=1667862643" alt="img" srcset="" style={{width:'100%',height:'100%'}}/>
         </div>
@@ -31,7 +31,7 @@ function Homepage() {
             <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Feature_Banner_Template2_def33c37-1761-4526-9157-1c91c4895748_1536x.jpg?v=1667862741" alt="img" srcset="" style={{width:'100%',height:'100%'}}/>
         </div>
         <h3 className='trending'>Women's New</h3>
-        <MultiCarouselApp/>
+        <div className='carousel123' style={{width:"100%"}}><MultiCarouselApp/></div>
         <div id='line5'>
             <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/Firday_bag_Feature_Banner_Template_1536x.jpg?v=1668034602" alt="img" srcset="" style={{width:'100%',height:'100%'}}/>
         </div>
@@ -61,13 +61,9 @@ function Homepage() {
         </div>
         <hr style={{border:"1px solid #545542", marginTop:'60px'}}/>
         <div className='trending' style={{marginTop:"80px"}}>GO FOLLOW</div>
-        <div id='nicherow'>
-            <img src="https://scontent.cdninstagram.com/v/t51.29350-15/317513419_158333716913679_1584852231768000139_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=cjwv67eVLhgAX8kjHgq&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAYjqEUPf4esDXWYR6qaw5_Kp3w48VjMPUBpSt-zHAz6w&oe=638B05AB" alt="" srcset="" />
-            <img src="https://scontent.cdninstagram.com/v/t51.2885-15/316705771_1121948111800932_2254888192851595727_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=-NxrRLAslksAX-axbIQ&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAuS_joINz0CbKk58Ib8j5NPoPdeIZHTofGl8I1Zoxzdw&oe=6389F212" alt="" srcset="" />
-            <img src="https://scontent.cdninstagram.com/v/t51.29350-15/315653659_1371811670225957_1705502938649023014_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=isYi3lostygAX-QlyIc&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDL10cwncGiwGqYzmQWUrPBitsSitabLh4BtDgXMrlyWA&oe=638ABA0F" alt="" srcset="" />
-            <img src="https://scontent.cdninstagram.com/v/t51.29350-15/315865306_1270145477166129_1413989968034381988_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=QUReOhsQOWQAX9oAyPT&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfA_CtWu7ILHvMFY294upFBtacxwvFMPXh6vEp8ZBkDkKw&oe=638A9264" alt="" srcset="" />
-            <img src="https://cdn.shopify.com/s/files/1/0233/5133/files/backpack_600x.jpg?v=1651724232" alt="" srcset="" />
-            <img src="https://scontent.cdninstagram.com/v/t51.2885-15/315435316_678462006960847_6628115535468807493_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=zg4rl3cuNCsAX_yOxHp&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAYcFZbaNZcB9e3lRo6kRj5HpEBIhMM-xHAPDiTtlmTRw&oe=638A8CCC" alt="" srcset="" />
+        <div  style={{width:"80%",margin:"auto",padding:"30px"}} >
+            <img style={{width:"100%"}} src="https://sslimages.shoppersstop.com/sys-master/root/hbb/h77/28704737656862/Top-Banner-van-heausen-Web-1840x500_663333_dbhdbbbdsddqrwwww.jpg" alt="" srcset="" />
+            
         </div>
         <hr style={{border:"1px solid #545542", marginTop:'100px'}}/>
         <h2 className='trending'style={{fontSize:'20px',fontWeight:'bold',letterSpacing:'.07em' , marginTop:'100px'}}>Making Holiday Gifting Simple</h2>

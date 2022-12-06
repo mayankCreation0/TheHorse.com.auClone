@@ -10,7 +10,7 @@ import menu from './icons/menu.png'
 // import BackdropExample from "../button/button"
 // import DrawerExample from './sidenav/sideNav'
 import Top from './sidebar/sidebar'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Cart from '../../gopal/CartPage/Cart'
 
 function Navbar() {
@@ -30,6 +30,14 @@ const [state,setstate]= useState(0)
   // useEffect(()=>{
      
   // },[state])
+  let navigate=useNavigate();
+  const[search_,setState]=useState("");
+
+  const handle2=()=>{
+
+    navigate(`products/${search_}`);
+
+  }
 
   const length1= useSelector((storedata)=>{
               return storedata.carts
@@ -500,7 +508,7 @@ const [state,setstate]= useState(0)
                             <p>Gifts Under $150</p>
                             <p>Gifts Under $50</p></Link>
                         </div>
-
+                  
                       </div>
                     </li>
                     <li>Wedding Essentials
@@ -565,7 +573,11 @@ const [state,setstate]= useState(0)
             </button>
             <ul class="dropdown-menu" style={{ width: '100%', position: 'fixed', left: '50%', top: '54.87%', transform: 'translate(-50%,-50%)', borderRadius: '0px', height: '90vh', margin: 'auto' }}>
               <div style={{ position: 'fixed', left: '7.5%', top: '37%', transform: 'translate(-50%,-50%)' }}><p style={{ fontFamily: 'canela', fontSize: '17px', fontWeight: '900', borderBottom: '1px solid #545540' }}>Popular In Categories</p></div>
-              <div id='finput1' style={{ width: '30%', position: 'fixed', left: '50%', top: '8%', transform: 'translate(-50%,-50%)' }} ><input type="text" placeholder='Search...' /><button >&#10230;</button></div>
+              <div id='finput1' style={{ width: '30%', position: 'fixed', left: '50%', top: '8%', transform: 'translate(-50%,-50%)' }} ><input onChange={(event)=>{
+
+                 setState(event.target.value);
+
+              }} value={search_} type="text" placeholder='Search...' /><button onClick={handle2}>&#10230;</button></div>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'fixed', left: '20%', top: '70%', transform: 'translate(-50%,-50%)' }} ><iframe src='https://player.vimeo.com/video/764025864?h=526f5239d5&byline=0&portrait=0&muted=1&autoplay=1&controls=0&loop=1&background=1&app_id=122963' style={{ width: '800px', height: '350px' }}></iframe></div>
               <div><img src='https://cdn.shopify.com/s/files/1/0233/5133/files/backpacks_82905338-2b52-480a-8676-0b0f976310d8_300x.jpg?v=1669694649' alt='img' style={{ height: '350px', position: 'fixed', left: '85%', top: '70%', transform: 'translate(-50%,-50%)' }}></img></div>
               <div><img src='https://cdn.shopify.com/s/files/1/0233/5133/files/bags3_300x.jpg?v=1653962761' alt='img' style={{ width: '300px', height: '350px', position: 'fixed', left: '56%', top: '70%', transform: 'translate(-50%,-50%)' }} /></div>

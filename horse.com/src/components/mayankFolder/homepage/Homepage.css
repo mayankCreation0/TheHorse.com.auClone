@@ -136,6 +136,9 @@
         align-items: center;
         margin: 20px;
     }
+    .carousel123{
+        display: none;
+    }
     #smallpic{
         display: grid;
         grid-template-columns: repeat(4,3fr);

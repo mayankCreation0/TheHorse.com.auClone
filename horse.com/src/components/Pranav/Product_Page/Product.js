@@ -56,7 +56,7 @@ function Product() {
 
         <Navbar/>
 
-            <StaticData />
+            <StaticData type1={category.category}  />
 
             <Box position="absolute" right="230px" p="5px" top="440px" zIndex="1" >
                 <FadeEx type={category.category} ></FadeEx>
